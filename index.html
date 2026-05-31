@@ -3,27 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZyeemZia Apps</title>
+    <title>ZyeemZia Studio</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; text-align: center; padding: 40px 20px; line-height: 1.6; }
-        .container { max-width: 650px; margin: 0 auto; }
+        /* Base Styling & Theme */
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background: #090d16; 
+            color: #f1f5f9; 
+            text-align: center; 
+            padding: 50px 20px; 
+            line-height: 1.6; 
+        }
+        .container { max-width: 950px; margin: 0 auto; }
         
-        /* Main Header Styles */
-        .header { margin-bottom: 40px; }
-        .header h1 { color: #f8fafc; font-size: 32px; margin-bottom: 5px; letter-spacing: 1px; }
-        .header p { color: #94a3b8; font-size: 16px; margin-top: 0; }
+        /* Dashboard Header */
+        .header { margin-bottom: 50px; }
+        .header h1 { 
+            color: #f8fafc; 
+            font-size: 36px; 
+            margin-bottom: 5px; 
+            letter-spacing: 2px; 
+            font-weight: 800;
+        }
+        .header p { 
+            color: #64748b; 
+            font-size: 16px; 
+            margin-top: 0; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+        }
         
-        /* Individual App Card Styles */
-        .app-card { background: #1e293b; padding: 25px 30px; border-radius: 12px; border: 1px solid #334155; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 25px; text-align: left; }
-        .app-card h2 { color: #f59e0b; margin-top: 0; margin-bottom: 10px; font-size: 24px; }
-        .app-card p { color: #cbd5e1; font-size: 15px; margin-bottom: 20px; }
+        /* Grid Layout System */
+        .app-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+            margin-bottom: 40px; 
+        }
         
-        /* Links and Buttons */
-        .footer-links { border-top: 1px solid #334155; padding-top: 15px; }
-        .link-btn { display: inline-block; margin-right: 20px; color: #f59e0b; text-decoration: none; font-weight: bold; font-size: 14px; }
+        /* Creative App Module Cards */
+        .app-card { 
+            background: #111827; 
+            padding: 30px; 
+            border-radius: 16px; 
+            border: 1px solid #1f2937; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); 
+            text-align: left; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            transition: transform 0.2s ease, border-color 0.2s ease; 
+        }
+        .app-card:hover { 
+            transform: translateY(-4px); 
+            border-color: #374151; 
+        }
+        
+        /* Dynamic Theme Indicators */
+        .app-card h2 { margin-top: 0; margin-bottom: 12px; font-size: 22px; font-weight: 700; }
+        .amber-accent h2 { color: #f59e0b; }
+        .blue-accent h2 { color: #3b82f6; }
+        .emerald-accent h2 { color: #10b981; }
+        
+        .app-card p { color: #9ca3af; font-size: 14px; margin-bottom: 25px; flex-grow: 1; }
+        
+        /* Action Links */
+        .card-footer { 
+            border-top: 1px solid #1f2937; 
+            padding-top: 15px; 
+            margin-top: auto; 
+        }
+        .link-btn { 
+            display: inline-block; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 13px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+        }
+        .amber-accent .link-btn { color: #f59e0b; }
+        .blue-accent .link-btn { color: #3b82f6; }
+        .emerald-accent .link-btn { color: #10b981; }
         .link-btn:hover { text-decoration: underline; }
         
-        .global-support { margin-top: 40px; }
+        /* Global Command Links */
+        .global-support { 
+            margin-top: 60px; 
+            padding-top: 20px; 
+        }
+        .support-btn { 
+            color: #94a3b8; 
+            text-decoration: none; 
+            font-weight: 500; 
+            font-size: 14px; 
+            border: 1px solid #334155; 
+            padding: 10px 20px; 
+            border-radius: 30px; 
+            transition: background 0.2s ease; 
+        }
+        .support-btn:hover { background: #1e293b; color: #f8fafc; }
     </style>
 </head>
 <body>
@@ -31,31 +109,51 @@
         
         <!-- Studio Header -->
         <div class="header">
-            <h1>ZyeemZia Apps</h1>
-            <p>Official Developer Portfolio</p>
+            <h1>ZyeemZia Studio</h1>
+            <p>Application Matrix Dashboard</p>
         </div>
 
-        <!-- App 1: Military Abbreviation Pro -->
-        <div class="app-card">
-            <h2>Military Abbreviation Pro</h2>
-            <p>Dedicated to tactical utility, advanced telemetry, and field communications modernizations.</p>
-            <div class="footer-links">
-                <a class="link-btn" href="https://sites.google.com/view/militaryabbreviation/home" target="_blank">Privacy Policy</a>
-            </div>
-        </div>
+        <!-- Dashboard Grid -->
+        <div class="app-grid">
 
-        <!-- App 2: GR CONVERTER PRO -->
-        <div class="app-card">
-            <h2>GR CONVERTER PRO</h2>
-            <p>Advanced conversion utility and calculation tools for professional workflows.</p>
-            <div class="footer-links">
-                <a class="link-btn" href="https://sites.google.com/view/grconverterpro/home" target="_blank">Privacy Policy</a>
+            <!-- Module 1: Military Abbreviation Pro -->
+            <div class="app-card amber-accent">
+                <div>
+                    <h2>Military Abbreviation Pro</h2>
+                    <p>Designed for field operations. Advanced translation matrix, signal telemetry, and local intelligence processing models.</p>
+                </div>
+                <div class="card-footer">
+                    <a class="link-btn" href="https://sites.google.com/view/militaryabbreviation/home" target="_blank">Privacy Protocol</a>
+                </div>
             </div>
+
+            <!-- Module 2: GR CONVERTER PRO -->
+            <div class="app-card blue-accent">
+                <div>
+                    <h2>GR CONVERTER PRO</h2>
+                    <p>High-precision technical calculation framework and conversion mechanisms built for engineering workflows.</p>
+                </div>
+                <div class="card-footer">
+                    <a class="link-btn" href="https://sites.google.com/view/grconverterpro/home" target="_blank">Privacy Protocol</a>
+                </div>
+            </div>
+
+            <!-- Module 3: Golf Gadget Pro -->
+            <div class="app-card emerald-accent">
+                <div>
+                    <h2>Golf Gadget Pro</h2>
+                    <p>Precision performance metrics analyzer. Telemetry integrations and vector analysis engine for technical utility on the green.</p>
+                </div>
+                <div class="card-footer">
+                    <a class="link-btn" href="https://sites.google.com/view/golf-gadget-pro/home" target="_blank">Privacy Protocol</a>
+                </div>
+            </div>
+
         </div>
         
-        <!-- Global Support Contact -->
+        <!-- Global Command Center Support -->
         <div class="global-support">
-            <a class="link-btn" href="mailto:zyeemzia@gmail.com">✉ Contact Support</a>
+            <a class="support-btn" href="mailto:zyeemzia@gmail.com">✉ Signal Support Desk</a>
         </div>
 
     </div>

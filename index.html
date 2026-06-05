@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zyeem Zia</title>
+    <title>Zyeem Zia | Application Matrix</title>
+    <!-- Phase 2: Technical/Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         /* Base Styling & Theme */
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
             background: #090d16; 
             color: #f1f5f9; 
             text-align: center; 
@@ -17,21 +22,51 @@
         .container { max-width: 950px; margin: 0 auto; }
         
         /* Dashboard Header */
-        .header { margin-bottom: 50px; }
+        .header { margin-bottom: 30px; }
         .header h1 { 
             color: #f8fafc; 
-            font-size: 36px; 
+            font-size: 42px; 
             margin-bottom: 5px; 
             letter-spacing: 2px; 
-            font-weight: 800;
+            font-weight: 700;
+            text-transform: uppercase;
         }
         .header p { 
             color: #64748b; 
             font-size: 16px; 
             margin-top: 0; 
             text-transform: uppercase; 
-            letter-spacing: 1.5px; 
+            letter-spacing: 2px; 
+            font-weight: 600;
         }
+
+        /* Phase 4: Executive Authority Profile Section */
+        .profile-section {
+            background: rgba(17, 24, 39, 0.6);
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            padding: 25px 35px;
+            margin-bottom: 50px;
+            text-align: left;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+        }
+        .profile-section h3 {
+            color: #e2e8f0;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+        .profile-section p {
+            color: #94a3b8;
+            font-size: 16px;
+            margin: 0;
+            font-weight: 500;
+        }
+        .profile-highlight { color: #f8fafc; font-weight: 600; }
         
         /* Grid Layout System */
         .app-grid { 
@@ -52,39 +87,62 @@
             display: flex; 
             flex-direction: column; 
             justify-content: space-between; 
-            transition: transform 0.2s ease, border-color 0.2s ease; 
+            transition: all 0.3s ease; 
         }
+
+        /* Phase 3: Tactical UI Interactions (Glow Effects) */
         .app-card:hover { 
-            transform: translateY(-4px); 
+            transform: translateY(-6px); 
             border-color: #374151; 
         }
+        .amber-accent:hover { box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.4); }
+        .blue-accent:hover { box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); }
+        .emerald-accent:hover { box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); }
         
         /* Dynamic Theme Indicators */
-        .app-card h2 { margin-top: 0; margin-bottom: 12px; font-size: 22px; font-weight: 700; }
+        .app-card h2 { margin-top: 0; margin-bottom: 12px; font-size: 24px; font-weight: 700; letter-spacing: 0.5px; }
         .amber-accent h2 { color: #f59e0b; }
         .blue-accent h2 { color: #3b82f6; }
         .emerald-accent h2 { color: #10b981; }
         
-        .app-card p { color: #9ca3af; font-size: 14px; margin-bottom: 25px; flex-grow: 1; }
+        .app-card p { color: #9ca3af; font-size: 16px; font-weight: 500; margin-bottom: 25px; flex-grow: 1; }
         
-        /* Action Links */
+        /* Action Links & Phase 1: Store Badges */
         .card-footer { 
             border-top: 1px solid #1f2937; 
-            padding-top: 15px; 
+            padding-top: 20px; 
             margin-top: auto; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         .link-btn { 
             display: inline-block; 
             text-decoration: none; 
             font-weight: 600; 
-            font-size: 13px; 
+            font-size: 14px; 
             text-transform: uppercase; 
             letter-spacing: 0.5px; 
+            transition: opacity 0.2s ease;
         }
         .amber-accent .link-btn { color: #f59e0b; }
         .blue-accent .link-btn { color: #3b82f6; }
         .emerald-accent .link-btn { color: #10b981; }
-        .link-btn:hover { text-decoration: underline; }
+        .link-btn:hover { opacity: 0.7; }
+
+        /* Google Play Badge Styling */
+        .play-badge {
+            display: inline-block;
+            height: 40px;
+            transition: transform 0.2s ease;
+        }
+        .play-badge:hover {
+            transform: scale(1.05);
+        }
+        .play-badge img {
+            height: 100%;
+            width: auto;
+        }
         
         /* Global Command Links */
         .global-support { 
@@ -92,16 +150,18 @@
             padding-top: 20px; 
         }
         .support-btn { 
+            display: inline-block;
             color: #94a3b8; 
             text-decoration: none; 
-            font-weight: 500; 
-            font-size: 14px; 
+            font-weight: 600; 
+            font-size: 15px; 
             border: 1px solid #334155; 
-            padding: 10px 20px; 
+            padding: 12px 24px; 
             border-radius: 30px; 
-            transition: background 0.2s ease; 
+            letter-spacing: 1px;
+            transition: all 0.2s ease; 
         }
-        .support-btn:hover { background: #1e293b; color: #f8fafc; }
+        .support-btn:hover { background: #1e293b; color: #f8fafc; border-color: #475569; }
     </style>
 </head>
 <body>
@@ -109,8 +169,14 @@
         
         <!-- Studio Header -->
         <div class="header">
-            <h1>Zyeem Zia </h1>
+            <h1>Zyeem Zia</h1>
             <p>Application Matrix Dashboard</p>
+        </div>
+
+        <!-- Executive Authority Profile Section -->
+        <div class="profile-section">
+            <h3>System Architect & Developer</h3>
+            <p>Major Zyeem Bin Zia is a Communications Officer and software engineer specializing in <span class="profile-highlight">tactical intelligence processing</span>, <span class="profile-highlight">cyber defense</span>, and <span class="profile-highlight">autonomous systems</span>. Holding advanced degrees in Computer Science and Electrical, Electronics, and Communication Engineering, this matrix dashboard serves as the public distribution hub for high-precision operational tools and technical calculation frameworks.</p>
         </div>
 
         <!-- Dashboard Grid -->
@@ -124,6 +190,9 @@
                 </div>
                 <div class="card-footer">
                     <a class="link-btn" href="https://sites.google.com/view/militaryabbreviation/home" target="_blank">Privacy Protocol</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.militaryabbreviation" class="play-badge" target="_blank">
+                        <img alt="Get it on Google Play" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"/>
+                    </a>
                 </div>
             </div>
 
@@ -135,6 +204,9 @@
                 </div>
                 <div class="card-footer">
                     <a class="link-btn" href="https://sites.google.com/view/grconverterpro/home" target="_blank">Privacy Protocol</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.grconverterpro" class="play-badge" target="_blank">
+                        <img alt="Get it on Google Play" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"/>
+                    </a>
                 </div>
             </div>
 
@@ -146,6 +218,9 @@
                 </div>
                 <div class="card-footer">
                     <a class="link-btn" href="https://sites.google.com/view/golf-gadget-pro/home" target="_blank">Privacy Protocol</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.golfgadgetpro" class="play-badge" target="_blank">
+                        <img alt="Get it on Google Play" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"/>
+                    </a>
                 </div>
             </div>
 
@@ -153,7 +228,7 @@
         
         <!-- Global Command Center Support -->
         <div class="global-support">
-            <a class="support-btn" href="mailto:zyeemzia@gmail.com">✉ Signal Support Desk Copyright @ ZyeemZia </a>
+            <a class="support-btn" href="mailto:zyeem@zyeemzia.com">✉ SIGNAL SUPPORT DESK | COPYRIGHT © ZYEEMZIA </a>
         </div>
 
     </div>

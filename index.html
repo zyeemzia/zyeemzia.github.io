@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZyeemZia™ | Chairman & CEO</title>
-    <!-- Phase 2: Technical/Modern Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,8 +17,9 @@
             text-align: center; 
             padding: 50px 20px; 
             line-height: 1.6; 
+            margin: 0;
         }
-        .container { max-width: 950px; margin: 0 auto; }
+        .container { max-width: 950px; margin: 0 auto; position: relative; z-index: 1; }
         
         /* Dashboard Header */
         .header { margin-bottom: 30px; }
@@ -39,7 +39,7 @@
             font-weight: 600;
         }
 
-        /* Phase 4: Executive Authority Profile Section */
+        /* Executive Authority Profile Section */
         .profile-section {
             background: rgba(17, 24, 39, 0.6);
             border: 1px solid #1f2937;
@@ -88,8 +88,6 @@
             justify-content: space-between; 
             transition: all 0.3s ease; 
         }
-
-        /* Phase 3: Tactical UI Interactions (Glow Effects) */
         .app-card:hover { 
             transform: translateY(-6px); 
             border-color: #374151; 
@@ -98,7 +96,6 @@
         .blue-accent:hover { box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); }
         .emerald-accent:hover { box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); }
         
-        /* Dynamic Theme Indicators */
         .app-card h2 { margin-top: 0; margin-bottom: 12px; font-size: 24px; font-weight: 700; letter-spacing: 0.5px; }
         .amber-accent h2 { color: #f59e0b; }
         .blue-accent h2 { color: #3b82f6; }
@@ -106,7 +103,7 @@
         
         .app-card p { color: #9ca3af; font-size: 16px; font-weight: 500; margin-bottom: 25px; flex-grow: 1; }
         
-        /* Action Links & Phase 1: Store Badges */
+        /* Action Links & Store Badges */
         .card-footer { 
             border-top: 1px solid #1f2937; 
             padding-top: 20px; 
@@ -129,7 +126,6 @@
         .emerald-accent .link-btn { color: #10b981; }
         .link-btn:hover { opacity: 0.7; }
 
-        /* Google Play Badge Styling */
         .play-badge {
             display: inline-block;
             height: 40px;
@@ -147,10 +143,10 @@
         .global-support { 
             margin-top: 60px; 
             padding-top: 20px; 
-            display: flex; /* Makes buttons sit side-by-side */
+            display: flex; 
             justify-content: center;
-            gap: 20px; /* Space between the buttons */
-            flex-wrap: wrap; /* Allows safe stacking on mobile */
+            gap: 20px; 
+            flex-wrap: wrap; 
         }
         .support-btn { 
             display: inline-flex;
@@ -164,8 +160,51 @@
             border-radius: 30px; 
             letter-spacing: 1px;
             transition: all 0.2s ease; 
+            cursor: pointer;
+            background: transparent;
         }
         .support-btn:hover { background: #1e293b; color: #f8fafc; border-color: #475569; }
+
+        /* --- NEW MODAL CSS --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(9, 13, 22, 0.85); /* Dark background */
+            backdrop-filter: blur(8px); /* Blurs the dashboard behind it */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer; /* Indicates clicking closes it */
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(245, 158, 11, 0.1);
+            transform: scale(0.9);
+            transition: all 0.3s ease-in-out;
+            /* Anti-copy protections */
+            user-select: none;
+            -webkit-user-select: none;
+            pointer-events: none; /* Stops right-clicking directly on the image */
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
     </style>
 </head>
 <body>
@@ -232,10 +271,39 @@
         
         <!-- Global Command Center Support -->
         <div class="global-support">
-            <a class="support-btn" href="ZyeemZia™.png" target="_blank">🪪 DIGITAL BUSINESS CARD</a>
+            <!-- Changed this button to trigger the JavaScript modal -->
+            <button id="openCardBtn" class="support-btn">🪪 DIGITAL BUSINESS CARD</button>
             <a class="support-btn" href="mailto:zyeem@zyeemzia.com">✉ SIGNAL SUPPORT DESK | COPYRIGHT © ZYEEMZIA </a>
         </div>
 
     </div>
+
+    <!-- NEW: Hidden Modal Overlay -->
+    <div class="modal-overlay" id="cardModal" oncontextmenu="return false;">
+        <!-- Anti-copy tags added to the image -->
+        <img src="ZyeemZia™.png" alt="ZyeemZia Digital Business Card" class="modal-content" draggable="false">
+    </div>
+
+    <!-- NEW: JavaScript to handle opening and closing -->
+    <script>
+        const modal = document.getElementById('cardModal');
+        const openBtn = document.getElementById('openCardBtn');
+
+        // When the user clicks the button, show the modal
+        openBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.classList.add('active');
+        });
+
+        // When the user clicks anywhere on the dark background, hide the modal
+        modal.addEventListener('click', function() {
+            modal.classList.remove('active');
+        });
+
+        // Extra anti-copy security: Prevent right-click context menu on the modal
+        modal.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
 </body>
 </html>

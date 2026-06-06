@@ -151,6 +151,7 @@
         .support-btn { 
             display: inline-flex;
             align-items: center;
+            font-family: inherit; /* Fixes the mismatched font issue */
             color: #94a3b8; 
             text-decoration: none; 
             font-weight: 600; 
@@ -165,15 +166,15 @@
         }
         .support-btn:hover { background: #1e293b; color: #f8fafc; border-color: #475569; }
 
-        /* --- NEW MODAL CSS --- */
+        /* MODAL CSS */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(9, 13, 22, 0.85); /* Dark background */
-            backdrop-filter: blur(8px); /* Blurs the dashboard behind it */
+            background: rgba(9, 13, 22, 0.85); 
+            backdrop-filter: blur(8px); 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -181,7 +182,7 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease-in-out;
-            cursor: pointer; /* Indicates clicking closes it */
+            cursor: pointer; 
         }
         
         .modal-overlay.active {
@@ -196,10 +197,9 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(245, 158, 11, 0.1);
             transform: scale(0.9);
             transition: all 0.3s ease-in-out;
-            /* Anti-copy protections */
             user-select: none;
             -webkit-user-select: none;
-            pointer-events: none; /* Stops right-clicking directly on the image */
+            pointer-events: none; 
         }
 
         .modal-overlay.active .modal-content {
@@ -271,36 +271,31 @@
         
         <!-- Global Command Center Support -->
         <div class="global-support">
-            <!-- Changed this button to trigger the JavaScript modal -->
             <button id="openCardBtn" class="support-btn">🪪 DIGITAL BUSINESS CARD</button>
             <a class="support-btn" href="mailto:zyeem@zyeemzia.com">✉ SIGNAL SUPPORT DESK | COPYRIGHT © ZYEEMZIA </a>
         </div>
 
     </div>
 
-    <!-- NEW: Hidden Modal Overlay -->
+    <!-- Hidden Modal Overlay -->
     <div class="modal-overlay" id="cardModal" oncontextmenu="return false;">
-        <!-- Anti-copy tags added to the image -->
         <img src="ZyeemZia™.png" alt="ZyeemZia Digital Business Card" class="modal-content" draggable="false">
     </div>
 
-    <!-- NEW: JavaScript to handle opening and closing -->
+    <!-- JavaScript to handle opening and closing -->
     <script>
         const modal = document.getElementById('cardModal');
         const openBtn = document.getElementById('openCardBtn');
 
-        // When the user clicks the button, show the modal
         openBtn.addEventListener('click', function(e) {
             e.preventDefault();
             modal.classList.add('active');
         });
 
-        // When the user clicks anywhere on the dark background, hide the modal
         modal.addEventListener('click', function() {
             modal.classList.remove('active');
         });
 
-        // Extra anti-copy security: Prevent right-click context menu on the modal
         modal.addEventListener('contextmenu', function(e) {
             e.preventDefault();
         });

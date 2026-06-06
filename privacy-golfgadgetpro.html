@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Protocol | Golf Gadget Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background: #090d16; 
+            color: #f1f5f9; 
+            padding: 40px 20px; 
+            line-height: 1.6; 
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: #111827; 
+            padding: 40px 50px; 
+            border-radius: 12px; 
+            border: 1px solid #1f2937; 
+            text-align: left; 
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); 
+        }
+        .back-btn { 
+            display: inline-block; 
+            margin-bottom: 30px; 
+            color: #94a3b8; 
+            font-weight: 600; 
+            text-decoration: none; 
+            border: 1px solid #334155; 
+            padding: 8px 20px; 
+            border-radius: 30px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+        .back-btn:hover { background: #1e293b; color: #f8fafc; border-color: #475569; }
+        
+        h1 { color: #f8fafc; font-size: 32px; border-bottom: 1px solid #334155; padding-bottom: 15px; margin-top: 0; text-transform: uppercase; letter-spacing: 1px;}
+        
+        /* Updated to Emerald Accent for Golf Gadget Pro */
+        h2 { color: #10b981; font-size: 20px; margin-top: 35px; text-transform: uppercase; letter-spacing: 1px;}
+        
+        p, li { color: #9ca3af; font-size: 16px; font-weight: 500; margin-bottom: 15px; }
+        ul { padding-left: 20px; }
+        
+        .meta-info {
+            background: rgba(17, 24, 39, 0.8);
+            padding: 15px 20px;
+            border-radius: 8px;
+            /* Updated to Emerald Accent */
+            border-left: 4px solid #10b981;
+            margin-bottom: 30px;
+        }
+        .meta-info p { margin: 0; font-size: 15px; }
+        .meta-info strong { color: #f8fafc; }
+        
+        a.contact-link { color: #10b981; text-decoration: none; font-weight: 600; }
+        a.contact-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">← Return to Matrix Dashboard</a>
+        
+        <h1>Privacy Policy</h1>
+        
+        <div class="meta-info">
+            <p><strong>Application:</strong> Golf Gadget Pro</p>
+            <p><strong>Developer:</strong> ZyeemZia™</p>
+            <p><strong>Last Updated:</strong> June 1, 2026</p>
+        </div>
+
+        <h2>1. Introduction</h2>
+        <p>Welcome to Golf Gadget Pro. This Privacy Policy informs you of our policies regarding the collection, use, and disclosure of personal data when you use our tactical golf tracking, rangefinder, AR green reading, and digital scorecard application. By using the app, you agree to the collection and use of information in accordance with this policy. We prioritize a lean, privacy-first user experience and are committed to protecting your digital footprint on the course.</p>
+
+        <h2>2. Information Collection and Use</h2>
+        <p>We request specific device permissions to provide our core features. We do not require you to create a traditional account, nor do we secretly collect your email, phone number, or personal contacts.</p>
+        <ul>
+            <li><strong>Precise Location Data (GPS):</strong> Golf Gadget Pro collects location data to enable real-time golf route tracking and distance calculations only when the app is actively running in the foreground. A persistent system notification is visible to the user whenever location data is being processed. We do not access or collect location data in the background when the app is closed. This data is processed locally to generate your route trail and calculate distances.</li>
+            <li><strong>Camera Access (AR Green Reading):</strong> We request access to your device's camera strictly to power the AR Topography and Green Reading feature. The camera feed is processed entirely locally on your device in real-time. We do not record, capture, store, or transmit video feeds or images to our servers or any third parties.</li>
+            <li><strong>Multiplayer Tournament Data:</strong> If you choose to participate in the "Tournament Lobby" feature, your chosen alias, handicap, round scores, and chat messages are transmitted to our cloud servers (Firebase) to enable real-time synchronization with other players in your lobby.</li>
+            <li><strong>Local Storage & Caching:</strong> Solo digital scorecards, tactical map pins, saved round telemetry, generated shareable story graphics, and offline map tile caches are stored securely within your device's local memory.</li>
+            <li><strong>Device Identifiers:</strong> We use secure third-party services that collect Device IDs and advertising identifiers to facilitate ad delivery and manage premium subscriptions.</li>
+        </ul>
+
+        <h2>3. Third-Party Service Providers</h2>
+        <p>To provide monetization, mapping, weather, and multiplayer services, we integrate with industry-standard third-party platforms. These providers operate under their own strict Privacy Policies:</p>
+        <ul>
+            <li><strong>Google Firebase & Firestore:</strong> We use Firebase to synchronize live tournament leaderboards, chat messages, and anonymous guest player authentication.</li>
+            <li><strong>Open-Meteo (Weather API):</strong> When you use the "AI Caddie" feature, your device's current coordinates are sent ephemerally to Open-Meteo to return live atmospheric data (temperature, wind, pressure). No personal identifiers are tied to these weather requests.</li>
+            <li><strong>Google AdMob:</strong> We display banner, interstitial, and app-open advertisements to keep the base service free. AdMob may collect and use service data, such as your device's advertising ID and network information, to show relevant ads.</li>
+            <li><strong>RevenueCat & Google Play Billing:</strong> We offer an optional "PRO" upgrade within the app. All payment processing is securely handled by Google Play Billing, and subscription statuses are verified via RevenueCat. We do not process or store your financial details on our developer servers.</li>
+            <li><strong>Mapping Services:</strong> When actively rendering maps, the app connects to third-party providers (such as ESRI, OpenStreetMap, Carto, and USGS). These services inherently receive your IP address to deliver map tiles to your screen.</li>
+        </ul>
+
+        <h2>4. Data Retention and Deletion Policy</h2>
+        <p>In compliance with modern app store Data Safety regulations:</p>
+        <ul>
+            <li><strong>Local Data Deletion:</strong> Solo scorecards, map pins, and route histories you generate are stored locally on your device. You can permanently delete this data at any time by clearing the app's cache in your Android settings, or by simply uninstalling the app.</li>
+            <li><strong>Cloud Data Deletion (Tournaments):</strong> Data generated during multiplayer tournaments is stored on Firebase. When a host ends a tournament, or when a lobby is abandoned, active session data is archived or deleted according to the application's automated database lifecycle.</li>
+            <li><strong>No Formal Deletion Request Required:</strong> Because we do not tie your usage to a permanent, personally identifiable profile (like an email address), no formal data deletion request to the publisher is necessary.</li>
+        </ul>
+
+        <h2>5. Analytics and Tracking</h2>
+        <p>We maintain a lean and private user experience. We do not use generalized behavioral monitoring or external analytics tools (such as Google Analytics). Our third-party partners (RevenueCat and AdMob) only collect the minimum telemetry data required to verify your subscription status and serve advertisements.</p>
+
+        <h2>6. Your Privacy Rights & Consent</h2>
+        <p>Depending on your region (such as the EEA or the UK), you have specific rights regarding your personal data and ad tracking.</p>
+        <ul>
+            <li><strong>Consent Management:</strong> If applicable in your region, you will be presented with a Consent Management Platform (CMP) dialog upon launching the app, allowing you to grant or deny permission for personalized ad tracking.</li>
+            <li><strong>Opt-Out of Personalized Ads:</strong> You can opt-out of personalized advertising at any time by navigating to your device's system settings (e.g., Google Settings > Ads > Opt out of Ads Personalization).</li>
+        </ul>
+
+        <h2>7. Children’s Privacy</h2>
+        <p>Our Service does not address anyone under the age of 13 (or 16 in certain jurisdictions). We do not knowingly collect personally identifiable information from children. If you are a parent or guardian and you are aware that your child has provided us with personal data, please contact us immediately so we can take steps to ensure it is purged from any associated cloud services.</p>
+
+        <h2>8. Security of Data</h2>
+        <p>The security of your operational data is critical to us. Solo play data is secured natively by your device's sandboxed storage. Multiplayer data is protected using industry-standard Firebase encryption. However, please remember that no method of electronic storage or transmission over the Internet is 100% secure.</p>
+
+        <h2>9. Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy from time to time to reflect changes in legal requirements or new app features. We will notify you of any changes by updating the "Last Updated" date at the top of this policy.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact ZyeemZia™ via email at: <a href="mailto:zyeem@zyeemzia.com" class="contact-link">zyeem@zyeemzia.com</a>.</p>
+    </div>
+
+</body>
+</html>

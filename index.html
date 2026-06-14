@@ -169,6 +169,31 @@
         }
         .support-btn:hover { background: #e2e8f0; color: #0f172a; border-color: #94a3b8; }
 
+        /* Legal Footer For Web Crawlers */
+        .legal-footer { 
+            margin-top: 40px; 
+            padding-top: 20px; 
+            border-top: 1px solid #e2e8f0; 
+            color: #64748b; 
+            font-size: 13px; 
+            font-weight: 600; 
+            line-height: 1.8;
+            transition: border-color 0.3s ease, color 0.3s ease; 
+        }
+        body.dark-mode .legal-footer { 
+            border-top-color: #1f2937; 
+            color: #94a3b8; 
+        }
+        .legal-footer a { 
+            color: #3b82f6; 
+            text-decoration: none; 
+            font-weight: 700; 
+            display: inline-block;
+            margin-top: 5px;
+            transition: opacity 0.2s ease; 
+        }
+        .legal-footer a:hover { opacity: 0.7; }
+
         /* THEME TOGGLE BUTTON CSS (SVG Icons) */
         .theme-toggle-btn {
             position: fixed;
@@ -320,7 +345,14 @@
         
         <div class="global-support">
             <button id="openCardBtn" class="support-btn">DIGITAL BUSINESS CARD</button>
-            <a class="support-btn" href="mailto:zyeem@zyeemzia.com">SIGNAL SUPPORT DESK | COPYRIGHT © ZyeemZia™ </a>
+            <a class="support-btn" href="mailto:admin@zyeemzia.com">SIGNAL SUPPORT DESK | ADMIN@ZYEEMZIA.COM</a>
+        </div>
+
+        <div class="legal-footer">
+            Copyright @ ZyeemZia<br>
+            Developer & Publisher: Zyeem Bin Zia | TIN: 455794641335<br>
+            Plot-109, Road-1, Mirpur DOHS, Thana: Mirpur, Dhaka-1216, Bangladesh<br>
+            <a href="https://policy.zyeemzia.com">ACCESS FULL LEGAL & CORPORATE POLICY HUB &rarr;</a>
         </div>
 
     </div>

@@ -169,6 +169,100 @@
         }
         .support-btn:hover { background: #e2e8f0; color: #0f172a; border-color: #94a3b8; }
 
+        /* Contact Section */
+        .contact-section {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #8b5cf6; /* Executive purple accent */
+            border-radius: 12px;
+            padding: 30px 35px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            text-align: left;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .contact-section h3 {
+            color: #0f172a;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        .contact-section p { color: #475569; font-size: 16px; font-weight: 500; margin-bottom: 20px; transition: color 0.3s ease; }
+
+        /* Contact Form Fields */
+        .contact-form { display: flex; flex-direction: column; gap: 20px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; text-align: left; }
+        .form-group label { font-weight: 600; color: #0f172a; font-size: 15px; transition: color 0.3s ease; }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            font-family: inherit;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background: #f8fafc;
+            color: #0f172a;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .form-group input[type="file"] {
+            padding: 9px 12px;
+            background: transparent;
+            border: 1px dashed #cbd5e1;
+            cursor: pointer;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+        }
+
+        /* Phone Input with Country Code Wrapper */
+        .phone-wrapper { display: flex; }
+        .phone-wrapper select {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0;
+            width: 130px;
+            padding: 12px 10px;
+            cursor: pointer;
+        }
+        .phone-wrapper input {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            flex: 1;
+        }
+
+        .submit-btn {
+            background: #8b5cf6;
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            align-self: center; /* Centered in dashboard view */
+            width: 100%;
+            max-width: 400px;
+            margin-top: 10px;
+        }
+        .submit-btn:hover { background: #7c3aed; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3); }
+
+        @media (max-width: 650px) {
+            .form-row { grid-template-columns: 1fr; }
+            .phone-wrapper select { width: 110px; }
+        }
+
         /* Legal Footer For Web Crawlers */
         .legal-footer { 
             margin-top: 40px; 
@@ -201,7 +295,7 @@
             right: 20px;
             background: #ffffff;
             border: 1px solid #cbd5e1;
-            color: #475569; /* SVG inherits this color */
+            color: #475569;
             border-radius: 50%;
             width: 45px;
             height: 45px;
@@ -251,7 +345,7 @@
         body.dark-mode .app-card p { color: #9ca3af; }
         body.dark-mode .card-footer { border-top-color: #1f2937; }
 
-        /* FIX: Ensure vibrant colors show on hover in Dark Mode */
+        /* Vibrant colors on hover in Dark Mode */
         body.dark-mode .app-card.amber-accent:hover { box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.4); }
         body.dark-mode .app-card.blue-accent:hover { box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); }
         body.dark-mode .app-card.emerald-accent:hover { box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); }
@@ -259,6 +353,23 @@
         body.dark-mode .support-btn { border-color: #334155; color: #94a3b8; }
         body.dark-mode .support-btn:hover { background: #1e293b; color: #f8fafc; border-color: #475569; }
         
+        /* Dark Mode for Contact Form */
+        body.dark-mode .contact-section { background: rgba(17, 24, 39, 0.6); border-color: #1f2937; border-left-color: #8b5cf6; box-shadow: inset 0 0 20px rgba(0,0,0,0.2); }
+        body.dark-mode .contact-section h3 { color: #e2e8f0; border-bottom-color: #334155; }
+        body.dark-mode .contact-section p { color: #94a3b8; }
+        
+        body.dark-mode .form-group label { color: #e2e8f0; }
+        body.dark-mode .form-group input, body.dark-mode .form-group textarea, body.dark-mode .form-group select {
+            background: #1e293b;
+            border-color: #334155;
+            color: #f1f5f9;
+        }
+        body.dark-mode .form-group input[type="file"] { border-color: #334155; }
+        body.dark-mode .form-group input:focus, body.dark-mode .form-group textarea:focus, body.dark-mode .form-group select:focus {
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+        }
+
         body.dark-mode .theme-toggle-btn { background: #111827; border-color: #334155; color: #94a3b8; box-shadow: 0 4px 6px rgba(0,0,0,0.3);}
         body.dark-mode .theme-toggle-btn:hover { border-color: #475569; color: #f8fafc; }
 
@@ -346,6 +457,83 @@
         <div class="global-support">
             <button id="openCardBtn" class="support-btn">DIGITAL BUSINESS CARD</button>
             <a class="support-btn" href="mailto:admin@zyeemzia.com">SIGNAL SUPPORT DESK | ADMIN@ZYEEMZIA.COM</a>
+        </div>
+
+        <!-- CONTACT FORM SECTION -->
+        <div class="contact-section">
+            <h3>Direct Transmission Hub</h3>
+            <p>For operational inquiries, tactical software support, or partnership requests, submit a secure message directly to the executive command.</p>
+            
+            <form action="https://formsubmit.co/zyeemz@gmail.com" method="POST" enctype="multipart/form-data" class="contact-form">
+                <input type="hidden" name="_subject" value="New Transmission via Main Dashboard">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="First Name" required placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="Last Name" required placeholder="Doe">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="Email" required placeholder="john@domain.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <div class="phone-wrapper">
+                            <!-- Country Code Dropdown -->
+                            <select id="countryCode" name="Country Code">
+                                <option value="+1">+1 (US/CA)</option>
+                                <option value="+44">+44 (UK)</option>
+                                <option value="+61">+61 (AU)</option>
+                                <option value="+86">+86 (CN)</option>
+                                <option value="+880" selected>+880 (BD)</option>
+                                <option value="+91">+91 (IN)</option>
+                                <option value="+92">+92 (PK)</option>
+                                <option value="+971">+971 (UAE)</option>
+                                <option disabled>──────</option>
+                                <option value="+20">+20 (EG)</option>
+                                <option value="+27">+27 (ZA)</option>
+                                <option value="+33">+33 (FR)</option>
+                                <option value="+34">+34 (ES)</option>
+                                <option value="+39">+39 (IT)</option>
+                                <option value="+49">+49 (DE)</option>
+                                <option value="+52">+52 (MX)</option>
+                                <option value="+55">+55 (BR)</option>
+                                <option value="+60">+60 (MY)</option>
+                                <option value="+62">+62 (ID)</option>
+                                <option value="+63">+63 (PH)</option>
+                                <option value="+65">+65 (SG)</option>
+                                <option value="+81">+81 (JP)</option>
+                                <option value="+82">+82 (KR)</option>
+                                <option value="+94">+94 (LK)</option>
+                                <option value="+234">+234 (NG)</option>
+                                <option value="+254">+254 (KE)</option>
+                                <option value="+966">+966 (SA)</option>
+                            </select>
+                            <input type="tel" id="phone" name="Phone" placeholder="1700 000000">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Secure Message</label>
+                    <textarea id="message" name="Message" rows="5" required placeholder="Detail your inquiry or request here..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="attachment">Attach Documentation (Optional)</label>
+                    <input type="file" id="attachment" name="Attachment" accept="image/*,.pdf,.doc,.docx">
+                </div>
+
+                <button type="submit" class="submit-btn">TRANSMIT SECURE MESSAGE</button>
+            </form>
         </div>
 
         <div class="legal-footer">

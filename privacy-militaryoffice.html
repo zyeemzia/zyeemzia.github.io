@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Protocol | Military Office</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           BASE STYLING & THEME (DEFAULT: LIGHT MODE)
+           ========================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            padding: 40px 20px;
+            line-height: 1.6;
+            margin: 0;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px 50px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            text-align: justify;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #475569;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid #cbd5e1;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+        .back-btn:hover { background: #e2e8f0; color: #0f172a; border-color: #94a3b8; }
+
+        h1 { color: #0f172a; font-size: 32px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-top: 0; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease, border-color 0.3s ease;}
+
+        /* Steel/Blue-Grey Accent for Military Office */
+        h2 { color: #3b82f6; font-size: 20px; margin-top: 35px; text-transform: uppercase; letter-spacing: 1px;}
+
+        p, li { color: #475569; font-size: 16px; font-weight: 500; margin-bottom: 15px; transition: color 0.3s ease; text-align: justify; }
+        ul { padding-left: 20px; }
+
+        .meta-info {
+            background: #f1f5f9;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+            margin-bottom: 30px;
+            transition: background 0.3s ease;
+        }
+        .meta-info p { margin: 0; font-size: 15px; text-align: left; }
+        .meta-info strong { color: #0f172a; transition: color 0.3s ease; }
+
+        a.contact-link { color: #3b82f6; text-decoration: none; font-weight: 600; }
+        a.contact-link:hover { text-decoration: underline; }
+
+        .theme-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #475569;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .theme-toggle-btn:hover { transform: scale(1.1); border-color: #94a3b8; color: #0f172a; }
+
+        .icon-moon { display: block; }
+        .icon-sun { display: none; }
+
+        @media (max-width: 650px) {
+            body { padding: 20px 15px; }
+            .container { padding: 30px 20px; }
+            h1 { font-size: 26px; }
+            .back-btn { font-size: 13px; padding: 8px 16px; margin-bottom: 20px; }
+            .theme-toggle-btn { top: 15px; right: 15px; width: 40px; height: 40px; }
+        }
+
+        /* =========================================
+           DARK MODE OVERRIDES
+           ========================================= */
+        body.dark-mode { background: #090d16; color: #f1f5f9; }
+        body.dark-mode .container { background: #111827; border-color: #1f2937; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); }
+        body.dark-mode .back-btn { color: #94a3b8; border-color: #334155; }
+        body.dark-mode .back-btn:hover { background: #1e293b; color: #f8fafc; border-color: #475569; }
+
+        body.dark-mode h1 { color: #f8fafc; border-bottom-color: #334155; }
+        body.dark-mode p, body.dark-mode li { color: #9ca3af; }
+
+        body.dark-mode .meta-info { background: rgba(17, 24, 39, 0.8); border-color: #1f2937; border-left-color: #3b82f6;}
+        body.dark-mode .meta-info strong { color: #f8fafc; }
+
+        body.dark-mode .theme-toggle-btn { background: #111827; border-color: #334155; color: #94a3b8; box-shadow: 0 4px 6px rgba(0,0,0,0.3);}
+        body.dark-mode .theme-toggle-btn:hover { border-color: #475569; color: #f8fafc; }
+
+        body.dark-mode .icon-moon { display: none; }
+        body.dark-mode .icon-sun { display: block; }
+    </style>
+</head>
+<body>
+
+    <button id="themeToggle" class="theme-toggle-btn" title="Toggle Light/Dark Mode">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+    </button>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">← Return to Matrix Dashboard</a>
+
+        <h1>Privacy Policy</h1>
+
+        <div class="meta-info">
+            <p><strong>Application:</strong> Military Office</p>
+            <p><strong>Developer:</strong> ZyeemZia™</p>
+            <p><strong>Last Updated:</strong> September 17, 2026</p>
+        </div>
+
+        <h2>1. Introduction</h2>
+        <p>Welcome to Military Office. This Privacy Policy informs you of our policies regarding the collection, use, and disclosure of information when you use our offline office suite — PDF editor, Word and PowerPoint reader, document scanner, tactical dictionary, and telemetry tools. By using the app, you agree to the collection and use of information in accordance with this policy.</p>
+
+        <h2>2. Information Collection and Use</h2>
+        <p>Military Office has no sign-in and no user accounts. We do not collect your name, email address, phone number, or contacts.</p>
+        <ul>
+            <li><strong>Your Documents Stay On Your Phone:</strong> PDF, Word (.doc/.docx) and PowerPoint (.ppt/.pptx) files you open or edit, scanned pages, photos, OCR-recognized text, handwriting, highlights, and your custom abbreviation database are processed and stored only on your device using on-device engines. They are never uploaded to our servers. Files leave your device only when you deliberately choose to share, export, or print them.</li>
+            <li><strong>Document Scanning (On-Device):</strong> The scanner and text-recognition features use Google ML Kit's on-device Document Scanner and Text Recognition models, both of which run locally through Google Play services. Scanned images and recognized text are processed on your device and are not transmitted to us. The app does not request the Camera permission directly — ML Kit's scanner handles capture through its own secure, sandboxed interface.</li>
+            <li><strong>Precise Location Data (GPS):</strong> We request location access solely to power the compass/telemetry (Qibla direction and bearing) feature. Location is read in real time to calculate direction and is never stored, logged, or transmitted off your device.</li>
+            <li><strong>Local File Access:</strong> When you use file import/export, the Smart Picker, or the bulk abbreviation upload feature, the app reads and writes files (.pdf, .docx, .pptx, .txt, .csv, images) that you explicitly select from your device's storage. These files are used only to open, edit, or update content locally and are never uploaded to the cloud unless you personally choose to share them via the system share sheet.</li>
+            <li><strong>Local Notifications & Exact Alarms:</strong> We request notification and exact-alarm permissions to deliver the scheduled "Abbreviation of the Day" reminder. This is scheduled entirely on your device's local clock; we do not track or transmit your interaction with notifications.</li>
+            <li><strong>Device Identifiers:</strong> Our third-party advertising and subscription providers (below) collect device and advertising identifiers to serve ads and verify purchases.</li>
+        </ul>
+
+        <h2>3. Third-Party Service Providers</h2>
+        <p>To provide monetization, update, and subscription services, we integrate with the following industry-standard providers, each governed by its own privacy policy:</p>
+        <ul>
+            <li><strong>Google AdMob:</strong> Free users see app open, interstitial, native, and rewarded advertisements to keep the base app free. AdMob may collect your device's advertising ID, approximate IP-based location, app interaction, and diagnostic data to serve and measure ads. Users in the EEA, UK, and Switzerland are shown a consent dialog before any personalized ads load.</li>
+            <li><strong>RevenueCat & Google Play Billing:</strong> The optional "Pro" upgrade (ad removal and premium tools) is purchased through Google Play Billing. RevenueCat receives an anonymized app user ID and purchase history to verify your Pro entitlement. We never see, process, or store your payment card details.</li>
+            <li><strong>Google Play In-App Updates:</strong> We use Google Play's native in-app update API to prompt you when a newer version is available. This only checks version metadata with Google Play; no personal data is involved.</li>
+        </ul>
+
+        <h2>4. Data Retention and Deletion</h2>
+        <ul>
+            <li><strong>No Account Data:</strong> Because Military Office operates entirely without user accounts, we hold no personal profile data on any remote server.</li>
+            <li><strong>Local Data Deletion:</strong> Documents, scans, custom abbreviations, categories, and settings are stored locally on your device. You can delete this data at any time by clearing the app's storage in Android Settings, or by uninstalling the app.</li>
+            <li><strong>No Deletion Request Required:</strong> Because we do not collect or transmit personal user data to our own servers, no formal data-deletion request to the developer is necessary.</li>
+        </ul>
+
+        <h2>5. Analytics and Tracking</h2>
+        <p>We do not use general-purpose usage tracking, behavioral analytics, or crash-analytics SDKs of our own. Our third-party partners (AdMob and RevenueCat) collect only the minimum telemetry required to serve ads and confirm your Pro subscription status.</p>
+
+        <h2>6. Your Privacy Rights & Consent</h2>
+        <ul>
+            <li><strong>Consent Management:</strong> Where applicable (EEA, UK, Switzerland), a consent dialog is shown on launch, letting you grant or deny personalized ad tracking.</li>
+            <li><strong>Opt-Out of Personalized Ads:</strong> You can opt out of personalized advertising at any time from your device settings (Settings → Google → Ads → Opt out of Ads Personalization), or reset your advertising ID from the same menu.</li>
+        </ul>
+
+        <h2>7. Children's Privacy</h2>
+        <p>Military Office is not directed at children under 13 (or 16 in certain jurisdictions), and we do not knowingly collect personal data from children. If you believe a child has provided us with personal data through a third-party service, please contact us so it can be removed.</p>
+
+        <h2>8. Security of Data</h2>
+        <p>Because your documents, scans, and dictionary data are never transmitted to our servers, the risk of a server-side data breach is mitigated by the app's architecture itself. Password-protected PDFs you export use AES-256 encryption. Data exchanged with our ad and billing partners is encrypted in transit. No method of electronic storage or transmission is ever 100% secure, and we cannot guarantee absolute security.</p>
+
+        <h2>9. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect legal or feature changes. Any changes are reflected by updating the "Last Updated" date above. Please review this policy periodically.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how your data is handled, please contact the developer via email at: <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>.</p>
+
+        <p style="margin-top:30px; font-size:13px; text-transform:uppercase; letter-spacing:1px;">Military Office is an independent productivity app by ZyeemZia™. It is not affiliated with, endorsed by, or connected to any government, armed force, ministry, or NATO. Abbreviation lists are compiled for reference only and may be incomplete.</p>
+    </div>
+
+    <script>
+        const themeBtn = document.getElementById('themeToggle');
+        const bodyElement = document.body;
+
+        if (localStorage.getItem('matrixTheme') === 'dark') {
+            bodyElement.classList.add('dark-mode');
+        }
+
+        themeBtn.addEventListener('click', () => {
+            bodyElement.classList.toggle('dark-mode');
+            if (bodyElement.classList.contains('dark-mode')) {
+                localStorage.setItem('matrixTheme', 'dark');
+            } else {
+                localStorage.setItem('matrixTheme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>

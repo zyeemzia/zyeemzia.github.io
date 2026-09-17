@@ -7,45 +7,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         /* =========================================
-           BASE STYLING & THEME (DEFAULT: LIGHT MODE) 
+           BASE STYLING & THEME (DEFAULT: LIGHT MODE)
            ========================================= */
         /* GLOBAL RESET FOR OVERFLOW PREVENTION */
         *, *::before, *::after {
             box-sizing: border-box;
         }
 
-        body { 
-            font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            background: #f8fafc; 
-            color: #0f172a; 
-            text-align: center; 
-            padding: 50px 20px; 
-            line-height: 1.6; 
+        body {
+            font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            text-align: center;
+            padding: 50px 20px;
+            line-height: 1.6;
             margin: 0;
             overflow-x: hidden; /* Prevents horizontal scroll wobbling */
-            transition: background-color 0.3s ease, color 0.3s ease; 
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .container { max-width: 950px; margin: 0 auto; position: relative; z-index: 1; }
-        
+
         /* Dashboard Header */
         .header { margin-bottom: 30px; }
-        .header h1 { 
-            color: #0f172a; 
-            font-size: 42px; 
-            margin-bottom: 5px; 
-            letter-spacing: 2px; 
+        .header h1 {
+            color: #0f172a;
+            font-size: 42px;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
             font-weight: 700;
             transition: color 0.3s ease;
         }
-        .header p { 
-            color: #64748b; 
-            font-size: 16px; 
-            margin-top: 0; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
+        .header p {
+            color: #64748b;
+            font-size: 16px;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             font-weight: 600;
         }
 
@@ -79,66 +79,69 @@
             transition: color 0.3s ease;
         }
         .profile-highlight { color: #0f172a; font-weight: 600; transition: color 0.3s ease; }
-        
+
         /* Grid Layout System */
-        .app-grid { 
-            display: grid; 
+        .app-grid {
+            display: grid;
             /* min() function ensures cards shrink safely on micro-devices (< 280px) */
-            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); 
-            gap: 25px; 
-            margin-bottom: 40px; 
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
         }
-        
+
         /* Creative App Module Cards */
-        .app-card { 
-            background: #ffffff; 
-            padding: 30px; 
-            border-radius: 16px; 
-            border: 1px solid #e2e8f0; 
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); 
-            text-align: justify; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between; 
-            transition: all 0.3s ease; 
+        .app-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
         }
-        .app-card:hover { 
-            transform: translateY(-6px); 
-            border-color: #cbd5e1; 
+        .app-card:hover {
+            transform: translateY(-6px);
+            border-color: #cbd5e1;
         }
         .amber-accent:hover { box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.4); }
         .blue-accent:hover { box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); }
         .emerald-accent:hover { box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); }
-        
+        .slate-accent:hover { box-shadow: 0 10px 25px -5px rgba(100, 116, 139, 0.15); border-color: rgba(100, 116, 139, 0.4); }
+
         .app-card h2 { margin-top: 0; margin-bottom: 12px; font-size: 24px; font-weight: 700; letter-spacing: 0.5px; }
         .amber-accent h2 { color: #f59e0b; }
         .blue-accent h2 { color: #3b82f6; }
         .emerald-accent h2 { color: #10b981; }
-        
+        .slate-accent h2 { color: #64748b; }
+
         .app-card p { color: #64748b; font-size: 16px; font-weight: 500; margin-bottom: 25px; flex-grow: 1; transition: color 0.3s ease; }
-        
+
         /* Action Links & Store Badges */
-        .card-footer { 
-            border-top: 1px solid #e2e8f0; 
-            padding-top: 20px; 
-            margin-top: auto; 
+        .card-footer {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+            margin-top: auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
             transition: border-color 0.3s ease;
         }
-        .link-btn { 
-            display: inline-block; 
-            text-decoration: none; 
-            font-weight: 600; 
-            font-size: 14px; 
-            text-transform: uppercase; 
-            letter-spacing: 0.5px; 
+        .link-btn {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             transition: opacity 0.2s ease;
         }
         .amber-accent .link-btn { color: #f59e0b; }
         .blue-accent .link-btn { color: #3b82f6; }
         .emerald-accent .link-btn { color: #10b981; }
+        .slate-accent .link-btn { color: #64748b; }
         .link-btn:hover { opacity: 0.7; }
 
         .play-badge {
@@ -148,31 +151,45 @@
         }
         .play-badge:hover { transform: scale(1.05); }
         .play-badge img { height: 100%; width: auto; }
-        
-        /* Global Command Links */
-        .global-support { 
-            margin-top: 60px; 
-            padding-top: 20px; 
-            display: flex; 
-            justify-content: center;
-            gap: 20px; 
-            flex-wrap: wrap; 
+
+        /* Closed-testing status badge — shown in place of the Play Store badge
+           until an app's public listing goes live. */
+        .testing-badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #64748b;
+            border: 1px dashed #94a3b8;
+            border-radius: 20px;
+            padding: 8px 14px;
         }
-        .support-btn { 
+
+        /* Global Command Links */
+        .global-support {
+            margin-top: 60px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .support-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            font-family: inherit; 
-            color: #475569; 
-            text-decoration: none; 
-            font-weight: 600; 
-            font-size: 15px; 
-            border: 1px solid #cbd5e1; 
-            padding: 12px 24px; 
-            border-radius: 30px; 
+            font-family: inherit;
+            color: #475569;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            border: 1px solid #cbd5e1;
+            padding: 12px 24px;
+            border-radius: 30px;
             letter-spacing: 1px;
-            transition: all 0.2s ease; 
+            transition: all 0.2s ease;
             cursor: pointer;
             background: transparent;
             line-height: 1.4;
@@ -183,7 +200,7 @@
         .contact-section {
             background: rgba(255, 255, 255, 0.8);
             border: 1px solid #e2e8f0;
-            border-left: 4px solid #8b5cf6; 
+            border-left: 4px solid #8b5cf6;
             border-radius: 12px;
             padding: 30px 35px;
             margin-top: 50px;
@@ -211,9 +228,9 @@
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; }
         .form-group { display: flex; flex-direction: column; gap: 6px; text-align: left; width: 100%; }
         .form-group label { font-weight: 600; color: #0f172a; font-size: 15px; transition: color 0.3s ease; }
-        
+
         .form-group input, .form-group textarea, .form-group select {
-            width: 100%; 
+            width: 100%;
             font-family: inherit;
             padding: 12px 15px;
             border: 1px solid #cbd5e1;
@@ -240,8 +257,8 @@
         .phone-wrapper select {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
-            border-right: 0; 
-            width: 150px; 
+            border-right: 0;
+            width: 150px;
             padding: 12px 10px;
             cursor: pointer;
             text-overflow: ellipsis; /* Ensures long names don't bleed visually */
@@ -267,7 +284,7 @@
             letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s ease;
-            align-self: center; 
+            align-self: center;
             width: 100%;
             max-width: 400px;
             margin-top: 10px;
@@ -276,33 +293,33 @@
 
         /* Media Query adjusted to optimize mobile boundaries */
         @media (max-width: 650px) {
-            .contact-section { padding: 25px 20px; } 
+            .contact-section { padding: 25px 20px; }
             .form-row { grid-template-columns: 1fr; }
             .phone-wrapper select { width: 120px; font-size: 14px; }
         }
 
         /* Legal Footer For Web Crawlers */
-        .legal-footer { 
-            margin-top: 40px; 
-            padding-top: 20px; 
-            border-top: 1px solid #e2e8f0; 
-            color: #64748b; 
-            font-size: 13px; 
-            font-weight: 600; 
+        .legal-footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 600;
             line-height: 1.8;
-            transition: border-color 0.3s ease, color 0.3s ease; 
+            transition: border-color 0.3s ease, color 0.3s ease;
         }
-        body.dark-mode .legal-footer { 
-            border-top-color: #1f2937; 
-            color: #94a3b8; 
+        body.dark-mode .legal-footer {
+            border-top-color: #1f2937;
+            color: #94a3b8;
         }
-        .legal-footer a { 
-            color: #3b82f6; 
-            text-decoration: none; 
-            font-weight: 700; 
+        .legal-footer a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 700;
             display: inline-block;
             margin-top: 5px;
-            transition: opacity 0.2s ease; 
+            transition: opacity 0.2s ease;
         }
         .legal-footer a:hover { opacity: 0.7; }
 
@@ -326,37 +343,37 @@
             transition: all 0.3s ease;
         }
         .theme-toggle-btn:hover { transform: scale(1.1); border-color: #94a3b8; color: #0f172a; }
-        
+
         .icon-moon { display: block; }
         .icon-sun { display: none; }
 
         /* MODAL CSS (Light Base) */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(248, 250, 252, 0.85); backdrop-filter: blur(8px); 
+            background: rgba(248, 250, 252, 0.85); backdrop-filter: blur(8px);
             display: flex; justify-content: center; align-items: center;
-            z-index: 9999; opacity: 0; visibility: hidden; transition: all 0.3s ease-in-out; cursor: pointer; 
+            z-index: 9999; opacity: 0; visibility: hidden; transition: all 0.3s ease-in-out; cursor: pointer;
         }
         .modal-overlay.active { opacity: 1; visibility: visible; }
         .modal-content {
             max-width: 90%; max-height: 85vh; border-radius: 12px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(245, 158, 11, 0.1);
             transform: scale(0.9); transition: all 0.3s ease-in-out;
-            user-select: none; -webkit-user-select: none; pointer-events: none; 
+            user-select: none; -webkit-user-select: none; pointer-events: none;
         }
         .modal-overlay.active .modal-content { transform: scale(1); }
 
         /* =========================================
-           DARK MODE OVERRIDES 
+           DARK MODE OVERRIDES
            ========================================= */
         body.dark-mode { background: #090d16; color: #f1f5f9; }
         body.dark-mode .header h1 { color: #f8fafc; }
-        
+
         body.dark-mode .profile-section { background: rgba(17, 24, 39, 0.6); border-color: #1f2937; box-shadow: inset 0 0 20px rgba(0,0,0,0.2); }
         body.dark-mode .profile-section h3 { color: #e2e8f0; border-bottom-color: #334155; }
         body.dark-mode .profile-section p { color: #94a3b8; }
         body.dark-mode .profile-highlight { color: #f8fafc; }
-        
+
         body.dark-mode .app-card { background: #111827; border-color: #1f2937; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
         body.dark-mode .app-card:hover { border-color: #374151; }
         body.dark-mode .app-card p { color: #9ca3af; }
@@ -365,15 +382,18 @@
         body.dark-mode .app-card.amber-accent:hover { box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.4); }
         body.dark-mode .app-card.blue-accent:hover { box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.4); }
         body.dark-mode .app-card.emerald-accent:hover { box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); }
-        
+        body.dark-mode .app-card.slate-accent:hover { box-shadow: 0 10px 25px -5px rgba(148, 163, 184, 0.15); border-color: rgba(148, 163, 184, 0.4); }
+
+        body.dark-mode .testing-badge { color: #94a3b8; border-color: #475569; }
+
         body.dark-mode .support-btn { border-color: #334155; color: #94a3b8; }
         body.dark-mode .support-btn:hover { background: #1e293b; color: #f8fafc; border-color: #475569; }
-        
+
         /* Dark Mode for Contact Form */
         body.dark-mode .contact-section { background: rgba(17, 24, 39, 0.6); border-color: #1f2937; border-left-color: #8b5cf6; box-shadow: inset 0 0 20px rgba(0,0,0,0.2); }
         body.dark-mode .contact-section h3 { color: #e2e8f0; border-bottom-color: #334155; }
         body.dark-mode .contact-section p { color: #94a3b8; }
-        
+
         body.dark-mode .form-group label { color: #e2e8f0; }
         body.dark-mode .form-group input, body.dark-mode .form-group textarea, body.dark-mode .form-group select {
             background: #1e293b;
@@ -415,7 +435,7 @@
     </button>
 
     <div class="container">
-        
+
         <div class="header">
             <h1>ZyeemZia™</h1>
             <p>Chairman & CEO</p>
@@ -427,6 +447,22 @@
         </div>
 
         <div class="app-grid">
+
+            <div class="app-card slate-accent">
+                <div>
+                    <h2>Military Office</h2>
+                    <p>The ultimate offline military office suite. On-device PDF editor, Word & PowerPoint reader/editor, ML Kit document scanner with OCR, a massive tactical abbreviation dictionary, and telemetry (compass/GPS) tools. Every document, scan, and entry stays on-device — no accounts, no cloud upload.</p>
+                </div>
+                <div class="card-footer">
+                    <a class="link-btn" href="privacy-militaryoffice.html">Privacy Protocol</a>
+                    <span class="testing-badge">CLOSED TESTING</span>
+                    <!-- Once the Play Store listing goes public, replace the span above with:
+                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.militaryoffice" class="play-badge" target="_blank">
+                        <img alt="Get it on Google Play" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"/>
+                    </a>
+                    -->
+                </div>
+            </div>
 
             <div class="app-card amber-accent">
                 <div>
@@ -468,7 +504,7 @@
             </div>
 
         </div>
-        
+
         <div class="global-support">
             <button id="openCardBtn" class="support-btn">DIGITAL BUSINESS CARD</button>
             <a class="support-btn" href="mailto:admin@zyeemzia.com">SIGNAL SUPPORT DESK | ADMIN@ZYEEMZIA.COM</a>
@@ -478,7 +514,7 @@
         <div class="contact-section">
             <h3>Direct Transmission Hub</h3>
             <p>For operational inquiries, tactical software support, or partnership requests, submit a secure message directly to the executive command.</p>
-            
+
             <form action="https://formsubmit.co/zyeemz@gmail.com" method="POST" enctype="multipart/form-data" class="contact-form">
                 <input type="hidden" name="_subject" value="New Transmission via Main Dashboard">
                 <input type="hidden" name="_captcha" value="false">
@@ -785,14 +821,14 @@
         // --- 2. THEME TOGGLE LOGIC ---
         const themeBtn = document.getElementById('themeToggle');
         const bodyElement = document.body;
-        
+
         if(localStorage.getItem('matrixTheme') === 'dark') {
             bodyElement.classList.add('dark-mode');
         }
 
         themeBtn.addEventListener('click', () => {
             bodyElement.classList.toggle('dark-mode');
-            
+
             if(bodyElement.classList.contains('dark-mode')) {
                 localStorage.setItem('matrixTheme', 'dark');
             } else {

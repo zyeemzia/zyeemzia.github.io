@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Protocol | Military Morse Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            padding: 40px 20px;
+            line-height: 1.6;
+            margin: 0;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px 50px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            text-align: justify;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #475569;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid #cbd5e1;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+        .back-btn:hover { background: #e2e8f0; color: #0f172a; border-color: #94a3b8; }
+
+        h1 { color: #0f172a; font-size: 32px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-top: 0; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease, border-color 0.3s ease;}
+
+        /* Signal-Red Accent for Military Morse Code */
+        h2 { color: #ef4444; font-size: 20px; margin-top: 35px; text-transform: uppercase; letter-spacing: 1px;}
+
+        p, li { color: #475569; font-size: 16px; font-weight: 500; margin-bottom: 15px; transition: color 0.3s ease; text-align: justify; }
+        ul { padding-left: 20px; }
+
+        .meta-info {
+            background: #f1f5f9;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ef4444;
+            margin-bottom: 30px;
+            transition: background 0.3s ease;
+        }
+        .meta-info p { margin: 0; font-size: 15px; text-align: left; }
+        .meta-info strong { color: #0f172a; transition: color 0.3s ease; }
+
+        a.contact-link { color: #ef4444; text-decoration: none; font-weight: 600; }
+        a.contact-link:hover { text-decoration: underline; }
+
+        .theme-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #475569;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .theme-toggle-btn:hover { transform: scale(1.1); border-color: #94a3b8; color: #0f172a; }
+
+        .icon-moon { display: block; }
+        .icon-sun { display: none; }
+
+        @media (max-width: 650px) {
+            body { padding: 20px 15px; }
+            .container { padding: 30px 20px; }
+            h1 { font-size: 26px; }
+            .back-btn { font-size: 13px; padding: 8px 16px; margin-bottom: 20px; }
+            .theme-toggle-btn { top: 15px; right: 15px; width: 40px; height: 40px; }
+        }
+
+        /* =========================================
+           DARK MODE OVERRIDES
+           ========================================= */
+        body.dark-mode { background: #090d16; color: #f1f5f9; }
+        body.dark-mode .container { background: #111827; border-color: #1f2937; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); }
+        body.dark-mode .back-btn { color: #94a3b8; border-color: #334155; }
+        body.dark-mode .back-btn:hover { background: #1e293b; color: #f8fafc; border-color: #475569; }
+
+        body.dark-mode h1 { color: #f8fafc; border-bottom-color: #334155; }
+        body.dark-mode p, body.dark-mode li { color: #9ca3af; }
+
+        body.dark-mode .meta-info { background: rgba(17, 24, 39, 0.8); border-color: #1f2937; border-left-color: #f87171;}
+        body.dark-mode .meta-info strong { color: #f8fafc; }
+
+        body.dark-mode .theme-toggle-btn { background: #111827; border-color: #334155; color: #94a3b8; box-shadow: 0 4px 6px rgba(0,0,0,0.3);}
+        body.dark-mode .theme-toggle-btn:hover { border-color: #475569; color: #f8fafc; }
+
+        body.dark-mode .icon-moon { display: none; }
+        body.dark-mode .icon-sun { display: block; }
+    </style>
+</head>
+<body>
+
+    <button id="themeToggle" class="theme-toggle-btn" title="Toggle Light/Dark Mode">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+    </button>
+
+    <div class="container">
+        <a href="https://zyeemzia.com" class="back-btn">← Return to Matrix Dashboard</a>
+
+        <h1>Privacy Policy</h1>
+
+        <div class="meta-info">
+            <p><strong>Application:</strong> Military Morse Code</p>
+            <p><strong>Developer:</strong> ZyeemZia™</p>
+            <p><strong>Last Updated:</strong> September 18, 2026</p>
+        </div>
+
+        <h2>1. Introduction</h2>
+        <p>Welcome to Military Morse Code — a tactical signal engine and training suite for learning, transmitting, and decoding Morse code. This Privacy Policy explains what the app accesses on your device and, more importantly, what it does not collect. By using the app, you agree to this policy.</p>
+
+        <h2>2. No Accounts, No Cloud, No Ads</h2>
+        <p>Military Morse Code has no sign-in, no user accounts, no advertising, and no in-app purchases. It does not collect your name, email address, phone number, or contacts, and it does not connect to any developer-run server. Every feature works fully offline.</p>
+
+        <h2>3. What the App Accesses On Your Device</h2>
+        <ul>
+            <li><strong>Microphone (Mic Ear):</strong> When you use the Mic Ear listening feature, the app accesses your microphone to detect the pitch of a Morse tone and decode it in real time, entirely on your device. Audio is analyzed in memory as it's captured and is never recorded, stored, or transmitted anywhere. Listening pauses automatically when you leave the screen.</li>
+            <li><strong>Vibration Motor:</strong> Used to output Morse patterns as vibration pulses when you enable the Vibrate channel. No data is collected — this is a one-way control of a device motor.</li>
+            <li><strong>Flashlight (Torch):</strong> Used to output Morse patterns as light pulses when you enable the Flash channel. No camera access is involved and no images are captured — the app only toggles the torch on and off.</li>
+            <li><strong>Local Settings & Training Progress:</strong> Your channel preferences (sound, vibrate, flash, screen), Morse speed settings, and flashcard/training progress are stored locally on your device using standard app preferences storage. This data never leaves your device.</li>
+        </ul>
+
+        <h2>4. Sharing and External Links</h2>
+        <ul>
+            <li><strong>Share:</strong> If you tap Share on translated or decoded text, your device's own share sheet opens so you can send it to an app of your choice. The app itself does not transmit this text anywhere.</li>
+            <li><strong>Play Store Links:</strong> The app includes links to the developer's other ZyeemZia™ apps and to its own Google Play listing. Tapping one opens Google Play or your browser; no personal data is passed along.</li>
+            <li><strong>Google Play In-App Updates:</strong> The app checks Google Play's native update API to let you know when a newer version is available. This only checks version metadata; no personal data is involved.</li>
+        </ul>
+
+        <h2>5. Data Retention and Deletion</h2>
+        <p>Because there is no account and no server-side storage, there is nothing held remotely to delete. All local data (settings and training progress) is removed the moment you clear the app's storage in Android Settings or uninstall the app.</p>
+
+        <h2>6. Analytics and Tracking</h2>
+        <p>Military Morse Code contains no analytics, advertising, or crash-reporting SDKs of any kind. Nothing about your usage is measured, profiled, or shared with any third party.</p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>The app is not directed at children under 13 (or 16 in certain jurisdictions) and does not knowingly collect personal data from anyone, regardless of age — the app simply does not collect personal data at all.</p>
+
+        <h2>8. Security of Data</h2>
+        <p>Because the app has no server component and stores everything locally, there is no remote database to be breached. No method of electronic storage is ever 100% secure, but the app's design minimizes risk by never transmitting your data off your device in the first place.</p>
+
+        <h2>9. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy to reflect legal or feature changes. Any changes are reflected by updating the "Last Updated" date above. Please review this policy periodically.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>If you have any questions or concerns regarding this Privacy Policy, please contact the developer via email at: <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>.</p>
+
+        <p style="margin-top:30px; font-size:13px; text-transform:uppercase; letter-spacing:1px;">Military Morse Code is an independent training and utility app by ZyeemZia™. It is not affiliated with, endorsed by, or connected to any government, armed force, ministry, or NATO.</p>
+    </div>
+
+    <script>
+        const themeBtn = document.getElementById('themeToggle');
+        const bodyElement = document.body;
+
+        if (localStorage.getItem('matrixTheme') === 'dark') {
+            bodyElement.classList.add('dark-mode');
+        }
+
+        themeBtn.addEventListener('click', () => {
+            bodyElement.classList.toggle('dark-mode');
+            if (bodyElement.classList.contains('dark-mode')) {
+                localStorage.setItem('matrixTheme', 'dark');
+            } else {
+                localStorage.setItem('matrixTheme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -3,50 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Golf Championship Mini</title>
+    <title>Privacy Protocol | Golf Gadget Pro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    
     <style>
         /* =========================================
-           BASE STYLING & THEME (DEFAULT: LIGHT MODE)
+           BASE STYLING & THEME (DEFAULT: LIGHT MODE) 
            ========================================= */
         /* GLOBAL RESET FOR OVERFLOW PREVENTION */
         *, *::before, *::after {
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #f8fafc;
-            color: #0f172a;
-            padding: 40px 20px;
+        body { 
+            font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background: #f8fafc; 
+            color: #0f172a; 
+            padding: 40px 20px; 
             line-height: 1.6;
             overflow-x: hidden; /* Prevents horizontal scroll wobbling */
             transition: background-color 0.3s ease, color 0.3s ease;
             margin: 0;
         }
-        .container {
-            max-width: 800px;
+        .container { 
+            max-width: 800px; 
             width: 100%;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 40px 50px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            text-align: justify;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            margin: 0 auto; 
+            background: #ffffff; 
+            padding: 40px 50px; 
+            border-radius: 12px; 
+            border: 1px solid #e2e8f0; 
+            text-align: justify; 
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); 
             transition: all 0.3s ease;
         }
-        .back-btn {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: #475569;
-            font-weight: 600;
-            text-decoration: none;
-            border: 1px solid #cbd5e1;
-            padding: 8px 20px;
+        .back-btn { 
+            display: inline-block; 
+            margin-bottom: 30px; 
+            color: #475569; 
+            font-weight: 600; 
+            text-decoration: none; 
+            border: 1px solid #cbd5e1; 
+            padding: 8px 20px; 
             border-radius: 30px;
             font-size: 14px;
             text-transform: uppercase;
@@ -54,15 +54,15 @@
             transition: all 0.2s ease;
         }
         .back-btn:hover { background: #e2e8f0; color: #0f172a; border-color: #94a3b8; }
-
+        
         h1 { color: #0f172a; font-size: 32px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-top: 0; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease, border-color 0.3s ease;}
-
-        /* Fairway green accent, matching the app's own primary colour */
+        
+        /* Emerald Accent for Golf Gadget Pro */
         h2 { color: #10b981; font-size: 20px; margin-top: 35px; text-transform: uppercase; letter-spacing: 1px;}
-
+        
         p, li { color: #475569; font-size: 16px; font-weight: 500; margin-bottom: 15px; transition: color 0.3s ease; text-align: justify; }
         ul { padding-left: 20px; }
-
+        
         .meta-info {
             background: #f1f5f9;
             padding: 15px 20px;
@@ -73,20 +73,7 @@
         }
         .meta-info p { margin: 0; font-size: 15px; text-align: left; }
         .meta-info strong { color: #0f172a; transition: color 0.3s ease; }
-
-        /* Plain-language summary of the Play Data safety declaration */
-        .summary-box {
-            background: #f1f5f9;
-            padding: 20px 24px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            margin: 25px 0 5px;
-            transition: background 0.3s ease, border-color 0.3s ease;
-        }
-        .summary-box ul { margin: 0; }
-        .summary-box li { text-align: left; margin-bottom: 10px; }
-        .summary-box li:last-child { margin-bottom: 0; }
-
+        
         a.contact-link { color: #10b981; text-decoration: none; font-weight: 600; }
         a.contact-link:hover { text-decoration: underline; }
 
@@ -110,7 +97,7 @@
             transition: all 0.3s ease;
         }
         .theme-toggle-btn:hover { transform: scale(1.1); border-color: #94a3b8; color: #0f172a; }
-
+        
         /* Default state: Light Mode */
         .icon-moon { display: block; }
         .icon-sun { display: none; }
@@ -122,24 +109,21 @@
             h1 { font-size: 26px; }
             .back-btn { font-size: 13px; padding: 8px 16px; margin-bottom: 20px; }
             .theme-toggle-btn { top: 15px; right: 15px; width: 40px; height: 40px; } /* Slightly scale down button */
-            .summary-box { padding: 16px 18px; }
         }
 
         /* =========================================
-           DARK MODE OVERRIDES
+           DARK MODE OVERRIDES 
            ========================================= */
         body.dark-mode { background: #090d16; color: #f1f5f9; }
         body.dark-mode .container { background: #111827; border-color: #1f2937; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); }
         body.dark-mode .back-btn { color: #94a3b8; border-color: #334155; }
         body.dark-mode .back-btn:hover { background: #1e293b; color: #f8fafc; border-color: #475569; }
-
+        
         body.dark-mode h1 { color: #f8fafc; border-bottom-color: #334155; }
         body.dark-mode p, body.dark-mode li { color: #9ca3af; }
-
+        
         body.dark-mode .meta-info { background: rgba(17, 24, 39, 0.8); border-color: #1f2937; border-left-color: #10b981; }
         body.dark-mode .meta-info strong { color: #f8fafc; }
-
-        body.dark-mode .summary-box { background: rgba(17, 24, 39, 0.8); border-color: #1f2937; }
 
         body.dark-mode .theme-toggle-btn { background: #111827; border-color: #334155; color: #94a3b8; box-shadow: 0 4px 6px rgba(0,0,0,0.3);}
         body.dark-mode .theme-toggle-btn:hover { border-color: #475569; color: #f8fafc; }
@@ -170,86 +154,73 @@
 
     <div class="container">
         <a href="index.html" class="back-btn">← Return to Matrix Dashboard</a>
-
+        
         <h1>Privacy Policy</h1>
-
+        
         <div class="meta-info">
-            <p><strong>Application:</strong> Golf Championship Mini</p>
-            <p><strong>Package:</strong> com.zyeemzia.golfchampionshipmini</p>
-            <p><strong>Developer:</strong> ZyeemZia™ / ZBZGames™</p>
-            <p><strong>Last Updated:</strong> September 23, 2026</p>
+            <p><strong>Application:</strong> Golf Gadget Pro</p>
+            <p><strong>Developer:</strong> ZyeemZia™</p>
+            <p><strong>Last Updated:</strong> June 1, 2026</p>
         </div>
 
         <h2>1. Introduction</h2>
-        <p>Golf Championship Mini is an offline, single-player golf game published by ZyeemZia™ / ZBZGames™. This Privacy Policy explains what data the app handles, what it deliberately does not handle, and the choices available to you. There is no account to create, no sign-in, and no profile. The game itself runs entirely on your device; the only data that ever leaves it is what is needed to display advertising, described in section 3.</p>
+        <p>Welcome to Golf Gadget Pro. This Privacy Policy informs you of our policies regarding the collection, use, and disclosure of personal data when you use our tactical golf tracking, rangefinder, AR green reading, and digital scorecard application. By using the app, you agree to the collection and use of information in accordance with this policy. We prioritize a lean, privacy-first user experience and are committed to protecting your digital footprint on the course.</p>
 
-        <h2>2. At A Glance</h2>
-        <p>This summary matches the Data safety declaration for the app on Google Play:</p>
-        <div class="summary-box">
-            <ul>
-                <li><strong>Collected and shared:</strong> your device's advertising identifier and standard network information, used by Google AdMob to deliver advertising. Not linked to your identity.</li>
-                <li><strong>Stored on your device only:</strong> scorecards, career points, achievements, personal bests, the round you have in progress, and your theme and assist preferences. This data is never uploaded.</li>
-                <li><strong>Not collected at all:</strong> no name, no email address, no phone number, no contacts, no location, no camera or microphone access, no photos or files, no health data, no message content, no payment details.</li>
-                <li><strong>Permissions requested:</strong> internet access and network state only. The app asks for no runtime permissions whatsoever.</li>
-            </ul>
-        </div>
-
-        <h2>3. Advertising</h2>
-        <p>The app is free and supported by advertising served through Google AdMob. Ad formats used are a banner on the home screen, a full-screen advert at natural breaks between holes and at the end of a round, an advert when you return to the app, and an optional rewarded video you may choose to watch in exchange for an in-game benefit such as replaying a shot or taking a free drop after a water penalty. Rewarded adverts are always optional and declining one never blocks your progress.</p>
-        <p>To deliver adverts, Google AdMob may collect and process your device's advertising identifier, IP address, and general information about your device and network. Google acts as an independent controller of that data. Google's handling of it is described at <a href="https://business.safety.google/privacy/" class="contact-link" target="_blank" rel="noopener">business.safety.google/privacy</a>, and the partners involved are listed at <a href="https://policies.google.com/technologies/partner-sites" class="contact-link" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a>.</p>
-        <p>The app itself does not read, store or transmit your advertising identifier for any purpose of its own, and it does not build a profile of you.</p>
-
-        <h2>4. Data Stored On Your Device</h2>
-        <p>The following is written to your device's private, sandboxed app storage and is not transmitted anywhere:</p>
+        <h2>2. Information Collection and Use</h2>
+        <p>We request specific device permissions to provide our core features. We do not require you to create a traditional account, nor do we secretly collect your email, phone number, or personal contacts.</p>
         <ul>
-            <li><strong>Scorecards:</strong> hole-by-hole strokes for rounds you complete, held in a local database on the device.</li>
-            <li><strong>Career progress:</strong> points earned, achievements unlocked, and your best score on each course.</li>
-            <li><strong>Round in progress:</strong> the current hole, ball position and stroke count, so an interrupted round can be resumed.</li>
-            <li><strong>Preferences:</strong> your light or dark theme choice and whether assist mode is on.</li>
-            <li><strong>Advert pacing counters:</strong> a simple count of app launches, used only to keep adverts from appearing too often.</li>
+            <li><strong>Precise Location Data (GPS):</strong> Golf Gadget Pro collects location data to enable real-time golf route tracking and distance calculations only when the app is actively running in the foreground. A persistent system notification is visible to the user whenever location data is being processed. We do not access or collect location data in the background when the app is closed. This data is processed locally to generate your route trail and calculate distances.</li>
+            <li><strong>Camera Access (AR Green Reading):</strong> We request access to your device's camera strictly to power the AR Topography and Green Reading feature. The camera feed is processed entirely locally on your device in real-time. We do not record, capture, store, or transmit video feeds or images to our servers or any third parties.</li>
+            <li><strong>Multiplayer Tournament Data:</strong> If you choose to participate in the "Tournament Lobby" feature, your chosen alias, handicap, round scores, and chat messages are transmitted to our cloud servers (Firebase) to enable real-time synchronization with other players in your lobby.</li>
+            <li><strong>Local Storage & Caching:</strong> Solo digital scorecards, tactical map pins, saved round telemetry, generated shareable story graphics, and offline map tile caches are stored securely within your device's local memory.</li>
+            <li><strong>Device Identifiers:</strong> We use secure third-party services that collect Device IDs and advertising identifiers to facilitate ad delivery and manage premium subscriptions.</li>
         </ul>
 
-        <h2>5. Third-Party Services</h2>
-        <p>The app integrates exactly two third-party components, both from Google:</p>
+        <h2>3. Third-Party Service Providers</h2>
+        <p>To provide monetization, mapping, weather, and multiplayer services, we integrate with industry-standard third-party platforms. These providers operate under their own strict Privacy Policies:</p>
         <ul>
-            <li><strong>Google Mobile Ads (AdMob):</strong> serves the adverts described in section 3.</li>
-            <li><strong>Google User Messaging Platform:</strong> a Google-certified consent management platform, used to ask for and record your advertising preferences where the law requires it.</li>
-        </ul>
-        <p>There is no analytics SDK, no crash-reporting SDK, no social login, no advertising mediation network, no cloud database, no in-app purchases or subscriptions, and no server operated by the developer. The app connects to the internet only to request adverts and consent messages.</p>
-
-        <h2>6. Your Choices And Rights</h2>
-        <ul>
-            <li><strong>Consent (EEA, UK, Switzerland):</strong> on first launch you are asked whether Google and its partners may use your data for personalised advertising. You may refuse, and the game remains fully playable.</li>
-            <li><strong>Changing your mind:</strong> open the app and tap <em>Privacy options</em> on the home screen to review or withdraw your choice at any time.</li>
-            <li><strong>United States:</strong> residents of states with applicable privacy laws are shown a notice allowing them to opt out of the sale or sharing of personal information for targeted advertising. The same <em>Privacy options</em> entry reopens it.</li>
-            <li><strong>Device-level controls:</strong> you can reset or delete your advertising identifier, or opt out of advert personalisation entirely, in your Android settings under <em>Settings &gt; Privacy &gt; Ads</em> (wording varies by device).</li>
-            <li><strong>Access and portability:</strong> because no data about you is held on any server, there is nothing for us to export or disclose. Everything the app knows about you is on your device and visible in the app.</li>
+            <li><strong>Google Firebase & Firestore:</strong> We use Firebase to synchronize live tournament leaderboards, chat messages, and anonymous guest player authentication.</li>
+            <li><strong>Open-Meteo (Weather API):</strong> When you use the "AI Caddie" feature, your device's current coordinates are sent ephemerally to Open-Meteo to return live atmospheric data (temperature, wind, pressure). No personal identifiers are tied to these weather requests.</li>
+            <li><strong>Google AdMob:</strong> We display banner, interstitial, and app-open advertisements to keep the base service free. AdMob may collect and use service data, such as your device's advertising ID and network information, to show relevant ads.</li>
+            <li><strong>RevenueCat & Google Play Billing:</strong> We offer an optional "PRO" upgrade within the app. All payment processing is securely handled by Google Play Billing, and subscription statuses are verified via RevenueCat. We do not process or store your financial details on our developer servers.</li>
+            <li><strong>Mapping Services:</strong> When actively rendering maps, the app connects to third-party providers (such as ESRI, OpenStreetMap, Carto, and USGS). These services inherently receive your IP address to deliver map tiles to your screen.</li>
         </ul>
 
-        <h2>7. Data Retention And Deletion</h2>
-        <p>All app data is local, so you control its lifetime entirely:</p>
+        <h2>4. Data Retention and Deletion Policy</h2>
+        <p>In compliance with modern app store Data Safety regulations:</p>
         <ul>
-            <li>Delete saved scorecards from inside the app: open <em>Scorecards</em> and choose <em>Delete all</em>, or remove them individually.</li>
-            <li>Clear everything, including career progress and preferences, via <em>Settings &gt; Apps &gt; Golf Championship Mini &gt; Storage &gt; Clear data</em>.</li>
-            <li>Uninstalling the app removes all of it from your device.</li>
+            <li><strong>Local Data Deletion:</strong> Solo scorecards, map pins, and route histories you generate are stored locally on your device. You can permanently delete this data at any time by clearing the app's cache in your Android settings, or by simply uninstalling the app.</li>
+            <li><strong>Cloud Data Deletion (Tournaments):</strong> Data generated during multiplayer tournaments is stored on Firebase. When a host ends a tournament, or when a lobby is abandoned, active session data is archived or deleted according to the application's automated database lifecycle.</li>
+            <li><strong>No Formal Deletion Request Required:</strong> Because we do not tie your usage to a permanent, personally identifiable profile (like an email address), no formal data deletion request to the publisher is necessary.</li>
         </ul>
-        <p>No deletion request needs to be sent to the developer, because there is no account and no server-side copy of your data to delete. Data processed by Google for advertising is retained according to Google's own policies, linked in section 3.</p>
 
-        <h2>8. Children's Privacy</h2>
-        <p>Golf Championship Mini is intended for users aged 13 and over and is not directed to children. The app is not enrolled in Google Play's Designed for Families programme, and it does not knowingly collect personal information from children. If you believe a child has provided personal information through this app, please contact us at the address in section 10 and we will assist.</p>
+        <h2>5. Analytics and Tracking</h2>
+        <p>We maintain a lean and private user experience. We do not use generalized behavioral monitoring or external analytics tools (such as Google Analytics). Our third-party partners (RevenueCat and AdMob) only collect the minimum telemetry data required to verify your subscription status and serve advertisements.</p>
 
-        <h2>9. Security And Changes To This Policy</h2>
-        <p>Your game data is protected by Android's per-app sandbox, which prevents other apps from reading it. Because the developer operates no servers and holds no copy of your data, there is no central store of user information to breach. Advert and consent requests travel over encrypted connections. No method of electronic storage or transmission is completely secure, and we cannot guarantee absolute security.</p>
-        <p>We may update this policy to reflect new features or legal requirements. Material changes will be reflected in the <strong>Last Updated</strong> date above, and the current version will always be available at this address.</p>
+        <h2>6. Your Privacy Rights & Consent</h2>
+        <p>Depending on your region (such as the EEA or the UK), you have specific rights regarding your personal data and ad tracking.</p>
+        <ul>
+            <li><strong>Consent Management:</strong> If applicable in your region, you will be presented with a Consent Management Platform (CMP) dialog upon launching the app, allowing you to grant or deny permission for personalized ad tracking.</li>
+            <li><strong>Opt-Out of Personalized Ads:</strong> You can opt-out of personalized advertising at any time by navigating to your device's system settings (e.g., Google Settings > Ads > Opt out of Ads Personalization).</li>
+        </ul>
+
+        <h2>7. Children’s Privacy</h2>
+        <p>Our Service does not address anyone under the age of 13 (or 16 in certain jurisdictions). We do not knowingly collect personally identifiable information from children. If you are a parent or guardian and you are aware that your child has provided us with personal data, please contact us immediately so we can take steps to ensure it is purged from any associated cloud services.</p>
+
+        <h2>8. Security of Data</h2>
+        <p>The security of your operational data is critical to us. Solo play data is secured natively by your device's sandboxed storage. Multiplayer data is protected using industry-standard Firebase encryption. However, please remember that no method of electronic storage or transmission over the Internet is 100% secure.</p>
+
+        <h2>9. Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy from time to time to reflect changes in legal requirements or new app features. We will notify you of any changes by updating the "Last Updated" date at the top of this policy.</p>
 
         <h2>10. Contact Us</h2>
-        <p>For any question or request about this policy, contact ZyeemZia™ at <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>.</p>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact ZyeemZia™ via email at: <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>.</p>
     </div>
 
     <script>
         const themeBtn = document.getElementById('themeToggle');
         const bodyElement = document.body;
-
+        
         // Check if the user selected dark mode on the main index.html page
         if(localStorage.getItem('matrixTheme') === 'dark') {
             bodyElement.classList.add('dark-mode');
@@ -257,7 +228,7 @@
 
         themeBtn.addEventListener('click', () => {
             bodyElement.classList.toggle('dark-mode');
-
+            
             if(bodyElement.classList.contains('dark-mode')) {
                 localStorage.setItem('matrixTheme', 'dark');
             } else {
@@ -267,3 +238,4 @@
     </script>
 </body>
 </html>
+

@@ -111,6 +111,7 @@
         .emerald-accent:hover { box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); }
         .slate-accent:hover { box-shadow: 0 10px 25px -5px rgba(100, 116, 139, 0.15); border-color: rgba(100, 116, 139, 0.4); }
         .crimson-accent:hover { box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.4); }
+        .olive-accent:hover { box-shadow: 0 10px 25px -5px rgba(132, 154, 52, 0.18); border-color: rgba(132, 154, 52, 0.45); }
 
         .app-card h2 { margin-top: 0; margin-bottom: 12px; font-size: 24px; font-weight: 700; letter-spacing: 0.5px; }
         .amber-accent h2 { color: #f59e0b; }
@@ -118,6 +119,7 @@
         .emerald-accent h2 { color: #10b981; }
         .slate-accent h2 { color: #64748b; }
         .crimson-accent h2 { color: #ef4444; }
+        .olive-accent h2 { color: #6b7f2a; }
 
         .app-card p { color: #64748b; font-size: 16px; font-weight: 500; margin-bottom: 25px; flex-grow: 1; transition: color 0.3s ease; }
 
@@ -145,6 +147,7 @@
         .emerald-accent .link-btn { color: #10b981; }
         .slate-accent .link-btn { color: #64748b; }
         .crimson-accent .link-btn { color: #ef4444; }
+        .olive-accent .link-btn { color: #6b7f2a; }
         .link-btn:hover { opacity: 0.7; }
 
         .play-badge {
@@ -155,8 +158,8 @@
         .play-badge:hover { transform: scale(1.05); }
         .play-badge img { height: 100%; width: auto; }
 
-        /* Closed-testing status badge — shown in place of the Play Store badge
-           until an app's public listing goes live. */
+        /* Status badge shown in place of the Play Store badge until an app's
+           public listing goes live. */
         .testing-badge {
             display: inline-block;
             font-size: 12px;
@@ -387,6 +390,8 @@
         body.dark-mode .app-card.emerald-accent:hover { box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); }
         body.dark-mode .app-card.slate-accent:hover { box-shadow: 0 10px 25px -5px rgba(148, 163, 184, 0.15); border-color: rgba(148, 163, 184, 0.4); }
         body.dark-mode .app-card.crimson-accent:hover { box-shadow: 0 10px 25px -5px rgba(248, 113, 113, 0.15); border-color: rgba(248, 113, 113, 0.4); }
+        body.dark-mode .app-card.olive-accent:hover { box-shadow: 0 10px 25px -5px rgba(181, 196, 99, 0.15); border-color: rgba(181, 196, 99, 0.4); }
+        body.dark-mode .olive-accent h2, body.dark-mode .olive-accent .link-btn { color: #b5c463; }
 
         body.dark-mode .testing-badge { color: #94a3b8; border-color: #475569; }
 
@@ -447,7 +452,7 @@
 
         <div class="profile-section">
             <h3>System Architect & Developer</h3>
-            <p>Zyeem Bin Zia is the Owner, Chairman, and CEO of ZyeemZia™. Zyeem is a software engineer and communications officer, he architects solutions at the intersection of tactical intelligence processing, cyber defense, and autonomous systems. Grounded by a Master of Science in Computer Science and a Bachelor of Science in Electrical, Electronics, and Communication Engineering, his technical expertise is further reinforced by advanced specializations from Google, IBM, and top-tier academic institutions. This matrix dashboard serves as the central distribution hub for his high-precision operational tools and advanced technical calculation frameworks.</p>
+            <p>Zyeem Bin Zia is the Owner, Chairman, and CEO of ZyeemZia™. Zyeem is a software engineer and communications officer, he architects solutions at the intersection of tactical intelligence processing, cyber defense, and autonomous systems. Grounded by a Master of Science in Computer Science and a Bachelor of Science in Electrical, Electronics, and Communication Engineering, his technical expertise is further reinforced by advanced specializations from Google, IBM, and top-tier academic institutions. This matrix dashboard serves as the central distribution hub for his high-precision operational tools and advanced technical calculation frameworks &mdash; now <span class="profile-highlight">live on Google Play</span> for operators worldwide.</p>
         </div>
 
         <div class="app-grid">
@@ -459,12 +464,9 @@
                 </div>
                 <div class="card-footer">
                     <a class="link-btn" href="privacy-militaryoffice.html">Privacy Protocol</a>
-                    <span class="testing-badge">CLOSED TESTING</span>
-                    <!-- Once the Play Store listing goes public, replace the span above with:
-                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.militaryoffice" class="play-badge" target="_blank">
+                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.militaryoffice" class="play-badge" target="_blank" rel="noopener">
                         <img alt="Get it on Google Play" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"/>
                     </a>
-                    -->
                 </div>
             </div>
 
@@ -475,12 +477,9 @@
                 </div>
                 <div class="card-footer">
                     <a class="link-btn" href="privacy-militarymorsecode.html">Privacy Protocol</a>
-                    <span class="testing-badge">CLOSED TESTING</span>
-                    <!-- Once the Play Store listing goes public, replace the span above with:
-                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.militarymorsecode" class="play-badge" target="_blank">
+                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.militarymorsecode" class="play-badge" target="_blank" rel="noopener">
                         <img alt="Get it on Google Play" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"/>
                     </a>
-                    -->
                 </div>
             </div>
 
@@ -491,7 +490,7 @@
                 </div>
                 <div class="card-footer">
                     <a class="link-btn" href="privacy-militaryabbreviation.html">Privacy Protocol</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.militaryabbreviation" class="play-badge" target="_blank">
+                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.militaryabbreviation" class="play-badge" target="_blank" rel="noopener">
                         <img alt="Get it on Google Play" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"/>
                     </a>
                 </div>
@@ -504,7 +503,7 @@
                 </div>
                 <div class="card-footer">
                     <a class="link-btn" href="privacy-grconverterpro.html">Privacy Protocol</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.grconverterpro" class="play-badge" target="_blank">
+                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.grconverterpro" class="play-badge" target="_blank" rel="noopener">
                         <img alt="Get it on Google Play" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"/>
                     </a>
                 </div>
@@ -517,9 +516,25 @@
                 </div>
                 <div class="card-footer">
                     <a class="link-btn" href="privacy-golfgadgetpro.html">Privacy Protocol</a>
-                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.golfgadgetpro" class="play-badge" target="_blank">
+                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.golfgadgetpro" class="play-badge" target="_blank" rel="noopener">
                         <img alt="Get it on Google Play" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"/>
                     </a>
+                </div>
+            </div>
+
+            <div class="app-card olive-accent">
+                <div>
+                    <h2>Military Gadget</h2>
+                    <p>The all-in-one tactical field suite. Guided route follow with voice and fully offline maps, a crash-safe tracker, compass and clinometer, sun and moon planning, resection, LED signalling and report formats &mdash; plus corps tools for artillery, armour, infantry, engineers, medical, ordnance, supply and signals, with map pick, smart MGRS search and true / magnetic / grid north. Every standard value is customisable.</p>
+                </div>
+                <div class="card-footer">
+                    <a class="link-btn" href="privacy-militarygadget.html">Privacy Protocol</a>
+                    <span class="testing-badge">COMING SOON</span>
+                    <!-- When the Play Store listing goes live, replace the span above with:
+                    <a href="https://play.google.com/store/apps/details?id=com.zyeemzia.militarygadget" class="play-badge" target="_blank" rel="noopener">
+                        <img alt="Get it on Google Play" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"/>
+                    </a>
+                    -->
                 </div>
             </div>
 

@@ -531,6 +531,11 @@
         .ac-verify button:hover { background: #6d28d9; }
         .ac-foot { margin: 18px 0 0; font-size: 13px; color: #64748b; font-weight: 600; text-align: center; }
 
+        /* 3-tier ladder and 3-card rows */
+        .ladder.ladder-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .ladder.ladder-3::before { background: linear-gradient(90deg, #0891b2, #e11d48, #7c3aed); }
+        .ac-trio { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+        @media (max-width: 860px) { .ladder.ladder-3 { grid-template-columns: minmax(0, 1fr); } .ladder.ladder-3::before { display: none; } }
         @media (max-width: 860px) {
             .ladder { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
             .ladder::before { display: none; }
@@ -702,9 +707,9 @@
             <p class="ac-lead">Free, self-paced courses built like field manuals: interactive lessons, scenarios and labs, a printable book, a timed official exam graded on the ZyeemZia server, and a certificate anyone can verify.</p>
 
             <div class="ac-stats">
-                <div><b>8</b><span>Courses</span></div>
-                <div><b>7</b><span>Certification tracks</span></div>
-                <div><b>350+</b><span>Lessons</span></div>
+                <div><b>19</b><span>Courses</span></div>
+                <div><b>15</b><span>Certification tracks</span></div>
+                <div><b>800+</b><span>Lessons</span></div>
                 <div><b>100%</b><span>Free, online and offline</span></div>
             </div>
 
@@ -759,7 +764,64 @@
             </div>
 
             <div class="ac-path">
-                <div class="ac-path-head"><h3>Leadership &amp; AI</h3><span>Run projects, architect intelligent systems</span></div>
+                <div class="ac-path-head"><h3>Cybersecurity &amp; IT Pathway</h3><span>Associate → Professional → Expert</span></div>
+                <div class="ladder ladder-3">
+                    <div class="tier">
+                        <span class="tier-tag">Tier 1 · Associate</span>
+                        <div class="course c-cyan">
+                            <span class="code">ZITSS</span><span class="cname">IT Support Specialization</span>
+                            <p>Job-ready IT support: hardware, operating systems, networking, troubleshooting and administration.</p>
+                            <span class="spec">38 lessons · 40-question exam · capstone</span>
+                            <div class="acts"><a class="bk" href="https://zitss.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zitss.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                        </div>
+                    </div>
+                    <div class="tier">
+                        <span class="tier-tag">Tier 2 · Professional</span>
+                        <div class="course c-red">
+                            <span class="code">ZCSS</span><span class="cname">Cybersecurity Specialization</span>
+                            <p>Hands-on security: networks, identity, cloud, application security, the SOC and incident response.</p>
+                            <span class="spec">37 lessons · 40-question exam · capstone</span>
+                            <div class="acts"><a class="bk" href="https://zcss.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zcss.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                        </div>
+                    </div>
+                    <div class="tier">
+                        <span class="tier-tag">Tier 3 · Expert</span>
+                        <div class="course c-violet">
+                            <span class="code">ZCSTG</span><span class="cname">Cyber Security · Technology and Governance</span>
+                            <p>Security technology meets governance: GRC, risk quantification, zero trust and resilience.</p>
+                            <span class="spec">38 lessons · 45-question exam · capstone</span>
+                            <div class="acts"><a class="bk" href="https://zcstg.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zcstg.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ac-path">
+                <div class="ac-path-head"><h3>Artificial Intelligence</h3><span>Build, govern and architect AI systems</span></div>
+                <div class="ac-duo ac-trio">
+                    <div class="course c-blue">
+                        <span class="code">ZMLS</span><span class="cname">Machine Learning Specialization · Professional</span>
+                        <p>Practical machine learning: the maths, models, evaluation, deep learning and MLOps.</p>
+                        <span class="spec">38 lessons · 40-question exam · capstone</span>
+                        <div class="acts"><a class="bk" href="https://zmls.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zmls.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                    </div>
+                    <div class="course c-emerald">
+                        <span class="code">ZAIG</span><span class="cname">AI Governance · Professional</span>
+                        <p>Responsible AI: regulation, risk and impact assessment, human oversight and assurance.</p>
+                        <span class="spec">36 lessons · 40-question exam · capstone</span>
+                        <div class="acts"><a class="bk" href="https://zaig.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zaig.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                    </div>
+                    <div class="course c-cyan">
+                        <span class="code">ZAIA</span><span class="cname">Artificial Intelligence Architecture · Architect</span>
+                        <p>Design production AI systems: data, models, LLM apps, retrieval, agents, operations and trust.</p>
+                        <span class="spec">39 lessons · 40-question exam · capstone</span>
+                        <div class="acts"><a class="bk" href="https://zaia.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zaia.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ac-path">
+                <div class="ac-path-head"><h3>Leadership &amp; Management</h3><span>Projects, people and IT service management</span></div>
                 <div class="ac-duo">
                     <div class="course c-orange">
                         <span class="code">ZPMP</span><span class="cname">Project Management Protocol · Professional</span>
@@ -767,11 +829,23 @@
                         <span class="spec">39 lessons · 40-question exam · capstone</span>
                         <div class="acts"><a class="bk" href="https://zpmp.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zpmp.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
                     </div>
-                    <div class="course c-cyan">
-                        <span class="code">ZAIA</span><span class="cname">Artificial Intelligence Architecture · Architect</span>
-                        <p>Design production AI systems: data, models, LLM apps, retrieval, agents, operations and trust.</p>
+                    <div class="course c-indigo">
+                        <span class="code">ZEPMS</span><span class="cname">Engineering Project Management · Professional</span>
+                        <p>Engineering projects end to end: CPM scheduling, earned value, contracts, HSE and handover.</p>
                         <span class="spec">39 lessons · 40-question exam · capstone</span>
-                        <div class="acts"><a class="bk" href="https://zaia.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zaia.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                        <div class="acts"><a class="bk" href="https://zepms.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zepms.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                    </div>
+                    <div class="course c-pink">
+                        <span class="code">ZHRLS</span><span class="cname">HR Management and Leadership · Professional</span>
+                        <p>Modern HR and people leadership: hiring, performance, pay, culture and people analytics.</p>
+                        <span class="spec">36 lessons · 40-question exam · capstone</span>
+                        <div class="acts"><a class="bk" href="https://zhrls.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zhrls.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                    </div>
+                    <div class="course c-violet">
+                        <span class="code">ZITIL Master</span><span class="cname">IT Infrastructure Library · Master</span>
+                        <p>Master-level IT service management: the service value system, practices, high-velocity IT and strategy.</p>
+                        <span class="spec">36 lessons · 45-question exam · capstone</span>
+                        <div class="acts"><a class="bk" href="https://zitil.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zitil.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
                     </div>
                 </div>
             </div>

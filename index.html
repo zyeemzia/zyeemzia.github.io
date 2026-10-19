@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZyeemZia™ | Chairman & CEO</title>
+    <meta name="description" content="ZyeemZia™: field apps on Google Play and the ZyeemZia™ Academy, with free certification tracks in networking, project management and AI, plus Quran and Arabic learning.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -423,6 +424,148 @@
 
         body.dark-mode .icon-moon { display: none; }
         body.dark-mode .icon-sun { display: block; }
+
+        /* =========================================
+           QUICK NAVIGATION + SECTION TITLES
+           ========================================= */
+        .quick-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 18px 0 0; }
+        .quick-nav a {
+            text-decoration: none; color: #475569; font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
+            border: 1px solid #cbd5e1; border-radius: 30px; padding: 7px 16px; transition: all 0.2s ease; background: rgba(255,255,255,0.7);
+        }
+        .quick-nav a:hover { color: #0f172a; border-color: #94a3b8; background: #e2e8f0; }
+        .quick-nav a.qn-new { border-color: rgba(139, 92, 246, 0.55); color: #7c3aed; }
+        .quick-nav a.qn-new::after { content: 'NEW'; font-size: 9px; letter-spacing: 1px; margin-left: 7px; padding: 1px 6px; border-radius: 10px; background: #8b5cf6; color: #fff; vertical-align: 2px; }
+        .section-title { display: flex; align-items: center; gap: 14px; margin: 0 0 22px; color: #0f172a; font-size: 15px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; transition: color 0.3s ease; }
+        .section-title::before, .section-title::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, #cbd5e1, transparent); }
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+        #apps, #academy, #contact { scroll-margin-top: 20px; }
+
+        /* =========================================
+           ZYEEMZIA ACADEMY
+           ========================================= */
+        .academy {
+            position: relative; margin: 10px 0 40px; padding: 34px 32px 30px; border-radius: 18px; text-align: left; overflow: hidden;
+            background: rgba(255, 255, 255, 0.8); border: 1px solid #e2e8f0; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        /* faint circuit grid, the academy's signature */
+        .academy::before {
+            content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.55;
+            background: radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.16) 1px, transparent 1.6px) 0 0 / 22px 22px;
+            -webkit-mask-image: linear-gradient(180deg, #000 0, transparent 260px); mask-image: linear-gradient(180deg, #000 0, transparent 260px);
+        }
+        .academy > * { position: relative; }
+        .ac-eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #7c3aed; }
+        .academy h2.ac-title { margin: 4px 0 6px; font-size: 34px; line-height: 1.15; letter-spacing: 1px; color: #0f172a; transition: color 0.3s ease; }
+        .ac-lead { margin: 0 0 22px; color: #475569; font-size: 17px; font-weight: 500; max-width: 720px; transition: color 0.3s ease; }
+        .ac-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 30px; }
+        .ac-stats div { border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 14px; background: #f8fafc; transition: all 0.3s ease; }
+        .ac-stats b { display: block; font-size: 28px; line-height: 1; color: #0f172a; transition: color 0.3s ease; }
+        .ac-stats span { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #64748b; }
+
+        .ac-path { margin-top: 26px; }
+        .ac-path-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; transition: border-color 0.3s ease; }
+        .ac-path-head h3 { margin: 0; font-size: 19px; letter-spacing: 1.5px; text-transform: uppercase; color: #0f172a; transition: color 0.3s ease; }
+        .ac-path-head span { font-size: 13px; font-weight: 600; color: #64748b; letter-spacing: 0.5px; }
+
+        /* Networking ladder: four tiers joined by a signal line */
+        .ladder { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; position: relative; }
+        .ladder::before {
+            content: ''; position: absolute; left: 6%; right: 6%; top: 17px; height: 2px; z-index: 0;
+            background: linear-gradient(90deg, #3b82f6, #6366f1, #8b5cf6, #ec4899);
+        }
+        .tier { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 10px; }
+        .tier-tag { align-self: center; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 7px 12px; border-radius: 20px; color: #fff; white-space: nowrap; }
+        .tier:nth-child(1) .tier-tag { background: #2563eb; }
+        .tier:nth-child(2) .tier-tag { background: #4f46e5; }
+        .tier:nth-child(3) .tier-tag { background: #7c3aed; }
+        .tier:nth-child(4) .tier-tag { background: #be185d; }
+
+        .course {
+            display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: inherit; flex: 1;
+            background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 16px 16px 14px;
+            box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.06); transition: all 0.3s ease;
+        }
+        .course:hover, .course:focus-within { transform: translateY(-4px); border-color: rgba(var(--c), 0.45); box-shadow: 0 12px 24px -8px rgba(var(--c), 0.28); }
+        .course .code { font-size: 22px; font-weight: 700; letter-spacing: 1px; line-height: 1.1; color: rgb(var(--c)); }
+        .course .cname { font-size: 15px; font-weight: 700; color: #0f172a; line-height: 1.3; transition: color 0.3s ease; }
+        .course p { margin: 2px 0 4px; color: #64748b; font-size: 14.5px; font-weight: 500; line-height: 1.45; flex-grow: 1; transition: color 0.3s ease; }
+        .course .spec { font-size: 12px; font-weight: 700; letter-spacing: 0.6px; color: #64748b; text-transform: uppercase; }
+        .course .acts { display: flex; gap: 8px; align-items: center; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 10px; margin-top: 4px; transition: border-color 0.3s ease; }
+        .course .acts a { text-decoration: none; font-weight: 700; font-size: 13px; letter-spacing: 0.6px; text-transform: uppercase; }
+        .course .acts .go { color: #fff; background: rgb(var(--c)); padding: 7px 14px; border-radius: 20px; transition: filter 0.2s ease, transform 0.2s ease; }
+        .course .acts .go:hover { filter: brightness(1.08); transform: translateX(2px); }
+        .course .acts .bk { color: rgb(var(--c)); }
+        .course .acts .bk:hover { opacity: 0.7; }
+        .tier-stack { display: flex; flex-direction: column; gap: 10px; }
+        .ladder { align-items: start; }
+        .ladder .course { flex: none; }
+        .ladder .course p { flex-grow: 0; }
+
+        .c-blue { --c: 37, 99, 235; } .c-indigo { --c: 79, 70, 229; } .c-violet { --c: 124, 58, 237; } .c-red { --c: 190, 18, 60; }
+        .c-pink { --c: 190, 24, 93; } .c-orange { --c: 194, 65, 12; } .c-cyan { --c: 14, 116, 144; } .c-emerald { --c: 4, 120, 87; }
+
+        .ac-duo { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 14px; }
+        .ac-duo .course { padding: 20px 20px 16px; }
+        .course .bn { font-size: 20px; font-weight: 700; color: #0f172a; line-height: 1.35; transition: color 0.3s ease; }
+
+        .ac-verify { margin-top: 30px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; align-items: center; border: 1px dashed #c4b5fd; border-radius: 14px; padding: 18px 20px; background: rgba(139, 92, 246, 0.05); transition: all 0.3s ease; }
+        .ac-verify h4 { margin: 0 0 2px; font-size: 16px; letter-spacing: 1.5px; text-transform: uppercase; color: #0f172a; transition: color 0.3s ease; }
+        .ac-verify p { margin: 0; color: #64748b; font-size: 14.5px; font-weight: 500; }
+        .ac-verify form { display: flex; gap: 8px; }
+        .ac-verify input {
+            font-family: inherit; font-size: 16px; font-weight: 600; letter-spacing: 0.5px; width: 250px; max-width: 100%; min-width: 0;
+            padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 30px; background: #f8fafc; color: #0f172a; text-transform: uppercase; transition: all 0.3s ease;
+        }
+        .ac-verify input::placeholder { text-transform: none; color: #94a3b8; }
+        .ac-verify input:focus { outline: none; border-color: #8b5cf6; box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15); }
+        .ac-verify button { font-family: inherit; font-weight: 700; font-size: 14px; letter-spacing: 1px; border: none; border-radius: 30px; padding: 10px 20px; background: #7c3aed; color: #fff; cursor: pointer; transition: all 0.2s ease; }
+        .ac-verify button:hover { background: #6d28d9; }
+        .ac-foot { margin: 18px 0 0; font-size: 13px; color: #64748b; font-weight: 600; text-align: center; }
+
+        @media (max-width: 860px) {
+            .ladder { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+            .ladder::before { display: none; }
+            .tier-tag { align-self: flex-start; }
+        }
+        @media (max-width: 650px) {
+            .academy { padding: 26px 18px 22px; }
+            .academy h2.ac-title { font-size: 28px; }
+            .ac-stats { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+            .ac-verify { grid-template-columns: minmax(0, 1fr); }
+            .ac-verify form { flex-wrap: wrap; }
+            .ac-verify input { flex: 1 1 180px; width: auto; }
+        }
+        @media (max-width: 480px) {
+            .ladder { grid-template-columns: minmax(0, 1fr); border-left: 2px solid #c7d2fe; padding-left: 14px; }
+        }
+
+        /* Academy in dark mode */
+        body.dark-mode .quick-nav a { color: #94a3b8; border-color: #334155; background: rgba(17, 24, 39, 0.6); }
+        body.dark-mode .quick-nav a:hover { color: #f8fafc; background: #1e293b; border-color: #475569; }
+        body.dark-mode .quick-nav a.qn-new { color: #c4b5fd; border-color: rgba(139, 92, 246, 0.55); }
+        body.dark-mode .section-title { color: #e2e8f0; }
+        body.dark-mode .section-title::before, body.dark-mode .section-title::after { background: linear-gradient(90deg, transparent, #334155, transparent); }
+        body.dark-mode .academy { background: rgba(17, 24, 39, 0.6); border-color: #1f2937; box-shadow: inset 0 0 20px rgba(0,0,0,0.2); }
+        body.dark-mode .academy::before { background: radial-gradient(circle at 1px 1px, rgba(167, 139, 250, 0.2) 1px, transparent 1.6px) 0 0 / 22px 22px; }
+        body.dark-mode .ac-eyebrow { color: #a78bfa; }
+        body.dark-mode .academy h2.ac-title, body.dark-mode .ac-path-head h3, body.dark-mode .ac-stats b, body.dark-mode .ac-verify h4 { color: #f8fafc; }
+        body.dark-mode .ac-lead { color: #94a3b8; }
+        body.dark-mode .ac-stats div { background: #111827; border-color: #1f2937; }
+        body.dark-mode .ac-stats span, body.dark-mode .ac-path-head span, body.dark-mode .ac-verify p, body.dark-mode .ac-foot { color: #94a3b8; }
+        body.dark-mode .ac-path-head { border-bottom-color: #334155; }
+        body.dark-mode .course { background: #111827; border-color: #1f2937; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
+        body.dark-mode .course .cname, body.dark-mode .course .bn { color: #f1f5f9; }
+        body.dark-mode .course p, body.dark-mode .course .spec { color: #9ca3af; }
+        body.dark-mode .course .acts { border-top-color: #1f2937; }
+        body.dark-mode .c-blue { --c: 96, 165, 250; } body.dark-mode .c-indigo { --c: 129, 140, 248; } body.dark-mode .c-violet { --c: 167, 139, 250; } body.dark-mode .c-red { --c: 251, 113, 133; }
+        body.dark-mode .c-pink { --c: 244, 114, 182; } body.dark-mode .c-orange { --c: 251, 146, 60; } body.dark-mode .c-cyan { --c: 34, 211, 238; } body.dark-mode .c-emerald { --c: 52, 211, 153; }
+        body.dark-mode .course .acts .go { color: #0b1120; }
+        body.dark-mode .ladder { border-left-color: #312e81; }
+        body.dark-mode .ac-verify { border-color: #4c1d95; background: rgba(139, 92, 246, 0.08); }
+        body.dark-mode .ac-verify input { background: #1e293b; border-color: #334155; color: #f1f5f9; }
     </style>
 </head>
 <body>
@@ -448,13 +591,19 @@
         <div class="header">
             <h1>ZyeemZia™</h1>
             <p>Chairman & CEO</p>
+            <nav class="quick-nav" aria-label="Sections">
+                <a href="#apps">Field Apps</a>
+                <a href="#academy" class="qn-new">Academy</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
 
         <div class="profile-section">
             <h3>System Architect & Developer</h3>
-            <p>Zyeem Bin Zia is the Owner, Chairman, and CEO of ZyeemZia™. Zyeem is a software engineer and communications officer, he architects solutions at the intersection of tactical intelligence processing, cyber defense, and autonomous systems. Grounded by a Master of Science in Computer Science and a Bachelor of Science in Electrical, Electronics, and Communication Engineering, his technical expertise is further reinforced by advanced specializations from Google, IBM, and top-tier academic institutions. This matrix dashboard serves as the central distribution hub for his high-precision operational tools and advanced technical calculation frameworks &mdash; now <span class="profile-highlight">live on Google Play</span> for operators worldwide.</p>
+            <p>Zyeem Bin Zia is the Owner, Chairman, and CEO of ZyeemZia™. Zyeem is a software engineer and communications officer, he architects solutions at the intersection of tactical intelligence processing, cyber defense, and autonomous systems. Grounded by a Master of Science in Computer Science and a Bachelor of Science in Electrical, Electronics, and Communication Engineering, his technical expertise is further reinforced by advanced specializations from Google, IBM, and top-tier academic institutions. This matrix dashboard serves as the central distribution hub for his high-precision operational tools and advanced technical calculation frameworks &mdash; now <span class="profile-highlight">live on Google Play</span> for operators worldwide &mdash; and as the home of the <span class="profile-highlight">ZyeemZia™ Academy</span>, his free certification tracks with verifiable credentials.</p>
         </div>
 
+        <h2 class="section-title" id="apps">Field Apps · Google Play</h2>
         <div class="app-grid">
 
             <div class="app-card slate-accent">
@@ -540,13 +689,119 @@
 
         </div>
 
+        <!-- ZYEEMZIA ACADEMY: every course, one place -->
+        <section class="academy" id="academy" aria-labelledby="academyTitle">
+            <div class="ac-eyebrow">Knowledge Operations</div>
+            <h2 class="ac-title" id="academyTitle">ZyeemZia™ Academy</h2>
+            <p class="ac-lead">Free, self-paced courses built like field manuals: interactive lessons, scenarios and labs, a printable book, a timed official exam graded on the ZyeemZia server, and a certificate anyone can verify.</p>
+
+            <div class="ac-stats">
+                <div><b>8</b><span>Courses</span></div>
+                <div><b>7</b><span>Certification tracks</span></div>
+                <div><b>350+</b><span>Lessons</span></div>
+                <div><b>100%</b><span>Free, online and offline</span></div>
+            </div>
+
+            <div class="ac-path">
+                <div class="ac-path-head"><h3>Networking Pathway</h3><span>Associate → Professional → Expert → Design Expert</span></div>
+                <div class="ladder">
+                    <div class="tier">
+                        <span class="tier-tag">Tier 1 · Associate</span>
+                        <div class="course c-blue">
+                            <span class="code">ZCNA</span><span class="cname">Certified Network Associate</span>
+                            <p>Build, address, switch, route and secure modern networks.</p>
+                            <span class="spec">40 lessons · 40-question exam</span>
+                            <div class="acts"><a class="bk" href="https://zcna.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zcna.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                        </div>
+                    </div>
+                    <div class="tier">
+                        <span class="tier-tag">Tier 2 · Professional</span>
+                        <div class="course c-indigo">
+                            <span class="code">ZCNP</span><span class="cname">Certified Network Professional</span>
+                            <p>Enterprise campus, OSPF and BGP, overlays, wireless and automation.</p>
+                            <span class="spec">38 lessons · 40-question exam</span>
+                            <div class="acts"><a class="bk" href="https://zcnp.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zcnp.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                        </div>
+                    </div>
+                    <div class="tier">
+                        <span class="tier-tag">Tier 3 · Expert</span>
+                        <div class="tier-stack">
+                            <div class="course c-violet">
+                                <span class="code">ZCIE</span><span class="cname">Certified Internetwork Expert</span>
+                                <p>Expert routing, MPLS and segment routing, EVPN fabrics, multicast and QoS.</p>
+                                <span class="spec">39 lessons · 45-question exam</span>
+                                <div class="acts"><a class="bk" href="https://zcie.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zcie.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                            </div>
+                            <div class="course c-red">
+                                <span class="code">ZCIE Security</span><span class="cname">Internetwork Expert · Security</span>
+                                <p>Firewalls, VPN, identity, threat defence, SASE and zero trust.</p>
+                                <span class="spec">37 lessons · 45-question exam</span>
+                                <div class="acts"><a class="bk" href="https://zcie-security.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zcie-security.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tier">
+                        <span class="tier-tag">Tier 4 · Design Expert</span>
+                        <div class="course c-pink">
+                            <span class="code">ZCDE</span><span class="cname">Certified Design Expert</span>
+                            <p>Requirements-driven network design across campus, WAN, cloud and security.</p>
+                            <span class="spec">34 lessons · 45-question exam</span>
+                            <div class="acts"><a class="bk" href="https://zcde.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zcde.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ac-path">
+                <div class="ac-path-head"><h3>Leadership &amp; AI</h3><span>Run projects, architect intelligent systems</span></div>
+                <div class="ac-duo">
+                    <div class="course c-orange">
+                        <span class="code">ZPMP</span><span class="cname">Project Management Protocol · Professional</span>
+                        <p>Value-driven, agile and hybrid project management with AI: from charter and planning to delivery, risk, leadership and benefits.</p>
+                        <span class="spec">39 lessons · 40-question exam · capstone</span>
+                        <div class="acts"><a class="bk" href="https://zpmp.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zpmp.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                    </div>
+                    <div class="course c-cyan">
+                        <span class="code">ZAIA</span><span class="cname">Artificial Intelligence Architecture · Architect</span>
+                        <p>Design production AI systems: data, models, LLM apps, retrieval, agents, operations and trust.</p>
+                        <span class="spec">39 lessons · 40-question exam · capstone</span>
+                        <div class="acts"><a class="bk" href="https://zaia.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://zaia.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ac-path">
+                <div class="ac-path-head"><h3>Language &amp; Faith</h3><span>বাংলা ও English</span></div>
+                <div class="ac-duo">
+                    <div class="course c-emerald">
+                        <span class="bn" lang="bn">কুরআন ও আরবি শিক্ষা</span><span class="cname">Quran &amp; Arabic Learning</span>
+                        <p>Learn to read the Quran and write Arabic in Bangla and English: letters to fluent reading, tajweed, word-by-word surahs, a phase-by-phase handwriting workbook, flashcards and games.</p>
+                        <span class="spec">87 lessons · handwriting workbook · book &amp; PDF</span>
+                        <div class="acts"><a class="bk" href="https://quranlearnarbi.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://quranlearnarbi.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ac-verify">
+                <div>
+                    <h4>Verify a ZyeemZia credential</h4>
+                    <p>Every certificate carries a credential ID. Enter it to confirm the certificate is genuine.</p>
+                </div>
+                <form id="verifyForm" autocomplete="off">
+                    <input id="verifyId" name="id" type="text" placeholder="e.g. ZPMP-20261019-7K2QXM" aria-label="Credential ID" spellcheck="false" autocapitalize="characters" required>
+                    <button type="submit">VERIFY</button>
+                </form>
+            </div>
+            <p class="ac-foot">Sign in with Google on any course to keep your progress on every device. Signing in is optional.</p>
+        </section>
+
         <div class="global-support">
             <button id="openCardBtn" class="support-btn">DIGITAL BUSINESS CARD</button>
             <a class="support-btn" href="mailto:admin@zyeemzia.com">SIGNAL SUPPORT DESK | ADMIN@ZYEEMZIA.COM</a>
         </div>
 
         <!-- CONTACT FORM SECTION -->
-        <div class="contact-section">
+        <div class="contact-section" id="contact">
             <h3>Direct Transmission Hub</h3>
             <p>For operational inquiries, tactical software support, or partnership requests, submit a secure message directly to the executive command.</p>
 
@@ -853,7 +1108,17 @@
             e.preventDefault();
         });
 
-        // --- 2. THEME TOGGLE LOGIC ---
+        // --- 2. CREDENTIAL VERIFICATION: open the matching course's verification page ---
+        const VERIFY_SITES = { ZPMP: 'zpmp', ZAIA: 'zaia', ZCNA: 'zcna', ZCNP: 'zcnp', ZCIE: 'zcie', ZCIESECURITY: 'zcie-security', ZCDE: 'zcde' };
+        document.getElementById('verifyForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const id = document.getElementById('verifyId').value.trim().toUpperCase().replace(/\s+/g, '');
+            if (!id) return;
+            const site = VERIFY_SITES[id.split('-')[0]] || 'zpmp';
+            window.open('https://' + site + '.zyeemzia.com/#verify/' + encodeURIComponent(id), '_blank', 'noopener');
+        });
+
+        // --- 3. THEME TOGGLE LOGIC ---
         const themeBtn = document.getElementById('themeToggle');
         const bodyElement = document.body;
 

@@ -553,6 +553,21 @@
             .ladder { grid-template-columns: minmax(0, 1fr); border-left: 2px solid #c7d2fe; padding-left: 14px; }
         }
 
+        /* link to the Academy campus site */
+        .ac-campus { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 18px; align-items: center; margin: -8px 0 30px; padding: 16px 20px; border-radius: 14px; border: 1px solid #c7d2fe; background: linear-gradient(120deg, rgba(47, 75, 216, 0.08), rgba(232, 163, 61, 0.08)); text-decoration: none; color: inherit; transition: transform 0.2s ease, border-color 0.2s ease; }
+        .ac-campus:hover { transform: translateY(-2px); border-color: #2f4bd8; }
+        .ac-campus-map { display: grid; gap: 5px; width: 64px; }
+        .ac-campus-map i { display: block; height: 5px; border-radius: 3px; background: var(--l); position: relative; }
+        .ac-campus-map i::after { content: ''; position: absolute; top: -3px; left: calc(var(--x, 50%) - 5px); width: 7px; height: 7px; border-radius: 50%; background: #fff; border: 2px solid var(--l); }
+        .ac-campus-map i:nth-child(2n)::after { --x: 30%; } .ac-campus-map i:nth-child(3n)::after { --x: 75%; }
+        .ac-campus-txt b { display: block; font-size: 17px; color: #0f172a; letter-spacing: 0.3px; transition: color 0.3s ease; }
+        .ac-campus-txt span { display: block; color: #64748b; font-size: 14px; font-weight: 500; }
+        .ac-campus-go { font-weight: 700; font-size: 14px; background: #2f4bd8; color: #fff; border-radius: 30px; padding: 10px 18px; white-space: nowrap; }
+        body.dark-mode .ac-campus { border-color: #34415e; background: linear-gradient(120deg, rgba(143, 162, 255, 0.1), rgba(242, 189, 95, 0.08)); }
+        body.dark-mode .ac-campus-txt b { color: #f8fafc; }
+        body.dark-mode .ac-campus-txt span { color: #94a3b8; }
+        body.dark-mode .ac-campus-go { background: #8fa2ff; color: #0e1320; }
+        @media (max-width: 640px) { .ac-campus { grid-template-columns: minmax(0, 1fr); gap: 12px; } .ac-campus-go { justify-self: start; } }
         /* Academy in dark mode */
         body.dark-mode .quick-nav a { color: #94a3b8; border-color: #334155; background: rgba(17, 24, 39, 0.6); }
         body.dark-mode .quick-nav a:hover { color: #f8fafc; background: #1e293b; border-color: #475569; }
@@ -605,6 +620,7 @@
             <nav class="quick-nav" aria-label="Sections">
                 <a href="#apps">Field Apps</a>
                 <a href="#academy">Academy</a>
+                <a href="https://academy.zyeemzia.com/" target="_blank" rel="noopener">Academy campus ↗</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -709,9 +725,15 @@
             <div class="ac-stats">
                 <div><b>19</b><span>Courses</span></div>
                 <div><b>15</b><span>Certification tracks</span></div>
-                <div><b>800+</b><span>Lessons</span></div>
+                <div><b>828</b><span>Lessons</span></div>
                 <div><b>100%</b><span>Free, online and offline</span></div>
             </div>
+
+            <a class="ac-campus" href="https://academy.zyeemzia.com/" target="_blank" rel="noopener">
+                <span class="ac-campus-map" aria-hidden="true"><i style="--l:#0b7fc0"></i><i style="--l:#cf3350"></i><i style="--l:#7349de"></i><i style="--l:#c97412"></i><i style="--l:#0d8f64"></i></span>
+                <span class="ac-campus-txt"><b>Visit the Academy campus</b><span>Every course on one route map, a course finder that suggests where to start, and the certificate check, at academy.zyeemzia.com</span></span>
+                <span class="ac-campus-go">Open →</span>
+            </a>
 
             <div class="ac-path">
                 <div class="ac-path-head"><h3>Networking Pathway</h3><span>Associate → Professional → Expert → Design Expert</span></div>

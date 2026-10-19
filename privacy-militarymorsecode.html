@@ -128,6 +128,8 @@
 
         body.dark-mode .icon-moon { display: none; }
         body.dark-mode .icon-sun { display: block; }
+            /* phones: justified text leaves wide gaps between words, so use normal alignment */
+        @media (max-width: 650px) { .container, .container p, .container li, .policy-card, .policy-card p, .policy-card li, .legal-entity-box p { text-align: left; } }
     </style>
     <link rel="stylesheet" href="transmit.css?v=3">
 </head>
@@ -157,50 +159,66 @@
 
         <div class="meta-info">
             <p><strong>Application:</strong> Military Morse Code</p>
-            <p><strong>Developer:</strong> ZyeemZia™</p>
-            <p><strong>Last Updated:</strong> September 18, 2026</p>
+            <p><strong>Package (Google Play ID):</strong> com.zyeemzia.militarymorsecode</p>
+            <p><strong>Developer:</strong> ZyeemZia™ (Zyeem Bin Zia), Dhaka, Bangladesh</p>
+            <p><strong>Effective date / Last updated:</strong> 19 October 2026</p>
         </div>
 
-        <h2>1. Introduction</h2>
-        <p>Welcome to Military Morse Code — a tactical signal engine and training suite for learning, transmitting, and decoding Morse code. This Privacy Policy explains what the app accesses on your device and, more importantly, what it does not collect. By using the app, you agree to this policy.</p>
+        <p>Military Morse Code is a signal engine and training suite for learning, transmitting and decoding Morse code. This policy explains what the app accesses on your device and what it does not collect. By using the app, you agree to this policy.</p>
 
-        <h2>2. No Accounts, No Cloud, No Ads</h2>
-        <p>Military Morse Code has no sign-in, no user accounts, no advertising, and no in-app purchases. It does not collect your name, email address, phone number, or contacts, and it does not connect to any developer-run server. Every feature works fully offline.</p>
-
-        <h2>3. What the App Accesses On Your Device</h2>
+        <h2>1. Summary</h2>
         <ul>
-            <li><strong>Microphone (Mic Ear):</strong> When you use the Mic Ear listening feature, the app accesses your microphone to detect the pitch of a Morse tone and decode it in real time, entirely on your device. Audio is analyzed in memory as it's captured and is never recorded, stored, or transmitted anywhere. Listening pauses automatically when you leave the screen.</li>
-            <li><strong>Vibration Motor:</strong> Used to output Morse patterns as vibration pulses when you enable the Vibrate channel. No data is collected — this is a one-way control of a device motor.</li>
-            <li><strong>Flashlight (Torch):</strong> Used to output Morse patterns as light pulses when you enable the Flash channel. No camera access is involved and no images are captured — the app only toggles the torch on and off.</li>
-            <li><strong>Local Settings & Training Progress:</strong> Your channel preferences (sound, vibrate, flash, screen), Morse speed settings, and flashcard/training progress are stored locally on your device using standard app preferences storage. This data never leaves your device.</li>
+            <li><strong>Collected:</strong> Nothing. The app has no sign-in, no user accounts and does not collect personal data.</li>
+            <li><strong>Stays on your device:</strong> Your channel preferences, Morse speed settings and flashcard/training progress.</li>
+            <li><strong>Never collected:</strong> Your name, email address, phone number or contacts. Microphone audio is never recorded, stored or transmitted.</li>
+            <li><strong>Servers:</strong> The app does not connect to any developer-run server, and every feature works fully offline.</li>
+            <li><strong>Ads and purchases:</strong> None. The app has no advertising and no in-app purchases.</li>
         </ul>
 
-        <h2>4. Sharing and External Links</h2>
+        <h2>2. Information the App Uses</h2>
         <ul>
+            <li><strong>Microphone (Mic Ear):</strong> When you use the Mic Ear listening feature, the app accesses your microphone to detect the pitch of a Morse tone and decode it in real time, entirely on your device. Audio is analysed in memory as it is captured and is never recorded, stored or transmitted. Listening pauses automatically when you leave the screen.</li>
+            <li><strong>Vibration motor:</strong> Used to output Morse patterns as vibration pulses when you enable the Vibrate channel. No data is collected; the app only controls the motor.</li>
+            <li><strong>Flashlight (torch):</strong> Used to output Morse patterns as light pulses when you enable the Flash channel. No camera access is involved and no images are captured; the app only switches the torch on and off.</li>
+            <li><strong>Local settings and training progress:</strong> Your channel preferences (sound, vibrate, flash, screen), Morse speed settings and flashcard/training progress are stored on your device using standard app preferences storage. This data never leaves your device.</li>
             <li><strong>Share:</strong> If you tap Share on translated or decoded text, your device's own share sheet opens so you can send it to an app of your choice. The app itself does not transmit this text anywhere.</li>
-            <li><strong>Play Store Links:</strong> The app includes links to the developer's other ZyeemZia™ apps and to its own Google Play listing. Tapping one opens Google Play or your browser; no personal data is passed along.</li>
-            <li><strong>Google Play In-App Updates:</strong> The app checks Google Play's native update API to let you know when a newer version is available. This only checks version metadata; no personal data is involved.</li>
+            <li><strong>Play Store links:</strong> The app includes links to the developer's other ZyeemZia™ apps and to its own Google Play listing. Tapping one opens Google Play or your browser; no personal data is passed along.</li>
         </ul>
 
-        <h2>5. Data Retention and Deletion</h2>
-        <p>Because there is no account and no server-side storage, there is nothing held remotely to delete. All local data (settings and training progress) is removed the moment you clear the app's storage in Android Settings or uninstall the app.</p>
+        <h2>3. Third-Party Services</h2>
+        <ul>
+            <li><strong>Google Play In-App Updates:</strong> The app uses Google Play's update API to let you know when a newer version is available. This checks version metadata only; no personal data is involved. See the <a href="https://policies.google.com/privacy" class="contact-link" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
+        </ul>
 
-        <h2>6. Analytics and Tracking</h2>
-        <p>Military Morse Code contains no analytics, advertising, or crash-reporting SDKs of any kind. Nothing about your usage is measured, profiled, or shared with any third party.</p>
+        <h2>4. Data Retention and Deletion</h2>
+        <p>Because there is no account and no server-side storage, nothing is held remotely to delete.</p>
+        <p>All local data (settings and training progress) is removed when you clear the app's storage in Android Settings &gt; Apps &gt; Military Morse Code &gt; Storage &gt; Clear storage, or when you uninstall the app.</p>
+
+        <h2>5. Analytics and Tracking</h2>
+        <p>Military Morse Code contains no analytics, advertising or crash-reporting SDKs of any kind. Nothing about your usage is measured, profiled or shared with any third party.</p>
+
+        <h2>6. Your Choices and Rights</h2>
+        <ul>
+            <li><strong>Microphone permission:</strong> The microphone is only used for the Mic Ear feature. You can grant or revoke the Microphone permission at any time in Android Settings &gt; Apps &gt; Military Morse Code &gt; Permissions. The rest of the app works without it.</li>
+            <li><strong>Your rights:</strong> Depending on where you live (for example under the GDPR in the EEA/UK), you may have rights to access, correct or delete personal data and to object to processing. Because the app keeps your data on your device, most of these you can exercise directly on the device; for anything else, contact us.</li>
+        </ul>
 
         <h2>7. Children's Privacy</h2>
-        <p>The app is not directed at children under 13 (or 16 in certain jurisdictions) and does not knowingly collect personal data from anyone, regardless of age — the app simply does not collect personal data at all.</p>
+        <p>The app is not directed at children under 13 (or 16 in certain jurisdictions). It does not knowingly collect personal data from anyone, of any age, because it does not collect personal data at all.</p>
 
-        <h2>8. Security of Data</h2>
-        <p>Because the app has no server component and stores everything locally, there is no remote database to be breached. No method of electronic storage is ever 100% secure, but the app's design minimizes risk by never transmitting your data off your device in the first place.</p>
+        <h2>8. Security</h2>
+        <p>The app has no server component and stores everything locally, so there is no remote database to be breached. No method of electronic storage is 100% secure, but the app's design minimises risk by never transmitting your data off your device.</p>
 
-        <h2>9. Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy to reflect legal or feature changes. Any changes are reflected by updating the "Last Updated" date above. Please review this policy periodically.</p>
+        <h2>9. International Processing</h2>
+        <p>No personal data leaves your device. The only network connections the app makes are the Google Play version check and the Play Store links you choose to open.</p>
 
-        <h2>10. Contact Us</h2>
-        <p>If you have any questions or concerns regarding this Privacy Policy, please contact the developer via email at: <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>.</p>
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this policy to reflect legal or feature changes. When we do, we will update the date at the top of this page. For significant changes, we will also note them in the app's store listing or release notes.</p>
 
-        <p style="margin-top:30px; font-size:13px; text-transform:uppercase; letter-spacing:1px;">Military Morse Code is an independent training and utility app by ZyeemZia™. It is not affiliated with, endorsed by, or connected to any government, armed force, ministry, or NATO.</p>
+        <h2>11. Contact</h2>
+        <p>If you have any questions about this policy, email <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>. You can also use the Direct Transmission Hub at the bottom of this page.</p>
+
+        <p style="margin-top:30px; font-size:13px; text-transform:uppercase; letter-spacing:1px;">Military Morse Code is an independent training and utility app by ZyeemZia™. It is not affiliated with, endorsed by or connected to any government, armed force, ministry or NATO.</p>
     </div>
     <!-- DIRECT TRANSMISSION HUB (shared component from zyeemzia.com) -->
     <div class="tx-page"><section class="tx-mount" id="contact" data-tx-topic="privacy" data-tx-regarding="Military Morse Code" data-tx-source="zyeemzia.com · Privacy · Military Morse Code" data-tx-lead="Questions about this privacy policy or your data in Military Morse Code? Send them straight to the ZyeemZia command desk."></section></div>

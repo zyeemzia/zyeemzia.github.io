@@ -154,6 +154,8 @@
 
         body.dark-mode .icon-moon { display: none; }
         body.dark-mode .icon-sun { display: block; }
+            /* phones: justified text leaves wide gaps between words, so use normal alignment */
+        @media (max-width: 650px) { .container, .container p, .container li, .policy-card, .policy-card p, .policy-card li, .legal-entity-box p { text-align: left; } }
     </style>
     <link rel="stylesheet" href="transmit.css?v=3">
 </head>
@@ -183,9 +185,9 @@
 
         <div class="meta-info">
             <p><strong>Application:</strong> Military Gadget</p>
-            <p><strong>Package:</strong> com.zyeemzia.militarygadget</p>
-            <p><strong>Developer:</strong> ZyeemZia™</p>
-            <p><strong>Last Updated:</strong> October 17, 2026</p>
+            <p><strong>Package (Google Play ID):</strong> com.zyeemzia.militarygadget</p>
+            <p><strong>Developer:</strong> ZyeemZia™ (Zyeem Bin Zia), Dhaka, Bangladesh</p>
+            <p><strong>Effective date / Last updated:</strong> 19 October 2026</p>
         </div>
 
         <div class="summary">
@@ -195,72 +197,83 @@
             <span class="chip">No camera or microphone</span>
         </div>
 
-        <h2>1. Introduction</h2>
-        <p>Welcome to Military Gadget. This Privacy Policy informs you of our policies regarding the collection, use, and disclosure of information when you use our tactical field suite — GPS tracker, guided route follow with voice, waypoints, compass and clinometer, timers, sun and moon planning, field calculators with resection, LED signalling, report formats, and corps planning tools. By using the app, you agree to the collection and use of information in accordance with this policy.</p>
-
-        <h2>2. Information Collection and Use</h2>
-        <p>Military Gadget has no sign-in and no user accounts. We do not collect your name, email address, phone number, or contacts, and we operate no servers that receive your data.</p>
+        <h2>1. Summary</h2>
+        <p>Military Gadget is a tactical field suite: GPS tracker, guided route follow with voice, waypoints, compass and clinometer, timers, sun and moon planning, field calculators with resection, LED signalling, report formats and corps planning tools. This policy explains what information the app uses, what is shared and with whom, and the choices you have. By using the app, you agree to the practices described here.</p>
         <ul>
-            <li><strong>Precise Location Data (GPS):</strong> Location access powers the core features: showing your position and grid reference (MGRS), recording tracks, guiding you along a route, and the field calculators. Your positions, tracks, routes, and waypoints are processed and stored only on your device. They are never uploaded to us.</li>
-            <li><strong>Tracking With the Screen Off:</strong> When you start a track or a guided route, the app keeps receiving location through an Android foreground service, shown by a persistent notification for as long as it runs. The app does not request "all the time" background location, and location stops when you stop or pause tracking or guidance.</li>
-            <li><strong>Your Field Data Stays On Your Phone:</strong> Saved routes, waypoints and targets, report drafts (SALUTE, MEDEVAC, LOCSTAT, SITREP), settings, and downloaded offline map areas are stored locally on your device. An unsaved track is also checkpointed locally so it can be restored after an unexpected shutdown. This data leaves your device only when you deliberately share, export, or back it up — for example a route file or report text sent through the Android share sheet to an app you choose.</li>
-            <li><strong>Device Sensors:</strong> The compass, clinometer, and orientation features read the magnetometer and accelerometer in real time. Sensor readings are used on the device and are never stored or transmitted.</li>
-            <li><strong>Flashlight & Signalling:</strong> The LED signalling and torch features switch the phone's flashlight through the system torch. The app does not request the Camera permission and never takes photos or video. It does not use the microphone.</li>
-            <li><strong>Voice Guidance:</strong> Spoken directions use your phone's built-in text-to-speech engine. The text spoken (for example "turn left in 50 metres") is generated on the device.</li>
-            <li><strong>Battery & Screen:</strong> The app reads the battery level on the device to warn you before it runs low, and keeps the screen awake during guidance if you enable it in Settings.</li>
-            <li><strong>Local Notifications:</strong> The notification permission is used to show the tracking/guidance status notification required by Android. We do not track or transmit your interaction with notifications.</li>
-            <li><strong>Device Identifiers:</strong> Our third-party advertising and subscription providers (below) collect device and advertising identifiers to serve ads and verify purchases.</li>
+            <li><strong>No accounts:</strong> There is no sign-in and there are no user accounts. We do not collect your name, email address, phone number or contacts, and we operate no servers that receive your data.</li>
+            <li><strong>Stays on your device:</strong> Your positions, tracks, routes, waypoints, targets, reports, settings and offline map areas are stored only on your phone. They leave it only when you deliberately share, export or back them up.</li>
+            <li><strong>Never collected:</strong> The app does not request the Camera permission, never takes photos or video, and does not use the microphone. Sensor readings are never stored or transmitted, and the app never shares your precise GPS location with advertisers.</li>
+            <li><strong>Collected by third parties:</strong> Google AdMob and RevenueCat collect device and advertising identifiers to serve ads and verify purchases. Online map tiles and place-name searches are requested directly from your device by the map services you use.</li>
+            <li><strong>Ads:</strong> Yes. Free users see ads from Google AdMob; users in the EEA, UK and Switzerland are asked for consent before any personalised ads load.</li>
+            <li><strong>Purchases:</strong> Yes. An optional Pro upgrade (ad removal) is available through Google Play Billing. We never see your payment card details.</li>
         </ul>
 
-        <h2>3. Map, Place Search & Location Services</h2>
+        <h2>2. Information the App Uses</h2>
+        <ul>
+            <li><strong>Precise location (GPS):</strong> Location access powers the core features: showing your position and grid reference (MGRS), recording tracks, guiding you along a route and the field calculators. Your positions, tracks, routes and waypoints are processed and stored only on your device and are never uploaded to us.</li>
+            <li><strong>Tracking with the screen off:</strong> When you start a track or a guided route, the app keeps receiving location through an Android foreground service, shown by a persistent notification for as long as it runs. The app does not request "all the time" background location, and location stops when you stop or pause tracking or guidance.</li>
+            <li><strong>Field data on your phone:</strong> Saved routes, waypoints and targets, report drafts (SALUTE, MEDEVAC, LOCSTAT, SITREP), settings and downloaded offline map areas are stored locally on your device. An unsaved track is also checkpointed locally so it can be restored after an unexpected shutdown. This data leaves your device only when you deliberately share, export or back it up, for example a route file or report text sent through the Android share sheet to an app you choose.</li>
+            <li><strong>Device sensors:</strong> The compass, clinometer and orientation features read the magnetometer and accelerometer in real time. Sensor readings are used on the device and are never stored or transmitted.</li>
+            <li><strong>Flashlight and signalling:</strong> The LED signalling and torch features switch the phone's flashlight through the system torch. The app does not request the Camera permission and never takes photos or video. It does not use the microphone.</li>
+            <li><strong>Voice guidance:</strong> Spoken directions use your phone's built-in text-to-speech engine. The text spoken (for example "turn left in 50 metres") is generated on the device.</li>
+            <li><strong>Battery and screen:</strong> The app reads the battery level on the device to warn you before it runs low, and keeps the screen awake during guidance if you enable this in Settings.</li>
+            <li><strong>Notifications:</strong> The notification permission is used to show the tracking and guidance status notification required by Android. We do not track or transmit your interaction with notifications.</li>
+            <li><strong>Device identifiers:</strong> Our third-party advertising and subscription providers (see Section 3) collect device and advertising identifiers to serve ads and verify purchases.</li>
+        </ul>
+
+        <h2>3. Third-Party Services</h2>
+        <p>The app uses the following providers for advertising, purchases and updates. Each is governed by its own privacy policy. The map and search services the app contacts are described in Section 4.</p>
+        <ul>
+            <li><strong>Google AdMob:</strong> Free users see advertisements that keep the base app free. AdMob may collect your device's advertising ID, approximate IP-based location, app interaction and diagnostic data to serve and measure ads. Users in the EEA, UK and Switzerland are shown a consent dialog before any personalised ads load. The app never shares your precise GPS location with advertisers. See the <a href="https://policies.google.com/privacy" class="contact-link" target="_blank" rel="noopener">Google Privacy Policy</a> and <a href="https://business.safety.google/privacy/" class="contact-link" target="_blank" rel="noopener">how Google uses data from partners' apps</a>.</li>
+            <li><strong>Google Play Billing and RevenueCat:</strong> The optional Pro upgrade (ad removal) is purchased through Google Play Billing. RevenueCat receives an anonymised app user ID and purchase history to verify your Pro entitlement. We never see, process or store your payment card details. See the <a href="https://policies.google.com/privacy" class="contact-link" target="_blank" rel="noopener">Google Privacy Policy</a> and the <a href="https://www.revenuecat.com/privacy" class="contact-link" target="_blank" rel="noopener">RevenueCat Privacy Policy</a>.</li>
+            <li><strong>Google Play In-App Updates:</strong> Google Play's in-app update API prompts you when a newer version is available. It only checks version metadata with Google Play; no personal data is involved.</li>
+        </ul>
+
+        <h2>4. Map, Place Search &amp; Location Services</h2>
         <p>Maps and searches that need the internet contact third-party services directly from your device. We do not see or store these requests.</p>
         <ul>
-            <li><strong>Map Tiles:</strong> Online map layers are loaded from the provider you select (Esri, OpenStreetMap, OpenTopoMap, CyclOSM, or USGS). As with any web map, the provider receives your IP address and the map area being viewed. Areas you download for offline use are stored on your device and then work with no connection at all.</li>
-            <li><strong>Place-Name Search:</strong> When you search for a place by name, the text you type is sent to OpenStreetMap's Nominatim service to find matching locations. Grid references and coordinates you type are decoded entirely on your device and are never sent anywhere.</li>
-            <li><strong>Area Names:</strong> To show a readable area name for a position, the app may use your phone's built-in geocoding service, which sends the coordinates to the platform provider (on most Android phones, Google).</li>
-        </ul>
-
-        <h2>4. Third-Party Service Providers</h2>
-        <p>To provide monetization, update, and subscription services, we integrate with the following industry-standard providers, each governed by its own privacy policy:</p>
-        <ul>
-            <li><strong>Google AdMob:</strong> Free users see advertisements to keep the base app free. AdMob may collect your device's advertising ID, approximate IP-based location, app interaction, and diagnostic data to serve and measure ads. Users in the EEA, UK, and Switzerland are shown a consent dialog before any personalized ads load. Your precise GPS location is never shared with advertisers by the app.</li>
-            <li><strong>RevenueCat & Google Play Billing:</strong> The optional "Pro" upgrade (ad removal) is purchased through Google Play Billing. RevenueCat receives an anonymized app user ID and purchase history to verify your Pro entitlement. We never see, process, or store your payment card details.</li>
-            <li><strong>Google Play In-App Updates:</strong> We use Google Play's native in-app update API to prompt you when a newer version is available. This only checks version metadata with Google Play; no personal data is involved.</li>
+            <li><strong>Map tiles:</strong> Online map layers are loaded from the provider you select (Esri, OpenStreetMap, OpenTopoMap, CyclOSM or USGS). As with any web map, the provider receives your IP address and the map area being viewed. Areas you download for offline use are stored on your device and then work with no connection at all. See the <a href="https://www.esri.com/en-us/privacy/overview" class="contact-link" target="_blank" rel="noopener">Esri Privacy Statement</a> and the <a href="https://osmfoundation.org/wiki/Privacy_Policy" class="contact-link" target="_blank" rel="noopener">OpenStreetMap Foundation Privacy Policy</a>.</li>
+            <li><strong>Place-name search:</strong> When you search for a place by name, the text you type is sent to OpenStreetMap's Nominatim service to find matching locations (covered by the <a href="https://osmfoundation.org/wiki/Privacy_Policy" class="contact-link" target="_blank" rel="noopener">OpenStreetMap Foundation Privacy Policy</a>). Grid references and coordinates you type are decoded entirely on your device and are never sent anywhere.</li>
+            <li><strong>Area names:</strong> To show a readable area name for a position, the app may use your phone's built-in geocoding service, which sends the coordinates to the platform provider (on most Android phones, Google; see the <a href="https://policies.google.com/privacy" class="contact-link" target="_blank" rel="noopener">Google Privacy Policy</a>).</li>
         </ul>
 
         <h2>5. Data Retention and Deletion</h2>
         <ul>
-            <li><strong>No Account Data:</strong> Because Military Gadget operates entirely without user accounts, we hold no personal profile data on any remote server.</li>
-            <li><strong>Local Data Deletion:</strong> Routes, waypoints, reports, settings, and offline map areas can be deleted inside the app at any time, or all at once by clearing the app's storage in Android Settings or uninstalling the app.</li>
-            <li><strong>No Deletion Request Required:</strong> Because we do not collect or transmit personal user data to our own servers, no formal data-deletion request to the developer is necessary.</li>
+            <li><strong>No account data:</strong> Because Military Gadget works entirely without user accounts, we hold no personal profile data on any remote server.</li>
+            <li><strong>Local data:</strong> Routes, waypoints, reports, settings and offline map areas can be deleted inside the app at any time. To remove everything at once, go to Android Settings &gt; Apps &gt; Military Gadget &gt; Storage &gt; Clear storage, or uninstall the app.</li>
+            <li><strong>No deletion request needed:</strong> Because we do not collect or transmit personal data to our own servers, there is nothing for us to delete and no formal deletion request to the developer is necessary. If you have a question about your data, you can still contact us (see Section 12).</li>
+            <li><strong>Advertising data:</strong> Data collected by Google AdMob is retained by Google under Google's own policies.</li>
         </ul>
 
         <h2>6. Analytics and Tracking</h2>
-        <p>We do not use general-purpose usage tracking, behavioral analytics, or crash-analytics SDKs of our own. Our third-party partners (AdMob and RevenueCat) collect only the minimum telemetry required to serve ads and confirm your Pro subscription status.</p>
+        <p>We do not use general-purpose usage tracking, behavioural analytics or crash-analytics SDKs of our own. Our third-party partners (AdMob and RevenueCat) collect only the minimum telemetry required to serve ads and confirm your Pro status.</p>
 
-        <h2>7. Your Privacy Rights & Consent</h2>
+        <h2>7. Your Choices and Rights</h2>
         <ul>
-            <li><strong>Location Control:</strong> You can deny or revoke location access at any time in Android Settings. Features that do not need a position (timers, calculators, signalling, report formats) keep working.</li>
-            <li><strong>Consent Management:</strong> Where applicable (EEA, UK, Switzerland), a consent dialog is shown on launch, letting you grant or deny personalized ad tracking.</li>
-            <li><strong>Opt-Out of Personalized Ads:</strong> You can opt out of personalized advertising at any time from your device settings (Settings → Google → Ads → Opt out of Ads Personalization), or reset your advertising ID from the same menu.</li>
+            <li><strong>Location control:</strong> You can deny or revoke location access at any time in Android Settings. Features that do not need a position (timers, calculators, signalling, report formats) keep working.</li>
+            <li><strong>Ad consent:</strong> Where applicable (EEA, UK, Switzerland), a consent dialog is shown on launch, letting you grant or deny personalised ad tracking.</li>
+            <li><strong>Opting out of personalised ads:</strong> You can opt out of personalised advertising at any time from your device settings (Settings → Google → Ads → Opt out of Ads Personalization), or reset your advertising ID from the same menu.</li>
+            <li><strong>Data protection rights:</strong> Depending on where you live (for example under the GDPR in the EEA/UK), you may have rights to access, correct or delete personal data and to object to processing. Because the app keeps your data on your device, most of these you can exercise directly on the device; for anything else, contact us.</li>
         </ul>
 
         <h2>8. Children's Privacy</h2>
-        <p>Military Gadget is not directed at children under 13 (or 16 in certain jurisdictions), and we do not knowingly collect personal data from children. If you believe a child has provided us with personal data through a third-party service, please contact us so it can be removed.</p>
+        <p>Military Gadget is not directed at children under 13 (or 16 in certain jurisdictions), and we do not knowingly collect personal data from children. If you believe a child has provided personal data through a third-party service, please contact us so it can be removed.</p>
 
-        <h2>9. Security of Data</h2>
-        <p>Because your positions, tracks, routes, and reports are never transmitted to our servers, the risk of a server-side data breach is mitigated by the app's architecture itself. Data exchanged with map, ad, and billing providers is encrypted in transit. No method of electronic storage or transmission is ever 100% secure, and we cannot guarantee absolute security.</p>
+        <h2>9. Security</h2>
+        <p>Your positions, tracks, routes and reports are never transmitted to our servers, so the app's design itself reduces the risk of a server-side breach of that data. Data exchanged with map, ad and billing providers is encrypted in transit. No method of electronic storage or transmission is 100% secure, and we cannot guarantee absolute security.</p>
 
-        <h2>10. Safety Notice</h2>
-        <p>Navigation, grid, and planning figures are aids only. GPS accuracy, compass readings, and map data can be wrong. Always cross-check with approved maps, instruments, and your unit's procedures before relying on any result.</p>
+        <h2>10. International Processing</h2>
+        <p>The third-party services named above (Google, RevenueCat and the map and search providers) may process data on servers outside your country, under their own safeguards and privacy policies.</p>
 
-        <h2>11. Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time to reflect legal or feature changes. Any changes are reflected by updating the "Last Updated" date above. Please review this policy periodically.</p>
+        <h2>11. Changes to This Policy</h2>
+        <p>We may update this policy from time to time to reflect legal or feature changes. When we do, we will update the "Last updated" date at the top of this page. For significant changes, we will also note them in the app's store listing or release notes. Please review this policy periodically.</p>
 
-        <h2>12. Contact Us</h2>
-        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how your data is handled, please contact the developer via email at: <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>.</p>
+        <h2>12. Contact</h2>
+        <p>If you have any questions, concerns or requests about this policy or how your data is handled, email the developer at <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>. You can also use the Direct Transmission Hub at the bottom of this page.</p>
 
-        <p style="margin-top:30px; font-size:13px; text-transform:uppercase; letter-spacing:1px;">Military Gadget is an independent field-utility app by ZyeemZia™. It is not affiliated with, endorsed by, or connected to any government, armed force, ministry, or NATO. Planning figures are for reference only and do not replace official tables or orders.</p>
+        <p><strong>Safety notice:</strong> Navigation, grid and planning figures are aids only. GPS accuracy, compass readings and map data can be wrong. Always cross-check with approved maps, instruments and your unit's procedures before relying on any result.</p>
+
+        <p style="margin-top:30px; font-size:13px; text-transform:uppercase; letter-spacing:1px;">Military Gadget is an independent field-utility app by ZyeemZia™. It is not affiliated with, endorsed by or connected to any government, armed force, ministry or NATO. Planning figures are for reference only and do not replace official tables or orders.</p>
     </div>
     <!-- DIRECT TRANSMISSION HUB (shared component from zyeemzia.com) -->
     <div class="tx-page"><section class="tx-mount" id="contact" data-tx-topic="privacy" data-tx-regarding="Military Gadget" data-tx-source="zyeemzia.com · Privacy · Military Gadget" data-tx-lead="Questions about this privacy policy or your data in Military Gadget? Send them straight to the ZyeemZia command desk."></section></div>

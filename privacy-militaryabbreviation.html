@@ -136,6 +136,8 @@
         /* Dark state: Show Sun icon to toggle Light Mode */
         body.dark-mode .icon-moon { display: none; }
         body.dark-mode .icon-sun { display: block; }
+            /* phones: justified text leaves wide gaps between words, so use normal alignment */
+        @media (max-width: 650px) { .container, .container p, .container li, .policy-card, .policy-card p, .policy-card li, .legal-entity-box p { text-align: left; } }
     </style>
     <link rel="stylesheet" href="transmit.css?v=3">
 </head>
@@ -163,61 +165,76 @@
         <a href="index.html" class="back-btn">← Return to Matrix Dashboard</a>
         
         <h1>Privacy Policy</h1>
-        
+
         <div class="meta-info">
             <p><strong>Application:</strong> Military Abbreviation</p>
-            <p><strong>Developer:</strong> ZyeemZia™</p>
-            <p><strong>Last Updated:</strong> May 25, 2026</p>
+            <p><strong>Package (Google Play ID):</strong> com.zyeemzia.militaryabbreviation</p>
+            <p><strong>Developer:</strong> ZyeemZia™ (Zyeem Bin Zia), Dhaka, Bangladesh</p>
+            <p><strong>Effective date / Last updated:</strong> 19 October 2026</p>
         </div>
 
-        <h2>1. Introduction</h2>
-        <p>Welcome to Military Abbreviation. This Privacy Policy informs you of our policies regarding the collection, use, and disclosure of personal data when you use our utility and dictionary application. By using the app, you agree to the collection and use of information in accordance with this policy. We prioritize a lean, privacy-first user experience and are committed to protecting your digital footprint.</p>
-
-        <h2>2. Information Collection and Use</h2>
-        <p>We only request the permissions strictly necessary for the app to function. We do not require you to create an account, nor do we collect your name, email, phone number, or personal contacts.</p>
+        <h2>1. Summary</h2>
+        <p>This policy explains how the Military Abbreviation dictionary and utility app handles information. By using the app, you agree to the practices described here.</p>
         <ul>
-            <li><strong>Precise Location Data (GPS):</strong> We request access to your device's GPS solely to provide the Qibla and Compass functionality. This data is processed ephemerally (locally on your device in real-time). It is never stored on our servers, transmitted to the developer, or sold to third parties. We comply with Android's minimum scope guidelines, meaning location is only accessed while you are actively using these features.</li>
-            <li><strong>Local File Access:</strong> If you use the bulk upload feature, the app reads the .txt or .csv files you select from your device. This data is strictly used to update your local dictionary database. The files and their contents are never uploaded to the cloud or transmitted off-device.</li>
-            <li><strong>Local Notifications & Exact Alarms:</strong> We request notification and exact alarm permissions (POST_NOTIFICATIONS, SCHEDULE_EXACT_ALARM) to deliver the scheduled "Word of the Day" and to display the active status badge. These functions operate entirely locally on your device's internal clock. We do not track, log, or transmit your interaction with these notifications to any external servers.</li>
-            <li><strong>Device Identifiers:</strong> We use secure third-party services that collect Device IDs and advertising identifiers to facilitate ad delivery and manage premium subscriptions.</li>
+            <li><strong>No account:</strong> the app does not require an account, and we do not collect your name, email address, phone number or contacts.</li>
+            <li><strong>Stays on your device:</strong> your location, your dictionary entries, the custom abbreviations, categories and tactical symbols you create, your drawings and any files you import are processed and stored locally and are never sent to us.</li>
+            <li><strong>Collected by third parties:</strong> Google AdMob and RevenueCat collect device IDs and advertising identifiers to deliver ads and manage the optional upgrade.</li>
+            <li><strong>Advertising:</strong> yes, banner, interstitial and app-open ads through Google AdMob. We do not use remarketing services.</li>
+            <li><strong>Purchases:</strong> yes, an optional "Ad-Free Pro" upgrade, paid through Google Play Billing.</li>
+            <li><strong>Analytics:</strong> we do not use analytics tools.</li>
         </ul>
 
-        <h2>3. Third-Party Service Providers</h2>
-        <p>To provide monetization and subscription services, we integrate with industry-standard third-party platforms. These providers operate under their own strict Privacy Policies:</p>
+        <h2>2. Information the App Uses</h2>
+        <p>The app requests only the permissions it needs to work.</p>
         <ul>
-            <li><strong>Google AdMob:</strong> We display banner, interstitial, and app open advertisements to keep the base service free. AdMob may collect and use service data, such as your device's advertising ID and network information, to show relevant ads. We do not use remarketing services to target you after you have left the app.</li>
-            <li><strong>RevenueCat & Google Play Billing:</strong> We offer an optional "Ad-Free Pro" upgrade within the app. All payment processing is securely handled by Google Play Billing, and subscription statuses are verified via RevenueCat. We do not process, collect, or store your financial details, billing address, or credit card information on our developer servers.</li>
+            <li><strong>Precise location (GPS):</strong> used solely for the Qibla and Compass features. Location is processed locally on your device in real time and is only accessed while you are actively using these features. It is never stored on our servers, sent to the developer or sold to third parties.</li>
+            <li><strong>Files you select:</strong> if you use the bulk upload feature, the app reads the .txt or .csv files you choose and uses them only to update your local dictionary database. The files and their contents are never uploaded or sent off your device.</li>
+            <li><strong>Notifications and exact alarms:</strong> the app requests the POST_NOTIFICATIONS and SCHEDULE_EXACT_ALARM permissions to deliver the scheduled "Word of the Day" and to show the active status badge. These run locally on your device's clock. We do not track, log or transmit how you interact with these notifications.</li>
+            <li><strong>Device identifiers:</strong> the third-party services described below collect device IDs and advertising identifiers to deliver ads and manage the premium upgrade.</li>
         </ul>
 
-        <h2>4. Data Retention and Deletion Policy</h2>
-        <p>In compliance with modern app store Data Safety regulations:</p>
+        <h2>3. Third-Party Services</h2>
+        <p>These providers handle data under their own privacy policies:</p>
         <ul>
-            <li><strong>No Account Data:</strong> Because Military Abbreviation operates entirely without user accounts, we do not hold any personal profile data on any remote servers.</li>
-            <li><strong>Local Data Deletion:</strong> Any custom abbreviations, categories, or tactical symbols you create are stored securely and locally on your device. You can permanently delete this data at any time by clearing the app's cache in your Android settings, or by simply uninstalling the app.</li>
-            <li><strong>No Deletion Request Required:</strong> Because we do not collect or transmit personal user data to external developer servers, no formal data deletion request to the developer is necessary.</li>
+            <li><strong>Google AdMob:</strong> shows banner, interstitial and app-open ads that keep the base app free. AdMob may collect and use data such as your device's advertising ID and network information to show relevant ads. We do not use remarketing services to target you after you leave the app. See <a href="https://policies.google.com/privacy" class="contact-link" target="_blank" rel="noopener">Google's Privacy Policy</a> and <a href="https://business.safety.google/privacy/" class="contact-link" target="_blank" rel="noopener">how Google uses advertising data</a>.</li>
+            <li><strong>Google Play Billing:</strong> handles all payment processing for the optional "Ad-Free Pro" upgrade. See <a href="https://policies.google.com/privacy" class="contact-link" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+            <li><strong>RevenueCat:</strong> verifies your "Ad-Free Pro" subscription status. See <a href="https://www.revenuecat.com/privacy" class="contact-link" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a>.</li>
+        </ul>
+        <p>We do not process, collect or store your financial details, billing address or card information on our servers.</p>
+
+        <h2>4. Data Retention and Deletion</h2>
+        <ul>
+            <li><strong>No account data:</strong> because the app works without user accounts, we hold no personal profile data on any remote server.</li>
+            <li><strong>Local data:</strong> the abbreviations, categories and tactical symbols you create are stored locally on your device. You can delete them permanently at any time in Android Settings &gt; Apps &gt; Military Abbreviation &gt; Storage &gt; Clear storage, or by uninstalling the app.</li>
+            <li><strong>Deletion requests:</strong> because we do not collect or transmit personal data to our servers, you do not need to send us a deletion request. You are still welcome to contact us with any questions (see Contact).</li>
+            <li><strong>Advertising data:</strong> data collected by Google AdMob is retained by Google under Google's policies.</li>
         </ul>
 
         <h2>5. Analytics and Tracking</h2>
-        <p>We maintain a lean and private user experience. We do not use generalized usage tracking, behavioral monitoring, or analytics tools (such as Google Analytics). Our third-party partners (RevenueCat and AdMob) only collect the minimum telemetry data required to verify your subscription status and serve advertisements.</p>
+        <p>We do not use general usage tracking, behavioural monitoring or analytics tools such as Google Analytics. Our third-party partners, RevenueCat and AdMob, collect only the minimum data needed to verify your subscription status and serve ads.</p>
 
-        <h2>6. Your Privacy Rights & Consent</h2>
-        <p>Depending on your region (such as the EEA or the UK), you have specific rights regarding your personal data and ad tracking.</p>
+        <h2>6. Your Choices and Rights</h2>
         <ul>
-            <li><strong>Consent Management:</strong> If applicable in your region, you will be presented with a Consent Management Platform (CMP) dialog upon launching the app, allowing you to grant or deny permission for personalized ad tracking.</li>
-            <li><strong>Opt-Out of Personalized Ads:</strong> You can opt-out of personalized advertising at any time by navigating to your device's system settings (e.g., Google Settings > Ads > Opt out of Ads Personalization).</li>
+            <li><strong>Permissions:</strong> you can grant or revoke the app's permissions at any time in Android Settings.</li>
+            <li><strong>Ad consent:</strong> where applicable in your region (such as the EEA or the UK), a Consent Management Platform (CMP) dialog appears when you launch the app, letting you grant or deny permission for personalised ad tracking.</li>
+            <li><strong>Personalised ads:</strong> you can opt out of personalised advertising at any time in your device's settings (for example, Google Settings &gt; Ads &gt; Opt out of Ads Personalisation).</li>
         </ul>
+        <p>Depending on where you live (for example under the GDPR in the EEA/UK), you may have rights to access, correct or delete personal data and to object to processing. Because the app keeps your data on your device, most of these you can exercise directly on the device; for anything else, contact us.</p>
 
-        <h2>7. Children’s Privacy</h2>
-        <p>Our Service does not address anyone under the age of 13 (or 16 in certain jurisdictions). We do not knowingly collect personally identifiable information from children. If you are a parent or guardian and you are aware that your child has provided us with personal data, please contact us immediately so we can take steps to ensure it is purged from any associated third-party services.</p>
+        <h2>7. Children's Privacy</h2>
+        <p>The app is not directed at anyone under the age of 13 (or 16 in certain jurisdictions). We do not knowingly collect personally identifiable information from children. If you are a parent or guardian and believe your child has provided us with personal data, please contact us so we can take steps to have it removed from any associated third-party services.</p>
 
-        <h2>8. Security of Data</h2>
-        <p>The security of your operational data is critical to us. Because we do not transmit your location, dictionary entries, or drawings to external developer servers, the risk of external data breaches is mitigated natively by the application's architecture. However, please remember that no method of electronic storage or transmission over the Internet is 100% secure. While we strive to use commercially acceptable means to protect your device data, we cannot guarantee absolute security.</p>
+        <h2>8. Security</h2>
+        <p>Because the app does not send your location, dictionary entries or drawings to our servers, the risk of a breach on our side is limited by design. However, no method of electronic storage or transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
 
-        <h2>9. Changes to This Privacy Policy</h2>
-        <p>We may update our Privacy Policy from time to time to reflect changes in legal requirements or new app features. We will notify you of any changes by updating the "Last Updated" date at the top of this policy. You are advised to review this Privacy Policy periodically for any changes.</p>
+        <h2>9. International Processing</h2>
+        <p>The third-party services named above may process data on servers outside your country, under their own safeguards.</p>
 
-        <h2>10. Contact Us</h2>
-        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how your data is handled, please contact the developer via email at: <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>.</p>
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this policy to reflect changes in legal requirements or app features. When we do, we will update the date at the top of this page. For significant changes, we will also note them in the app's store listing or release notes.</p>
+
+        <h2>11. Contact</h2>
+        <p>For questions or requests about this policy or how your data is handled, email <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>. You can also use the Direct Transmission Hub at the bottom of this page.</p>
     </div>
 
     <!-- DIRECT TRANSMISSION HUB (shared component from zyeemzia.com) -->

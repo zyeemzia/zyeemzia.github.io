@@ -82,6 +82,12 @@
         a.contact-link { color: #3b82f6; text-decoration: none; font-weight: 600; }
         a.contact-link:hover { text-decoration: underline; }
 
+        /* AT-A-GLANCE SUMMARY LIST */
+        ul.glance { list-style: none; padding: 15px 20px; margin: 0 0 20px; background: #f1f5f9; border-radius: 8px; border-left: 4px solid #3b82f6; transition: background 0.3s ease; }
+        ul.glance li { margin-bottom: 8px; text-align: left; }
+        ul.glance li:last-child { margin-bottom: 0; }
+        ul.glance li strong { color: #0f172a; transition: color 0.3s ease; }
+
         /* THEME TOGGLE BUTTON CSS (SVG Icons) */
         .theme-toggle-btn {
             position: fixed;
@@ -129,6 +135,8 @@
         
         body.dark-mode .meta-info { background: rgba(17, 24, 39, 0.8); border-color: #1f2937; border-left-color: #3b82f6;}
         body.dark-mode .meta-info strong { color: #f8fafc; }
+        body.dark-mode ul.glance { background: rgba(17, 24, 39, 0.8); border-left-color: #3b82f6; }
+        body.dark-mode ul.glance li strong { color: #f8fafc; }
 
         body.dark-mode .theme-toggle-btn { background: #111827; border-color: #334155; color: #94a3b8; box-shadow: 0 4px 6px rgba(0,0,0,0.3);}
         body.dark-mode .theme-toggle-btn:hover { border-color: #475569; color: #f8fafc; }
@@ -136,6 +144,8 @@
         /* Dark state: Show Sun icon to toggle Light Mode */
         body.dark-mode .icon-moon { display: none; }
         body.dark-mode .icon-sun { display: block; }
+            /* phones: justified text leaves wide gaps between words, so use normal alignment */
+        @media (max-width: 650px) { .container, .container p, .container li, .policy-card, .policy-card p, .policy-card li, .legal-entity-box p { text-align: left; } }
     </style>
     <link rel="stylesheet" href="transmit.css?v=3">
 </head>
@@ -163,45 +173,77 @@
         <a href="index.html" class="back-btn">← Return to Matrix Dashboard</a>
         
         <h1>Privacy Policy</h1>
-        
+
         <div class="meta-info">
             <p><strong>Application:</strong> GR CONVERTER PRO</p>
-            <p><strong>Developer:</strong> ZyeemZia™</p>
-            <p><strong>Last Updated:</strong> May 29, 2026</p>
+            <p><strong>Package (Google Play ID):</strong> com.zyeemzia.grconverterpro</p>
+            <p><strong>Developer:</strong> ZyeemZia™ (Zyeem Bin Zia), Dhaka, Bangladesh</p>
+            <p><strong>Effective date / Last updated:</strong> 19 October 2026</p>
         </div>
 
-        <h2>1. Introduction</h2>
-        <p>Welcome to GR CONVERTER PRO. This Privacy Policy informs you of our policies regarding the collection, use, and disclosure of personal data when you use our tactical mapping and coordinate conversion application. By using the app, you agree to the collection and use of information in accordance with this policy.</p>
+        <p>This Privacy Policy explains how GR CONVERTER PRO (“the app”), a tactical mapping and coordinate conversion app, uses, stores and shares information when you use it. By using the app, you agree to the practices described here.</p>
 
-        <h2>2. Information Collection and Use</h2>
-        <p>We prioritize a privacy-first user experience. We only request the permissions and data strictly necessary for the app to function:</p>
-        <ul>
-            <li><strong>Precise Location Data (GPS):</strong> We use your device's GPS to provide real-time coordinate conversions, map centering, and tactical navigation. This data is processed locally on your device.</li>
-            <li><strong>Foreground Location Services:</strong> To support our Tactical Route Tracker, the app utilizes a secure foreground service to access your location. This ensures continuous, accurate route logging during field operations while the app is actively running, maintaining a persistent notification even when your device screen is locked. We do not request or utilize background location permissions. Your location data is processed locally and is never transmitted to our servers.</li>
-            <li><strong>Local Device Storage:</strong> Operational data—including custom Waypoints, saved Tactical Routes, Tactical Reports, and downloaded Offline Map Caches (AO Tiles)—is stored directly and securely on your device's local storage. We do not transmit, sync, or back up this data to any external servers.</li>
-            <li><strong>Clipboard Access:</strong> We request clipboard access solely when you use the "PASTE LINK" function to extract coordinates. We do not store, track, or transmit your clipboard history.</li>
-            <li><strong>Device Identifiers:</strong> We use third-party services (Google AdMob) that collect advertising identifiers to facilitate ad delivery.</li>
+        <h2>1. Summary</h2>
+        <ul class="glance">
+            <li><strong>On your device:</strong> your GPS location, route tracking history, waypoints, routes, tactical reports and offline map tiles (AO tiles) are processed and stored locally. They are not sent to our servers, synced or backed up.</li>
+            <li><strong>Map providers:</strong> OpenStreetMap, Esri, Carto and OpenTopo receive your IP address when the app fetches or downloads map tiles.</li>
+            <li><strong>Ads:</strong> yes, for non-PRO users, through Google AdMob, which uses your device’s advertising ID.</li>
+            <li><strong>Purchases:</strong> an optional PRO subscription, paid through Google Play Billing and verified through RevenueCat. We do not store your payment details.</li>
+            <li><strong>Never collected:</strong> your clipboard history, your email address for marketing, and general usage analytics (no Google Analytics).</li>
         </ul>
 
-        <h2>3. Third-Party Service Providers</h2>
-        <p>To provide advanced mapping, monetization, and subscription services, we integrate with secure third-party platforms:</p>
+        <h2>2. Information the App Uses</h2>
+        <p>The app requests only the permissions and data it needs to work:</p>
         <ul>
-            <li><strong>Map Tile Providers (OpenStreetMap, Esri, Carto, OpenTopo):</strong> Retrieving live map tiles, as well as downloading high-resolution tiles for the Offline Cache engine, inherently exposes your IP address to these providers to fetch and render the map imagery.</li>
-            <li><strong>Google AdMob:</strong> We display advertisements (including banner, interstitial, and app-open ads) to support the app for non-PRO users. AdMob may collect your device’s advertising ID to show relevant content.</li>
-            <li><strong>RevenueCat & Google Play Billing:</strong> We offer an optional "PRO" subscription. All payments are securely handled by Google Play Billing, and subscription statuses are verified via RevenueCat. We do not store your financial details or credit card information.</li>
+            <li><strong>Precise location (GPS):</strong> used for real-time coordinate conversions, map centring and tactical navigation. Location is processed locally on your device.</li>
+            <li><strong>Foreground location service:</strong> the Tactical Route Tracker uses a foreground service to keep logging your route accurately while the app is running, including when your screen is locked. A persistent notification is shown while it is active. The app does not request or use the background location permission, and your location is never transmitted to our servers.</li>
+            <li><strong>Local storage:</strong> waypoints, saved tactical routes, tactical reports and downloaded offline map tiles (AO tiles) are stored on your device. We do not transmit, sync or back up this data to any external server.</li>
+            <li><strong>Clipboard:</strong> the app accesses the clipboard only when you tap “PASTE LINK” to extract coordinates. We do not store, track or transmit your clipboard history.</li>
+            <li><strong>Device identifiers:</strong> Google AdMob collects your device’s advertising ID to deliver ads (see section 3).</li>
         </ul>
 
-        <h2>4. Analytics and Tracking</h2>
-        <p>We do not use generalized usage tracking or analytics tools (such as Google Analytics). Our partners (RevenueCat and AdMob) only collect the minimum data required to verify your subscription status and serve advertisements. We do not collect your email address for marketing purposes.</p>
+        <h2>3. Third-Party Services</h2>
+        <p>The app relies on the following third-party services for mapping, advertising and subscriptions:</p>
+        <ul>
+            <li><strong>Map tile providers (OpenStreetMap, Esri, Carto, OpenTopo):</strong> when the app loads live map tiles, or downloads tiles for offline use, your IP address is necessarily visible to these providers so that they can deliver the map imagery. See the <a href="https://osmfoundation.org/wiki/Privacy_Policy" class="contact-link" target="_blank" rel="noopener">OpenStreetMap Foundation privacy policy</a> and the <a href="https://www.esri.com/en-us/privacy/overview" class="contact-link" target="_blank" rel="noopener">Esri privacy statement</a>; Carto and OpenTopo apply their own privacy policies.</li>
+            <li><strong>Google AdMob:</strong> shows banner, interstitial and app-open ads to non-PRO users to support the app. AdMob may collect your device’s advertising ID to show relevant ads. See the <a href="https://policies.google.com/privacy" class="contact-link" target="_blank" rel="noopener">Google Privacy Policy</a> and <a href="https://business.safety.google/privacy/" class="contact-link" target="_blank" rel="noopener">how Google uses data from partner apps</a>.</li>
+            <li><strong>Google Play Billing:</strong> handles all payments for the optional PRO subscription. We do not store your financial details or card information. See the <a href="https://policies.google.com/privacy" class="contact-link" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
+            <li><strong>RevenueCat:</strong> verifies your PRO subscription status. See the <a href="https://www.revenuecat.com/privacy" class="contact-link" target="_blank" rel="noopener">RevenueCat privacy policy</a>.</li>
+        </ul>
 
-        <h2>5. Children’s Privacy</h2>
-        <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13.</p>
+        <h2>4. Data Retention and Deletion</h2>
+        <ul>
+            <li><strong>Data on your device:</strong> your waypoints, routes, tactical reports and offline map tiles stay on your device until you remove them. To delete them, go to Android <strong>Settings &gt; Apps &gt; GR CONVERTER PRO &gt; Storage &gt; Clear storage</strong>, or uninstall the app.</li>
+            <li><strong>Our servers:</strong> we do not keep any of this data on our own servers.</li>
+            <li><strong>Advertising data:</strong> data collected by Google AdMob is retained by Google under Google’s policies.</li>
+            <li><strong>Subscription records:</strong> payment and subscription status records are handled by Google Play and RevenueCat under their own policies.</li>
+        </ul>
 
-        <h2>6. Security of Data</h2>
-        <p>We mitigate data breach risks by processing and storing the entirety of your location data, tactical tracking history, and offline maps locally on your device rather than on external servers. However, please be aware that no method of transmission over the Internet or electronic device storage is 100% secure.</p>
+        <h2>5. Analytics and Tracking</h2>
+        <p>We do not use general usage tracking or analytics tools such as Google Analytics. Our partners, RevenueCat and AdMob, collect only the data needed to verify your subscription status and to serve ads. We do not collect your email address for marketing.</p>
 
-        <h2>7. Contact Us</h2>
-        <p>If you have questions or concerns about this Privacy Policy, please contact the developer via email at: <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>.</p>
+        <h2>6. Your Choices and Rights</h2>
+        <ul>
+            <li><strong>Permissions:</strong> you can grant or revoke the location permission at any time in Android Settings. Features such as GPS conversions and the Tactical Route Tracker need it to work.</li>
+            <li><strong>Personalised ads:</strong> you can opt out of personalised ads in your Android settings (<strong>Settings &gt; Google &gt; Ads</strong>, or <strong>Settings &gt; Privacy &gt; Ads</strong>, depending on your device). Where required by law, your choices about ads are requested as Google’s policies require.</li>
+            <li><strong>Ads and PRO:</strong> ads are shown only to non-PRO users.</li>
+        </ul>
+        <p>Depending on where you live (for example under the GDPR in the EEA/UK), you may have rights to access, correct or delete personal data and to object to processing. Because the app keeps your data on your device, most of these you can exercise directly on the device; for anything else, contact us.</p>
+
+        <h2>7. Children’s Privacy</h2>
+        <p>GR CONVERTER PRO is not directed at children under 13 (or 16 in certain jurisdictions). We do not knowingly collect personal information from children. If you believe a child has provided personal information through the app, please contact us.</p>
+
+        <h2>8. Security</h2>
+        <p>We reduce the risk of a data breach by processing and storing all of your location data, route tracking history and offline maps locally on your device rather than on external servers. However, no method of transmission over the internet or of electronic storage on a device is completely secure.</p>
+
+        <h2>9. International Processing</h2>
+        <p>The third-party services named above (the map tile providers, Google and RevenueCat) may process data on servers outside your country, under their own safeguards.</p>
+
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. When we do, we will change the date at the top of this page. For significant changes, we will also note it in the app’s store listing or release notes.</p>
+
+        <h2>11. Contact</h2>
+        <p>If you have questions or concerns about this Privacy Policy or your data, email us at <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>. You can also use the Direct Transmission Hub at the bottom of this page.</p>
     </div>
 
     <!-- DIRECT TRANSMISSION HUB (shared component from zyeemzia.com) -->

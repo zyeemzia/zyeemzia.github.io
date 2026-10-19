@@ -4,6 +4,7 @@
           <script src="https://zyeemzia.com/transmit.js" defer></script>
    Theme: data-tx-dark = selector that means dark (default "body.dark-mode"), data-tx-light = selector that means light,
           data-tx-auto="media" = otherwise follow the device setting. Pages that render later call ZZTransmit.mount(el).
+   Tone:  data-tx-tone="civil" uses plain everyday wording (for learning sites) instead of the hub's signal vocabulary.
    Copyright © ZyeemZia */
 (function () {
   'use strict';
@@ -23,19 +24,27 @@
     ok: svg('<circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/>')
   };
   var count = 0;
+  var WORDS = {
+    hub: { status: 'Secure channel · Online', title: 'Direct Transmission Hub', desk: 'Command desk', send: 'Transmit message', sending: 'Transmitting…', done: 'Transmission received',
+      lead: 'For operational inquiries, software support, Academy certificates or partnership requests, transmit a message straight to the ZyeemZia command desk.',
+      thanks: 'Thank you. Your message is on its way to the ZyeemZia command desk, and the reply will come to the email address you gave.' },
+    civil: { status: 'Online · we reply by email', title: 'Get in touch', desk: 'Email us', send: 'Send message', sending: 'Sending…', done: 'Message received',
+      lead: 'Questions about a course, an exam, a certificate or a partnership? Write to us and we will reply by email.',
+      thanks: 'Thank you. Your message has reached the ZyeemZia team, and the reply will come to the email address you gave.' }
+  };
 
   function mount(el) {
-    var id = 'tx' + (++count), d = el.dataset;
+    var id = 'tx' + (++count), d = el.dataset, w = WORDS[d.txTone] || WORDS.hub; el._txw = w;
     var topic = TOPICS.some(function (t) { return t[0] === d.txTopic; }) ? d.txTopic : 'apps';
     var regarding = d.txRegarding || '', source = d.txSource || document.title;
-    var lead = d.txLead || 'For operational inquiries, software support, Academy certificates or partnership requests, transmit a message straight to the ZyeemZia command desk.';
+    var lead = d.txLead || w.lead;
     var h = d.txHeading === 'h3' ? 'h3' : 'h2';
     el.classList.add('tx'); if (!el.id) el.id = 'contact';
     el.setAttribute('aria-labelledby', id + '-t');
     el.innerHTML =
-      '<div class="tx-head"><span class="tx-status"><i></i>Secure channel · Online</span><' + h + ' id="' + id + '-t">Direct Transmission Hub</' + h + '><p>' + esc(lead) + '</p></div>' +
+      '<div class="tx-head"><span class="tx-status"><i></i>' + w.status + '</span><' + h + ' id="' + id + '-t">' + w.title + '</' + h + '><p>' + esc(lead) + '</p></div>' +
       '<div class="tx-body"><div class="tx-rail">' +
-        '<div class="tx-chan">' + ICON.mail + '<div><b>Command desk</b><span>' + EMAIL + '</span><button type="button" class="tx-copy">Copy email</button></div></div>' +
+        '<div class="tx-chan">' + ICON.mail + '<div><b>' + w.desk + '</b><span>' + EMAIL + '</span><button type="button" class="tx-copy">Copy email</button></div></div>' +
         (d.txPolicy === 'off' ? '' : '<a class="tx-chan" href="https://policy.zyeemzia.com/">' + ICON.shield + '<div><b>Trust &amp; policy</b><span>Policy hub</span><small>Terms, privacy and security in one place.</small></div></a>') +
         '<div class="tx-chan">' + ICON.lock + '<div><b>Delivery</b><span>Encrypted in transit</span><small>Sent over HTTPS by FormSubmit straight to the ZyeemZia inbox.</small></div></div>' +
       '</div>' +
@@ -59,9 +68,9 @@
         '<div class="tx-field"><label class="tx-label" for="' + id + '-msg">Message <span class="tx-count" aria-hidden="true">0 / ' + MAX_MSG + '</span></label><textarea id="' + id + '-msg" name="Message" rows="6" maxlength="' + MAX_MSG + '" required placeholder="Tell us what you need: the more detail, the faster we can help."></textarea><div class="tx-err">Please write at least 10 characters.</div></div>' +
         '<div class="tx-field tx-attach"><span class="tx-label">Attachment <em>(optional)</em></span><label class="tx-drop">' + ICON.upload + '<div><b>Drop a file here or browse</b><small>PDF, Word or image · up to 5 MB</small></div><input type="file" name="attachment" accept="image/*,.pdf,.doc,.docx" aria-label="Attach a file"></label>' +
           '<div class="tx-file"><span></span><small></small><button type="button">Remove</button></div><div class="tx-err">That file is larger than 5 MB. Please attach a smaller one.</div></div>' +
-        '<div class="tx-foot"><p class="tx-note">Your message goes only to ZyeemZia. It is never shared or used for marketing.</p><button class="tx-send" type="submit">' + ICON.send + '<span>Transmit message</span></button></div>' +
+        '<div class="tx-foot"><p class="tx-note">Your message goes only to ZyeemZia. It is never shared or used for marketing.</p><button class="tx-send" type="submit">' + ICON.send + '<span>' + w.send + '</span></button></div>' +
       '</form></div>' +
-      '<div class="tx-done" role="status" tabindex="-1">' + ICON.ok + '<h3>Transmission received</h3><p>Thank you. Your message is on its way to the ZyeemZia command desk, and the reply will come to the email address you gave.</p><button type="button" class="tx-again">Send another message</button></div>';
+      '<div class="tx-done" role="status" tabindex="-1">' + ICON.ok + '<h3>' + w.done + '</h3><p>' + w.thanks + '</p><button type="button" class="tx-again">Send another message</button></div>';
     wire(el); themeWatch(el);
     if (/[?&]sent=1(&|$)/.test(location.search)) {
       el.classList.add('sent');
@@ -118,9 +127,9 @@
       form.querySelector('input[name=_next]').value = location.origin + location.pathname + '?sent=1#' + el.id;
       // an empty phone number sends neither the number nor its country code
       code.disabled = !phone.value.trim(); phone.disabled = !phone.value.trim();
-      send.disabled = true; send.querySelector('span').textContent = 'Transmitting…';
+      send.disabled = true; send.querySelector('span').textContent = el._txw.sending;
       // a page restored from the back button gets a working form again
-      addEventListener('pageshow', function () { send.disabled = false; send.querySelector('span').textContent = 'Transmit message'; code.disabled = false; phone.disabled = false; }, { once: true });
+      addEventListener('pageshow', function () { send.disabled = false; send.querySelector('span').textContent = el._txw.send; code.disabled = false; phone.disabled = false; }, { once: true });
     });
   }
 

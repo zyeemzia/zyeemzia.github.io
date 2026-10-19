@@ -506,9 +506,10 @@
         .course .acts .bk { color: rgb(var(--c)); }
         .course .acts .bk:hover { opacity: 0.7; }
         .tier-stack { display: flex; flex-direction: column; gap: 10px; }
-        .ladder { align-items: start; }
-        .ladder .course { flex: none; }
-        .ladder .course p { flex-grow: 0; }
+        /* cards in a row share one height; the two tier-3 expert tracks sit side by side so no tier leaves an empty column */
+        .ladder { align-items: stretch; }
+        .ladder:not(.ladder-3) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr); }
+        .tier-stack { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; flex: 1; }
 
         .c-blue { --c: 37, 99, 235; } .c-indigo { --c: 79, 70, 229; } .c-violet { --c: 124, 58, 237; } .c-red { --c: 190, 18, 60; }
         .c-pink { --c: 190, 24, 93; } .c-orange { --c: 194, 65, 12; } .c-cyan { --c: 14, 116, 144; } .c-emerald { --c: 4, 120, 87; }
@@ -551,6 +552,16 @@
         }
         @media (max-width: 480px) {
             .ladder { grid-template-columns: minmax(0, 1fr); border-left: 2px solid #c7d2fe; padding-left: 14px; }
+        }
+        /* narrower screens: two columns, with the tier-3 pair on its own full row; phones: one column */
+        @media (max-width: 1100px) {
+            .ladder:not(.ladder-3) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+            .ladder:not(.ladder-3) .tier:nth-child(3) { grid-column: 1 / -1; }
+            .ladder:not(.ladder-3)::before { display: none; }
+            .ladder:not(.ladder-3) .tier-tag { align-self: flex-start; }
+        }
+        @media (max-width: 480px) {
+            .ladder:not(.ladder-3), .tier-stack { grid-template-columns: minmax(0, 1fr); }
         }
 
         /* link to the Academy campus site */

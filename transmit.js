@@ -2,6 +2,8 @@
    Usage: <link rel="stylesheet" href="https://zyeemzia.com/transmit.css">
           <section class="tx-mount" data-tx-topic="privacy" data-tx-regarding="Military Office"></section>
           <script src="https://zyeemzia.com/transmit.js" defer></script>
+   Theme: data-tx-dark = selector that means dark (default "body.dark-mode"), data-tx-light = selector that means light,
+          data-tx-auto="media" = otherwise follow the device setting. Pages that render later call ZZTransmit.mount(el).
    Copyright © ZyeemZia */
 (function () {
   'use strict';
@@ -43,7 +45,8 @@
         '<input type="hidden" name="Source" value="' + esc(source) + '">' + (regarding ? '<input type="hidden" name="Regarding" value="' + esc(regarding) + '">' : '') +
         '<input type="text" name="_honey" class="tx-hp" tabindex="-1" autocomplete="off" aria-hidden="true">' +
         '<fieldset class="tx-topics"><legend class="tx-label">What is this about?</legend>' + TOPICS.map(function (t) {
-          return '<label class="tx-topic"><input type="radio" name="Topic" value="' + esc(t[1]) + '"' + (t[0] === topic ? ' checked' : '') + '><span>' + esc(t[1]) + '</span></label>';
+          var label = t[0] === 'apps' && d.txAppsLabel ? d.txAppsLabel : t[1];
+          return '<label class="tx-topic"><input type="radio" name="Topic" value="' + esc(label) + '"' + (t[0] === topic ? ' checked' : '') + '><span>' + esc(label) + '</span></label>';
         }).join('') + '</fieldset>' +
         (regarding ? '<div class="tx-regarding">Regarding <b>' + esc(regarding) + '</b></div>' : '') +
         '<div class="tx-row">' +
@@ -59,7 +62,7 @@
         '<div class="tx-foot"><p class="tx-note">Your message goes only to ZyeemZia. It is never shared or used for marketing.</p><button class="tx-send" type="submit">' + ICON.send + '<span>Transmit message</span></button></div>' +
       '</form></div>' +
       '<div class="tx-done" role="status" tabindex="-1">' + ICON.ok + '<h3>Transmission received</h3><p>Thank you. Your message is on its way to the ZyeemZia command desk, and the reply will come to the email address you gave.</p><button type="button" class="tx-again">Send another message</button></div>';
-    wire(el);
+    wire(el); themeWatch(el);
     if (/[?&]sent=1(&|$)/.test(location.search)) {
       el.classList.add('sent');
       setTimeout(function () { var done = el.querySelector('.tx-done'); el.scrollIntoView({ block: 'start' }); if (done) done.focus({ preventScroll: true }); }, 60);
@@ -121,6 +124,17 @@
     });
   }
 
+  // dark or light, matching however the host page does it
+  function themeWatch(el) {
+    var d = el.dataset, darkSel = d.txDark || 'body.dark-mode', lightSel = d.txLight || '', auto = d.txAuto === 'media';
+    var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+    var hit = function (sel) { if (!sel) return false; try { return !!document.querySelector(sel); } catch (x) { return false; } };
+    var apply = function () { el.classList.toggle('tx-dark', hit(darkSel) ? true : hit(lightSel) ? false : !!(auto && mq && mq.matches)); };
+    apply();
+    var mo = new MutationObserver(apply); mo.observe(document.documentElement, { attributes: true }); if (document.body) mo.observe(document.body, { attributes: true });
+    if (mq) { if (mq.addEventListener) mq.addEventListener('change', apply); else if (mq.addListener) mq.addListener(apply); }
+  }
+
   function valid(i) {
     var v = i.value.trim();
     if (i.type === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
@@ -128,5 +142,6 @@
   }
 
   function init() { Array.prototype.forEach.call(document.querySelectorAll('.tx-mount'), function (el) { if (!el.classList.contains('tx')) mount(el); }); }
+  window.ZZTransmit = { mount: function (el) { if (el && !el.classList.contains('tx')) mount(el); }, scan: init };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

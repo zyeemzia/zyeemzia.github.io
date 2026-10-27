@@ -975,7 +975,7 @@
         });
 
         // --- 2. CREDENTIAL VERIFICATION: open the matching course's verification page ---
-        const VERIFY_SITES = { ZPMP: 'zpmp', ZAIA: 'zaia', ZCNA: 'zcna', ZCNP: 'zcnp', ZCIE: 'zcie', ZCIESECURITY: 'zcie-security', ZCDE: 'zcde', ZITILM: 'zitil', ZCSS: 'zcss', ZAIG: 'zaig', ZCSTG: 'zcstg', ZMLS: 'zmls', ZEPMS: 'zepms', ZITSS: 'zitss', ZHRLS: 'zhrls' };
+        const VERIFY_SITES = { ZPMP: 'zpmp', ZAIA: 'zaia', ZCNA: 'zcna', ZCNP: 'zcnp', ZCIE: 'zcie', ZCIESECURITY: 'zcie-security', ZCDE: 'zcde', ZITILM: 'zitil', ZCSS: 'zcss', ZAIG: 'zaig', ZCSTG: 'zcstg', ZMLS: 'zmls', ZEPMS: 'zepms', ZITSS: 'zitss', ZHRLS: 'zhrls', TOTIHL: 'totihl' };
         document.getElementById('verifyForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const id = document.getElementById('verifyId').value.trim().toUpperCase().replace(/\s+/g, '');

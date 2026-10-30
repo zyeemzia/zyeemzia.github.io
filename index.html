@@ -731,9 +731,9 @@
             <p class="ac-lead">Free, self-paced courses built like field manuals: interactive lessons, scenarios and labs, a printable book, a timed official exam graded on the ZyeemZia server, and a certificate anyone can verify.</p>
 
             <div class="ac-stats">
-                <div><b>21</b><span>Courses</span></div>
-                <div><b>17</b><span>Certification tracks</span></div>
-                <div><b>903</b><span>Lessons</span></div>
+                <div><b>22</b><span>Courses</span></div>
+                <div><b>18</b><span>Certification tracks</span></div>
+                <div><b>940</b><span>Lessons</span></div>
                 <div><b>100%</b><span>Free, online and offline</span></div>
             </div>
 
@@ -895,6 +895,12 @@
                         <span class="spec">36 lessons · 10 workshops · 21 cases · 40-question exam · capstone · English · বাংলা · Français</span>
                         <div class="acts"><a class="bk" href="https://unbdlaw.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://unbdlaw.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
                     </div>
+                    <div class="course c-blue">
+                        <span class="code">UN-LEGAL</span><span class="cname">United Nations Legal System · Professional</span>
+                        <p>The Charter and organs, peace and security, the military law of UN operations, police and civilian pillars, immunities, accountability, courts, human rights, humanitarian action and law-making, updated to 2026.</p>
+                        <span class="spec">37 lessons · 10 workshops · 20 cases · 40-question exam · capstone · English · বাংলা · Français</span>
+                        <div class="acts"><a class="bk" href="https://unlegalsystem.zyeemzia.com/book.html" target="_blank" rel="noopener">Book</a><a class="go" href="https://unlegalsystem.zyeemzia.com/" target="_blank" rel="noopener">Enter →</a></div>
+                    </div>
                 </div>
             </div>
 
@@ -981,7 +987,7 @@
         });
 
         // --- 2. CREDENTIAL VERIFICATION: open the matching course's verification page ---
-        const VERIFY_SITES = { ZPMP: 'zpmp', ZAIA: 'zaia', ZCNA: 'zcna', ZCNP: 'zcnp', ZCIE: 'zcie', ZCIESECURITY: 'zcie-security', ZCDE: 'zcde', ZITILM: 'zitil', ZCSS: 'zcss', ZAIG: 'zaig', ZCSTG: 'zcstg', ZMLS: 'zmls', ZEPMS: 'zepms', ZITSS: 'zitss', ZHRLS: 'zhrls', TOTIHL: 'totihl', UNBDLAW: 'unbdlaw' };
+        const VERIFY_SITES = { ZPMP: 'zpmp', ZAIA: 'zaia', ZCNA: 'zcna', ZCNP: 'zcnp', ZCIE: 'zcie', ZCIESECURITY: 'zcie-security', ZCDE: 'zcde', ZITILM: 'zitil', ZCSS: 'zcss', ZAIG: 'zaig', ZCSTG: 'zcstg', ZMLS: 'zmls', ZEPMS: 'zepms', ZITSS: 'zitss', ZHRLS: 'zhrls', TOTIHL: 'totihl', UNBDLAW: 'unbdlaw', UNLEGAL: 'unlegalsystem' };
         document.getElementById('verifyForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const id = document.getElementById('verifyId').value.trim().toUpperCase().replace(/\s+/g, '');

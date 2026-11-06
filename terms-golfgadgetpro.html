@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Golf Gadget Pro</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           BASE STYLING & THEME (DEFAULT: LIGHT MODE) 
+           ========================================= */
+        /* GLOBAL RESET FOR OVERFLOW PREVENTION */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body { 
+            font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background: #f8fafc; 
+            color: #0f172a; 
+            padding: 40px 20px; 
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevents horizontal scroll wobbling */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin: 0;
+        }
+        .container { 
+            max-width: 800px; 
+            width: 100%;
+            margin: 0 auto; 
+            background: #ffffff; 
+            padding: 40px 50px; 
+            border-radius: 12px; 
+            border: 1px solid #e2e8f0; 
+            text-align: justify; 
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); 
+            transition: all 0.3s ease;
+        }
+        .back-btn { 
+            display: inline-block; 
+            margin-bottom: 30px; 
+            color: #475569; 
+            font-weight: 600; 
+            text-decoration: none; 
+            border: 1px solid #cbd5e1; 
+            padding: 8px 20px; 
+            border-radius: 30px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+        .back-btn:hover { background: #e2e8f0; color: #0f172a; border-color: #94a3b8; }
+        
+        h1 { color: #0f172a; font-size: 32px; border-bottom: 1px solid #e2e8f0; padding-bottom: 15px; margin-top: 0; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease, border-color 0.3s ease;}
+        
+        /* Emerald Accent for Golf Gadget Pro */
+        h2 { color: #10b981; font-size: 20px; margin-top: 35px; text-transform: uppercase; letter-spacing: 1px;}
+        
+        p, li { color: #475569; font-size: 16px; font-weight: 500; margin-bottom: 15px; transition: color 0.3s ease; text-align: justify; }
+        ul { padding-left: 20px; }
+        
+        .meta-info {
+            background: #f1f5f9;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+            margin-bottom: 30px;
+            transition: background 0.3s ease;
+        }
+        .meta-info p { margin: 0; font-size: 15px; text-align: left; }
+        .meta-info strong { color: #0f172a; transition: color 0.3s ease; }
+        
+        a.contact-link { color: #10b981; text-decoration: none; font-weight: 600; }
+        a.contact-link:hover { text-decoration: underline; }
+
+        /* At-a-glance summary list */
+        .glance { list-style: none; padding: 15px 20px; margin: 0 0 20px; background: #f1f5f9; border-radius: 8px; border-left: 4px solid #10b981; transition: background 0.3s ease; }
+        .glance li { margin-bottom: 8px; text-align: left; }
+        .glance li:last-child { margin-bottom: 0; }
+        body.dark-mode .glance { background: rgba(17, 24, 39, 0.8); border-left-color: #10b981; }
+
+        /* THEME TOGGLE BUTTON CSS (SVG Icons) */
+        .theme-toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: #475569;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .theme-toggle-btn:hover { transform: scale(1.1); border-color: #94a3b8; color: #0f172a; }
+        
+        /* Default state: Light Mode */
+        .icon-moon { display: block; }
+        .icon-sun { display: none; }
+
+        /* Media Query adjusted to optimize mobile boundaries */
+        @media (max-width: 650px) {
+            body { padding: 20px 15px; } /* Reduce outer padding */
+            .container { padding: 30px 20px; } /* Prevents text squeezing on tiny screens */
+            h1 { font-size: 26px; }
+            .back-btn { font-size: 13px; padding: 8px 16px; margin-bottom: 20px; }
+            .theme-toggle-btn { top: 15px; right: 15px; width: 40px; height: 40px; } /* Slightly scale down button */
+        }
+
+        /* =========================================
+           DARK MODE OVERRIDES 
+           ========================================= */
+        body.dark-mode { background: #090d16; color: #f1f5f9; }
+        body.dark-mode .container { background: #111827; border-color: #1f2937; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); }
+        body.dark-mode .back-btn { color: #94a3b8; border-color: #334155; }
+        body.dark-mode .back-btn:hover { background: #1e293b; color: #f8fafc; border-color: #475569; }
+        
+        body.dark-mode h1 { color: #f8fafc; border-bottom-color: #334155; }
+        body.dark-mode p, body.dark-mode li { color: #9ca3af; }
+        
+        body.dark-mode .meta-info { background: rgba(17, 24, 39, 0.8); border-color: #1f2937; border-left-color: #10b981; }
+        body.dark-mode .meta-info strong { color: #f8fafc; }
+
+        body.dark-mode .theme-toggle-btn { background: #111827; border-color: #334155; color: #94a3b8; box-shadow: 0 4px 6px rgba(0,0,0,0.3);}
+        body.dark-mode .theme-toggle-btn:hover { border-color: #475569; color: #f8fafc; }
+
+        /* Dark state: Show Sun icon */
+        body.dark-mode .icon-moon { display: none; }
+        body.dark-mode .icon-sun { display: block; }
+            /* phones: justified text leaves wide gaps between words, so use normal alignment */
+        @media (max-width: 650px) { .container, .container p, .container li, .policy-card, .policy-card p, .policy-card li, .legal-entity-box p { text-align: left; } }
+    </style>
+    <link rel="stylesheet" href="transmit.css?v=3">
+</head>
+<body>
+
+    <button id="themeToggle" class="theme-toggle-btn" title="Toggle Light/Dark Mode">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+    </button>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">← Return to Matrix Dashboard</a>
+        
+        <h1>Terms of Service</h1>
+
+        <div class="meta-info">
+            <p><strong>Application:</strong> Golf Gadget Pro</p>
+            <p><strong>Package (Google Play ID):</strong> com.zyeemzia.golfgadgetpro</p>
+            <p><strong>Developer:</strong> ZyeemZia™ (Zyeem Bin Zia), Dhaka, Bangladesh</p>
+            <p><strong>Effective date / Last updated:</strong> 6 November 2026</p>
+            <p><strong>Privacy Policy:</strong> <a href="privacy-golfgadgetpro.html" class="contact-link">Read the Golf Gadget Pro privacy policy</a></p>
+        </div>
+
+        <h2>1. Agreement</h2>
+        <p>These Terms of Service ("Terms") govern your use of Golf Gadget Pro, a golf telemetry app with GPS distances, AR green reading, weather-based caddie advice, offline maps and an optional online tournament lobby, published by ZyeemZia&trade; (Zyeem Bin Zia) ("we", "us"). By downloading, installing or using the app, you agree to these Terms and to our <a href="privacy-golfgadgetpro.html" class="contact-link">Privacy Policy</a>. If you do not agree, please do not use the app. Because you obtain Golf Gadget Pro through Google Play, the <a href="https://play.google.com/about/play-terms/" class="contact-link" target="_blank" rel="noopener">Google Play Terms of Service</a> also apply.</p>
+
+        <h2>2. Licence</h2>
+        <p>We grant you a personal, non-exclusive, non-transferable, revocable licence to install and use Golf Gadget Pro on Android devices you own or control, for lawful purposes and in line with these Terms.</p>
+        <ul>
+            <li>Do not copy, modify, decompile, reverse engineer or create derivative works of the app, except where the law expressly allows it.</li>
+            <li>Do not sell, rent, sublicense or redistribute the app, or publish it under another name.</li>
+            <li>Do not remove or alter any copyright, trademark or other notices.</li>
+            <li>Do not try to bypass licence checks, purchase verification, advertising or other technical protections.</li>
+            <li>Do not use the app in any way that breaks the law or harms other people.</li>
+        </ul>
+
+        <h2>3. Reference Use Only</h2>
+        <p>Golf Gadget Pro is a reference and productivity aid. Distances, wind, slope, club and green-reading suggestions are estimates. They may be affected by GPS accuracy, weather data and camera conditions, and do not replace your own judgement or the rules and local rules of your course or competition.</p>
+        <p>You are responsible for how you use any result the app gives you. Do not use it as the sole basis for any decision where an error could cause injury, loss or damage.</p>
+
+        <h2>4. Safety</h2>
+        <ul>
+            <li>Stay aware of your surroundings. Do not use the app while driving, cycling or operating machinery, and keep to roads, paths and areas you are allowed to enter.</li>
+            <li>GPS, compass and other sensor readings can be inaccurate, especially near buildings, metal objects, under tree cover or with weak signal.</li>
+            <li>Follow your course's safety rules and etiquette, and only take a shot when the area ahead is clear.</li>
+        </ul>
+
+        <h2>5. Advertising</h2>
+        <p>Golf Gadget Pro is free to download and is supported by advertising from Google AdMob, which can also deliver ads from Meta Audience Network through mediation. Where the law requires it, you are asked for consent before personalised ads are shown. We are not responsible for the content of third-party ads or for the products, services or websites they promote. Details of the data advertising partners use are in our <a href="privacy-golfgadgetpro.html" class="contact-link">Privacy Policy</a>.</p>
+
+        <h2>6. PRO upgrade</h2>
+        <ul>
+            <li>The optional PRO upgrade is sold through Google Play Billing. Prices are shown in the app and on Google Play before you buy, and may include local taxes.</li>
+            <li>Payments, refunds and cancellations are handled by Google Play under its own terms and refund policy. We never see or store your payment card details.</li>
+            <li>Your purchase is linked to your Google Play account. Use the app's restore option (or reinstall while signed in to the same account) to recover it on a new device.</li>
+            <li>Purchase verification is provided by RevenueCat. Pro features may be improved or changed over time, but we will not remove the core benefit you paid for (such as ad removal) from a valid purchase.</li>
+            <li>Nothing in these Terms limits any right to a refund or remedy that you have under the consumer law of your country.</li>
+        </ul>
+
+        <h2>7. Your Data and Content</h2>
+        <ul>
+            <li>Your content and settings in Golf Gadget Pro are stored on your device. We do not operate accounts, and we cannot recover data that is lost, deleted, or removed when the app is uninstalled or its storage is cleared.</li>
+            <li>You keep all rights in the documents, files, entries and other content you create or import. You are responsible for having the right to use that content.</li>
+            <li>You are responsible for keeping your own backups of anything important.</li>
+            <li>How the app handles information is described in full in our <a href="privacy-golfgadgetpro.html" class="contact-link">Privacy Policy</a>.</li>
+        </ul>
+
+        <h2>8. Tournament Lobby</h2>
+        <p>The online Tournament Lobby is optional. If you take part:</p>
+        <ul>
+            <li>Choose an alias that does not impersonate anyone and is not offensive.</li>
+            <li>Keep chat respectful. Do not post abuse, harassment, hate speech, spam, illegal content or other people's personal information.</li>
+            <li>Enter only scores you actually played. Do not manipulate results.</li>
+            <li>We may remove content, or remove or block any participant, that breaks these rules or harms the service, and we may suspend or end the lobby at any time.</li>
+            <li>Report misuse to <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>.</li>
+        </ul>
+
+        <h2>9. Third-Party Services</h2>
+        <p>Some features use weather data from Open-Meteo and map tiles from online map providers. These services are provided by third parties under their own terms and may change, limit or stop without notice. We are not responsible for their availability, accuracy or content. Map data &copy; its respective providers and contributors, including OpenStreetMap contributors where shown.</p>
+
+        <h2>10. Intellectual Property</h2>
+        <p>Golf Gadget Pro, including its software, code, design, text, graphics, sounds and data compilations, is owned by Zyeem Bin Zia and protected by copyright and other laws. ZyeemZia&trade; and the Golf Gadget Pro name and logo are trademarks. These Terms give you no right to use them except to use the app as allowed here. Third-party components are used under their own licences.</p>
+
+        <h2>11. No Affiliation</h2>
+        <p>Golf Gadget Pro is an independent app. It is not affiliated with, endorsed by or connected to any government, armed force, ministry, NATO or other alliance, golf association or tournament body. Any military, organisational or historical names are used only to describe the subject matter.</p>
+
+        <h2>12. Disclaimer of Warranties</h2>
+        <p>To the fullest extent permitted by law, Golf Gadget Pro is provided "as is" and "as available", without warranties of any kind, express or implied, including fitness for a particular purpose, accuracy and non-infringement. We do not promise that the app will be error-free, uninterrupted, or compatible with every device.</p>
+
+        <h2>13. Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law, we are not liable for any indirect, incidental, special or consequential loss, or for loss of data, profit or opportunity, arising from your use of or inability to use Golf Gadget Pro. Our total liability for any claim is limited to the amount you paid for the app or Pro features in the twelve months before the claim. Nothing in these Terms excludes or limits liability that cannot be excluded or limited under applicable law, including your statutory rights as a consumer.</p>
+
+        <h2>14. Termination</h2>
+        <p>You may stop using Golf Gadget Pro at any time by uninstalling it. Your licence ends automatically if you break these Terms. We may update, change or withdraw the app, or any feature, at any time.</p>
+
+        <h2>15. Changes to These Terms</h2>
+        <p>We may update these Terms to reflect changes to the app or the law. When we do, we will update the date at the top of this page; significant changes will also be noted in the app's release notes or store listing. Continuing to use the app after a change means you accept the updated Terms.</p>
+
+        <h2>16. Governing Law</h2>
+        <p>These Terms are governed by the laws of the People's Republic of Bangladesh. If you are a consumer, you also keep the protection of any mandatory laws of the country where you live, and you may bring a claim in your local courts where that law allows.</p>
+
+        <h2>17. Contact</h2>
+        <p>Questions about these Terms? Email us at <a href="mailto:admin@zyeemzia.com" class="contact-link">admin@zyeemzia.com</a>, or use the Direct Transmission Hub at the bottom of this page. Our full set of policies is in the <a href="https://policy.zyeemzia.com/" class="contact-link">ZyeemZia&trade; Trust Center</a>.</p>
+
+    </div>
+    <!-- DIRECT TRANSMISSION HUB (shared component from zyeemzia.com) -->
+    <div class="tx-page"><section class="tx-mount" id="contact" data-tx-topic="apps" data-tx-regarding="Golf Gadget Pro" data-tx-source="zyeemzia.com · Terms · Golf Gadget Pro" data-tx-lead="Questions about these terms, a purchase or support for Golf Gadget Pro? Send them straight to the ZyeemZia command desk."></section></div>
+
+
+    <script>
+        const themeBtn = document.getElementById('themeToggle');
+        const bodyElement = document.body;
+        
+        // Check if the user selected dark mode on the main index.html page
+        if(localStorage.getItem('matrixTheme') === 'dark') {
+            bodyElement.classList.add('dark-mode');
+        }
+
+        themeBtn.addEventListener('click', () => {
+            bodyElement.classList.toggle('dark-mode');
+            
+            if(bodyElement.classList.contains('dark-mode')) {
+                localStorage.setItem('matrixTheme', 'dark');
+            } else {
+                localStorage.setItem('matrixTheme', 'light');
+            }
+        });
+    </script>
+    <script src="transmit.js?v=3" defer></script>
+</body>
+</html>
+

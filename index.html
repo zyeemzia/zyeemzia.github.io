@@ -378,6 +378,8 @@
             user-select: none; -webkit-user-select: none; pointer-events: none;
         }
         .modal-overlay.active .modal-content { transform: scale(1); }
+        .modal-overlay picture { display: contents; }
+        .modal-overlay .modal-content { width: auto; height: auto; object-fit: contain; }
 
         /* =========================================
            DARK MODE OVERRIDES
@@ -1014,7 +1016,7 @@
     </div>
 
     <div class="modal-overlay" id="cardModal" oncontextmenu="return false;">
-        <img src="ZyeemZia™.png" alt="ZyeemZia Digital Business Card" class="modal-content" draggable="false">
+        <picture><source srcset="ZyeemZia-card.webp?v=2" type="image/webp"><img src="ZyeemZia%E2%84%A2.png?v=2" alt="Zyeem Bin Zia, ZyeemZia™: Owner, Founder &amp; CEO, Zyeem Foundation. Digital business card" class="modal-content" draggable="false" width="1920" height="1072" decoding="async"></picture>
     </div>
 
     <script>

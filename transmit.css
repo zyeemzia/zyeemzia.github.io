@@ -2,6 +2,8 @@
    Follows the host page's theme through the tx-dark class (see data-tx-dark / data-tx-light / data-tx-auto in transmit.js). Copyright © ZyeemZia */
 /* Form controls use the page font; browsers otherwise fall back to Arial. */
 button, input, select, textarea { font-family: inherit; }
+/* Small print never drops below 12px on screen. */
+small { font-size: max(12px, .85em); }
 .tx {
     --tx-ink: #0f172a; --tx-ink-2: #475569; --tx-ink-3: #64748b; --tx-line: #e2e8f0; --tx-card: #ffffff; --tx-soft: #f8fafc;
     --tx-field: #f8fafc; --tx-acc: #7c3aed; --tx-acc-2: #2563eb; --tx-acc-soft: rgba(124, 58, 237, 0.09); --tx-ok: #047857; --tx-bad: #be123c;
